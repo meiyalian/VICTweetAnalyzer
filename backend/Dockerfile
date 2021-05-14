@@ -19,7 +19,8 @@ COPY . /app
 WORKDIR /app
 # RUN pip install -r requirements.txt
 EXPOSE 5001
-CMD [ "FLASK_APP=app.py flask run" ]
+ENTRYPOINT [ "python" ]
+CMD [ "app.py" ]
 
 # # Commands in a list
 # CMD ["python", ".py"]
