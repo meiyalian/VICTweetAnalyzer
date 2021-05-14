@@ -1,4 +1,9 @@
 FROM ubuntu:18.04 AS base
+RUN set -xe \
+    && apt-get update \
+    && apt-get install python-pip
+RUN pip install --upgrade pip
+
 FROM base
 WORKDIR /usr/backend
 
