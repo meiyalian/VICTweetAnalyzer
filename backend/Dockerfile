@@ -11,7 +11,7 @@ RUN apt-get update -y && \
     apt-get install -y python-pip python-dev
 
 # https://hub.docker.com/r/library/python/tags/
-FROM python:apline3.6 
+FROM python:3-onbuild
 
 # Coping source in current directory into the image
 # python:3-onbuild expects the source in /usr/src/app
