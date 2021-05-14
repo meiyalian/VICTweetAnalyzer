@@ -1,3 +1,4 @@
+FROM ubuntu:18.04 AS base
 FROM base
 WORKDIR /usr/backend
 
