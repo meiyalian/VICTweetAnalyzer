@@ -28,4 +28,4 @@ ENV flask_host 0.0.0.0
 EXPOSE $flask_port
 #RUN ./run_flask_debug_mode.sh
 # ENTRYPOINT ["sh", "-c"]
-CMD ["python3 app.py -host $flask_host -port $flask_port"]
+CMD ["FLASK_APP=app.py flask run"]
