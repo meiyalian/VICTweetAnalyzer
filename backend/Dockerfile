@@ -27,8 +27,8 @@ CMD [ "app.py" ]
 
 # #ENV PORT "5000"
 # COPY . .
-WORKDIR /code
-RUN pip install -r requirements.txt
+# WORKDIR /code
+# RUN pip install -r requirements.txt
 
 # install dependency to conda
 # RUN npm install -g electron@1.8.4 orca \
@@ -40,4 +40,4 @@ RUN pip install -r requirements.txt
 # EXPOSE $flask_port
 #RUN ./run_flask_debug_mode.sh
 # ENTRYPOINT ["sh", "-c"]
-CMD ["python","app.py"]
+# CMD ["python","app.py"]
