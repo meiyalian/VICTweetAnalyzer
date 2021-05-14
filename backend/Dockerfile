@@ -1,4 +1,4 @@
-FROM ubuntu:18.04 
+FROM ubuntu:18.04 AS base
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 # ENV PATH /opt/conda/bin:$PATH
 ENV http_proxy http://wwwproxy.unimelb.edu.au:8000/
@@ -11,18 +11,18 @@ RUN apt-get update -y && \
     apt-get install -y python-pip python-dev
 
 # https://hub.docker.com/r/library/python/tags/
-FROM python:3-onbuild  
+FROM python:apline3.6 
 
 # Coping source in current directory into the image
 # python:3-onbuild expects the source in /usr/src/app
-COPY . /usr/src/app
+COPY ./app /code
 
 # # Commands in a list
 # CMD ["python", ".py"]
 
 # #ENV PORT "5000"
 # COPY . .
-
+WORKDIR /code
 RUN pip install -r requirements.txt
 
 # install dependency to conda
@@ -35,4 +35,4 @@ RUN pip install -r requirements.txt
 # EXPOSE $flask_port
 #RUN ./run_flask_debug_mode.sh
 # ENTRYPOINT ["sh", "-c"]
-CMD ["FLASK_APP=app.py flask run"]
+CMD ["python","app.py"]
