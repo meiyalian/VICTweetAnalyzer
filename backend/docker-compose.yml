@@ -5,7 +5,7 @@ services:
     image: comp90024-backend:latest
     ports:
       # port number on server that others can access: port number in container
-      - "5001:80"
+      - "5000:5000"
     # volumes:
     #   - ./app:/usr/src/app
     # environment:
