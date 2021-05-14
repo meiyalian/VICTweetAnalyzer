@@ -22,10 +22,10 @@ RUN pip install -r requirements.txt
 # RUN npm install -g electron@1.8.4 orca \
 #     && pip install psutil requests
 
-ENV flask_port 80
-ENV flask_host 0.0.0.0
+# ENV flask_port 80
+# ENV flask_host 0.0.0.0
 
-EXPOSE $flask_port
+# EXPOSE $flask_port
 #RUN ./run_flask_debug_mode.sh
 # ENTRYPOINT ["sh", "-c"]
 CMD ["FLASK_APP=app.py flask run"]
