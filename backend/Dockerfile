@@ -11,11 +11,16 @@ RUN apt-get update -y && \
     apt-get install -y python-pip python-dev
 
 # https://hub.docker.com/r/library/python/tags/
-FROM python:3-onbuild
-
+# FROM python:3-onbuild
+FROM python:alpine3.7
 # Coping source in current directory into the image
 # python:3-onbuild expects the source in /usr/src/app
-COPY requirements.txt /code
+COPY . /app
+WORKDIR /app
+RUN pip install -r requirements.txt
+EXPOSE 5001
+ENTRYPOINT [ "python" ]
+CMD [ "app.py" ]
 
 # # Commands in a list
 # CMD ["python", ".py"]
