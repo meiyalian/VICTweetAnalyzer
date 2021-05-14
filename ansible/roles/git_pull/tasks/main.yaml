@@ -1,4 +1,4 @@
 - name: git pull
-  shell: git pull 
+  shell: sudo git pull 
   args:
-    chdir: '{{ git_repo }}'
+    chdir: '{{ git_dir }}'
