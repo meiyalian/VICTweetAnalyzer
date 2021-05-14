@@ -12,7 +12,7 @@ RUN apt-get update -y && \
 
 # https://hub.docker.com/r/library/python/tags/
 # FROM python:3-onbuild
-FROM python:alpine3.7
+# FROM python:alpine3.7
 # Coping source in current directory into the image
 # python:3-onbuild expects the source in /usr/src/app
 COPY . /app
