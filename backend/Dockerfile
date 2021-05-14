@@ -1,3 +1,4 @@
+FROM base
 WORKDIR /usr/backend
 
 #ENV PORT "5000"
@@ -15,4 +16,4 @@ ENV flask_host 0.0.0.0
 EXPOSE $flask_port
 #RUN ./run_flask_debug_mode.sh
 # ENTRYPOINT ["sh", "-c"]
-CMD ["python backend.py -host $flask_host -port $flask_port"]
+CMD ["python3 app.py -host $flask_host -port $flask_port"]
