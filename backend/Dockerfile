@@ -15,7 +15,7 @@ FROM python:3-onbuild
 
 # Coping source in current directory into the image
 # python:3-onbuild expects the source in /usr/src/app
-COPY ./app /code
+COPY requirements.txt /code
 
 # # Commands in a list
 # CMD ["python", ".py"]
