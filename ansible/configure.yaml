@@ -1,0 +1,15 @@
+- hosts: localhost
+
+  roles:
+    - role: add_keys
+
+- hosts: instances
+  vars_files:
+    - host_vars/configure.yaml
+    - host_vars/mrc.yaml
+  gather_facts : true
+  roles:
+     - role: add_proxy   
+     - role: install_dependencies
+     - role: configure_docker
+     - role: mount_volumes

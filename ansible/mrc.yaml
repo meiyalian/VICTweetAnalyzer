@@ -1,0 +1,16 @@
+- hosts: localhost
+  vars:
+    ansible_python_interpreter: /usr/local/bin/python3
+  vars_files:
+    - host_vars/mrc.yaml
+  gather_facts: true
+
+  roles:
+    - role: common
+    - role: show_images
+    - role: create_volume
+    - role: create_security_groups
+    - role: create_instances  
+  
+    # - role: openstack-volume-snapshot
+  

@@ -1,0 +1,1 @@
+. ./openrc.sh; ansible-playbook --ask-become-pass configure.yaml -i inventory/hosts.ini

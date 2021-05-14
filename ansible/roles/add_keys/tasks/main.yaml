@@ -1,0 +1,7 @@
+- name: add key
+  copy:
+    src: "config/cloud.key"
+    dest: ~/.ssh/cloud.key
+#    owner: ubuntu
+#    group: ubuntu
+    mode: 0600

@@ -1,0 +1,13 @@
+- hosts: database
+  vars_files:
+    - host_vars/configure.yaml
+  gather_facts: true
+  roles:
+     - role: create_couchdb
+
+- hosts: masternode
+  vars_files:
+    - host_vars/configure.yaml
+  gather_facts: true
+  roles:
+     - role: create_couchdb_cluster
