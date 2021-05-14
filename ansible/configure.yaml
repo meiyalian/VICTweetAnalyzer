@@ -12,4 +12,5 @@
      - role: add_proxy   
      - role: install_dependencies
      - role: configure_docker
+     - role: clone_git
      - role: mount_volumes

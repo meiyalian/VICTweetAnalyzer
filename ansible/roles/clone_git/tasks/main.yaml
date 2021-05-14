@@ -1,0 +1,28 @@
+# ---
+# - name: add ssh key for github
+#   copy:
+#     src: "config/cloud.key"
+#     dest: /home/ubuntu/.ssh/cloudkey
+#     owner: ubuntu
+#     group: ubuntu
+#     mode: 0600
+# copy GitHub private key to server
+
+# - name: configure ssh to use ansible key for github.com
+#   template:
+#     src: "config/ssh_config"
+#     dest: /home/ubuntu/.ssh/config
+#     owner: ubuntu
+#     group: ubuntu
+#     mode: 0644
+# # configure ssh to use ansible key for github.com
+
+- name: Creates ~COMP90024 directory
+  file:
+    path: '{{ ubuntu_working_dir }}'
+    state: directory
+
+- name: pull clone
+  shell: sudo git clone https://github.com/Catherine959/comp90024.git
+  args:
+    chdir: '{{ ubuntu_working_dir }}'
