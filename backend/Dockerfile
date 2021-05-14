@@ -17,7 +17,7 @@ FROM python:alpine3.7
 # python:3-onbuild expects the source in /usr/src/app
 COPY . /app
 WORKDIR /app
-# RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt
 EXPOSE 5000
 ENTRYPOINT [ "python3" ]
 CMD [ "app.py" ]
