@@ -1,4 +1,4 @@
-FROM ubuntu:18.04 AS base
+FROM ubuntu:18.04 
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 # ENV PATH /opt/conda/bin:$PATH
 ENV http_proxy http://wwwproxy.unimelb.edu.au:8000/
@@ -10,11 +10,18 @@ ENV no_proxy localhost,127.0.0.1,localaddress,172.16.0.0/12,.melbourne.rc.nectar
 RUN apt-get update -y && \
     apt-get install -y python-pip python-dev
 
-FROM base
-WORKDIR /usr/backend
+# https://hub.docker.com/r/library/python/tags/
+FROM python:3-onbuild  
 
-#ENV PORT "5000"
-COPY . .
+# Coping source in current directory into the image
+# python:3-onbuild expects the source in /usr/src/app
+COPY . /usr/src/app
+
+# # Commands in a list
+# CMD ["python", ".py"]
+
+# #ENV PORT "5000"
+# COPY . .
 
 RUN pip install -r requirements.txt
 
