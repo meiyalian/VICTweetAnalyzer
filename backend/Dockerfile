@@ -15,8 +15,8 @@ RUN apt-get update -y && \
 # FROM python:alpine3.7
 # Coping source in current directory into the image
 # python:3-onbuild expects the source in /usr/src/app
-COPY . /app
-WORKDIR /app
+COPY . /app/backend
+WORKDIR /app/backend
 RUN pip install -r requirements.txt
 EXPOSE 5000
 ENTRYPOINT [ "python" ]
