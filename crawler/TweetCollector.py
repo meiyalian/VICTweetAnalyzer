@@ -8,6 +8,7 @@ import argparse
 from DBconnect import vic_areas_tweets_db
 from AurinAnalyzer import *
 from TimeConverter import convert_to_local_time
+import time
 
 
 
@@ -128,42 +129,50 @@ if __name__ == "__main__":
 
     if args.stream:
         print("Start streaming ....... ")
-        locations = [float(args.location[0]),float(args.location[1]),float(args.location[2]),float(args.location[3])]
-        myStreamListener = MyStreamListener()
-        myStream = tweepy.Stream(auth = getAuth(access), listener=myStreamListener)
-        myStream.filter(locations=locations) #filter tweets from vic using https://boundingbox.klokantech.com/
+        try:
+            locations = [float(args.location[0]),float(args.location[1]),float(args.location[2]),float(args.location[3])]
+            myStreamListener = MyStreamListener()
+            myStream = tweepy.Stream(auth = getAuth(access), listener=myStreamListener)
+            myStream.filter(locations=locations, stall_warnings=True) #filter tweets from vic using https://boundingbox.klokantech.com/
+        except KeyboardInterrupt: 
+                print('End Session.')
+
         
     elif args.search:
-        # process_areas(areas)
-        # csvFile = open('crawler/tweets.csv', 'a')
-        #Use csv Writer
         print("Start searching ....... ")
-        # csvWriter = csv.writer(csvFile)
+
         api = tweepy.API(getAuth(access), wait_on_rate_limit=True)
         recent = api.search(geocode=VIC_geo, count=1, result_type='recent')
-        # print(len(recent))
-        # print(recent[0])
+
 
         max_id = recent[0].id+1
 
         collected = 0
         count = 0
         while True:
-            new_search = api.search(q='*', count=300, lang="en", geocode=VIC_geo, tweet_mode="extended", max_id=str(max_id-1))
-            # for status in tweepy.Cursor(api.search, q='*', lang="en",geocode=VIC_geo,tweet_mode="extended", max_id=max_id).items(300):
-            for status in new_search:
-                if not hasattr(status, "retweeted_status") and (status.coordinates is not None or status.place is not None): 
-                    count +=1
-                    
-                    if status.coordinates is not None:
-                        save_a_tweet(status, is_polygon = False)
-                        # csvWriter.writerow([status.id, status.created_at, status.full_text.lower(), status.coordinates, "coordinates"])
-                    else:
-                        save_a_tweet(status, is_polygon = True)
-                       
-                        # csvWriter.writerow([status.id, status.created_at, status.full_text.lower(), status.place.bounding_box.coordinates[0], "polygon"])
-                        print("collected " + str(count))
-                max_id = status.id
+            try:
+                new_search = api.search(q='*', count=300, lang="en", geocode=VIC_geo, tweet_mode="extended", max_id=str(max_id-1))
+                # for status in tweepy.Cursor(api.search, q='*', lang="en",geocode=VIC_geo,tweet_mode="extended", max_id=max_id).items(300):
+                for status in new_search:
+                    if not hasattr(status, "retweeted_status") and (status.coordinates is not None or status.place is not None): 
+                        count +=1
+                        
+                        if status.coordinates is not None:
+                            save_a_tweet(status, is_polygon = False)
+                            # csvWriter.writerow([status.id, status.created_at, status.full_text.lower(), status.coordinates, "coordinates"])
+                        else:
+                            save_a_tweet(status, is_polygon = True)
+                        
+                            # csvWriter.writerow([status.id, status.created_at, status.full_text.lower(), status.place.bounding_box.coordinates[0], "polygon"])
+                            print("collected " + str(count))
+                    max_id = status.id
+            except KeyboardInterrupt: 
+                print('End Session.')
+
+            
+            else:
+                time.sleep(5)
+                continue
     
  
 
