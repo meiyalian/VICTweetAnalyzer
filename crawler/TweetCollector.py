@@ -9,6 +9,8 @@ from DBconnect import vic_areas_tweets_db
 from AurinAnalyzer import *
 from TimeConverter import convert_to_local_time
 import time
+from queue import Queue
+from threading import Thread
 
 
 
@@ -27,14 +29,14 @@ access = {"consumer_key": consumer_key,
 VIC_bounding_box = [141.03,-38.41,148.7,-33.98]
 VIC_geo = "-37.03521,145.23218,400km"
 
-print("Initialization ....... ")
+print("Initializing ....... ")
 areas_polygons = {}
 area_lst = vic_areas_tweets_db.view('vic_areas_tweets/getAllAreaRanges')
 for each in area_lst:
     polys = convert_to_multipolygon(each.value)
     areas_polygons[each.id] = polys
 
-
+print(".......Initialization completed")
 # Get the authentication
 def getAuth(access):
     auth = tweepy.OAuthHandler(access['consumer_key'], access['consumer_secret'])
@@ -44,7 +46,6 @@ def getAuth(access):
 
 def save_a_tweet(status, is_polygon,  area_dict = areas_polygons , db = vic_areas_tweets_db ):
     if (str(status.id) not in db):
-        # print("not in db")
         area = "Out Of Bound"
         if is_polygon:
             area = determine_location(area_dict,status.place.bounding_box.coordinates[0], isBoundingBox = True ) 
@@ -70,27 +71,36 @@ def save_a_tweet(status, is_polygon,  area_dict = areas_polygons , db = vic_area
             }
 
             db[str(status.id)] = tweet
-            print("save!")
+            print("save!!")
         else:
             print("area out of bound")
-   
+    else:
+        print("already in db")
 
 
 
 class MyStreamListener(tweepy.StreamListener):
-    def __init__(self, time_limit=300):
-        self.start_time = time.time()
-        self.limit = time_limit
-        super(MyStreamListener, self).__init__()
-        # self.file = open('crawler/OutputStreaming.csv', 'a')
-        # self.writer = csv.writer(self.file)
-        self.collected = 0
-        # self.num_tweets = 0
+    def __init__(self, q = Queue()):
+        super().__init__()
+        # super(MyStreamListener, self).__init__()
+        self.q = q
+        num_worker_threads = 4
+        for i in range(num_worker_threads):
+            t = Thread(target=self.do_stuff)
+            t.daemon = True
+            t.start()
+            
+    def do_stuff(self):
+        while True:
+            self.q.get()
+            self.q.task_done()
+
+
+
     def on_status(self, status):
 
         
         if not hasattr(status, "retweeted_status")and status.lang=="en" and (status.coordinates is not None or status.place is not None) :  # if its not Retweet and is in English
-            self.collected +=1 
             if status.coordinates is not None:
                 save_a_tweet(status, is_polygon = False)
                 # self.writer.writerow([status.id, status.created_at, tweet, status.coordinates, "coordinates"])
@@ -98,7 +108,6 @@ class MyStreamListener(tweepy.StreamListener):
                  save_a_tweet(status, is_polygon = True)
                 # self.writer.writerow([status.id, status.created_at, tweet, status.place.bounding_box.coordinates[0], "polygon"])
             
-            print(str(self.collected) + " collected")
  
     
        
@@ -137,6 +146,7 @@ if __name__ == "__main__":
         except KeyboardInterrupt: 
                 print('End Session.')
 
+
         
     elif args.search:
         print("Start searching ....... ")
@@ -159,12 +169,10 @@ if __name__ == "__main__":
                         
                         if status.coordinates is not None:
                             save_a_tweet(status, is_polygon = False)
-                            # csvWriter.writerow([status.id, status.created_at, status.full_text.lower(), status.coordinates, "coordinates"])
                         else:
                             save_a_tweet(status, is_polygon = True)
                         
-                            # csvWriter.writerow([status.id, status.created_at, status.full_text.lower(), status.place.bounding_box.coordinates[0], "polygon"])
-                            print("collected " + str(count))
+
                     max_id = status.id
             except KeyboardInterrupt: 
                 print('End Session.')
@@ -175,10 +183,6 @@ if __name__ == "__main__":
                 continue
     
  
-
-    # print(a["age_distribution"]["teenagers_and_young_adults_ratio"])
-    # print("Alpine (S)" in  vic_areas_tweets_db)
-
 
 
 
