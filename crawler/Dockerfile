@@ -11,4 +11,4 @@ COPY . /app/crawler
 WORKDIR /app/crawler
 RUN pip install -r requirements.txt
 
-CMD ["python3", "TweetCollector.py","--search"]
+CMD ["python3", "-u","TweetCollector.py","--search"]
