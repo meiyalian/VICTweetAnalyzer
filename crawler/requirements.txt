@@ -1,3 +1,4 @@
 couchdb
 tweepy
 shapely
+matplotlib
