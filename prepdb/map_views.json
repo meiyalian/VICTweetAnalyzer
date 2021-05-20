@@ -12,7 +12,9 @@
 
          "getAllAreaRanges": {
             "map": "function(doc) {if(doc.type == \"area\"){emit(doc.area, doc.area_range)};}"
-         }
+        }
+
+        
 
         
  

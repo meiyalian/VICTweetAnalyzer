@@ -19,6 +19,7 @@ from urllib3.exceptions import ProtocolError
 
 
 
+
 #app key & secret 
 consumer_key = '0BQfUFuL2P16vfMdoKWQe5cuk'
 consumer_secret = 'XYEo4GhttDNIuy7dnvTJ9lEIyZqMoUZ6OaOeIMYMpavOG9u1EI'
@@ -155,61 +156,61 @@ if __name__ == "__main__":
     parser.add_argument("--area",  help="search twitter --> specify search area using string or default set to Victoria) " , default =VIC_geo)
     args = parser.parse_args()
 
-    print(determine_location(area_polygons, [-38.10492453, 145.2983662]))
-    # if args.stream:
-    #     print("Start streaming ....... ")
-    #     while True:
-    #         try:
-    #             locations = [float(args.location[0]),float(args.location[1]),float(args.location[2]),float(args.location[3])]
-    #             myStreamListener = MyStreamListener()
-    #             myStream = tweepy.Stream(auth = getAuth(access), listener=myStreamListener)
-    #             myStream.filter(locations=locations, stall_warnings=True) #filter tweets from vic using https://boundingbox.klokantech.com/
-    #         except KeyboardInterrupt: 
-    #             myStream.disconnect()
-    #             print('End Session.')
-    #             break
-    #         except ProtocolError:
-    #             print("Something went wrong ... reconnecting")
-    #             continue
+
+    if args.stream:
+        print("Start streaming ....... ")
+        while True:
+            try:
+                locations = [float(args.location[0]),float(args.location[1]),float(args.location[2]),float(args.location[3])]
+                myStreamListener = MyStreamListener()
+                myStream = tweepy.Stream(auth = getAuth(access), listener=myStreamListener)
+                myStream.filter(locations=locations, stall_warnings=True) #filter tweets from vic using https://boundingbox.klokantech.com/
+            except KeyboardInterrupt: 
+                myStream.disconnect()
+                print('End Session.')
+                break
+            except ProtocolError:
+                print("Something went wrong ... reconnecting")
+                continue
 
 
 
 
 
         
-    # elif args.search:
-    #     print("Start searching ....... ")
+    elif args.search:
+        print("Start searching ....... ")
 
-    #     api = tweepy.API(getAuth(access), wait_on_rate_limit=True)
-    #     recent = api.search(geocode=VIC_geo, count=1, result_type='recent')
+        api = tweepy.API(getAuth(access), wait_on_rate_limit=True)
+        recent = api.search(geocode=VIC_geo, count=1, result_type='recent')
 
 
-    #     max_id = recent[0].id+1
+        max_id = recent[0].id+1
 
-    #     collected = 0
-    #     count = 0
-    #     while True:
-    #         try:
-    #             new_search = api.search(q='*', count=300, lang="en", geocode=VIC_geo, tweet_mode="extended", max_id=str(max_id-1))
-    #             # for status in tweepy.Cursor(api.search, q='*', lang="en",geocode=VIC_geo,tweet_mode="extended", max_id=max_id).items(300):
-    #             for status in new_search:
-    #                 if not hasattr(status, "retweeted_status") and (status.coordinates is not None or status.place is not None): 
-    #                     count +=1
+        collected = 0
+        count = 0
+        while True:
+            try:
+                new_search = api.search(q='*', count=300, lang="en", geocode=VIC_geo, tweet_mode="extended", max_id=str(max_id-1))
+                # for status in tweepy.Cursor(api.search, q='*', lang="en",geocode=VIC_geo,tweet_mode="extended", max_id=max_id).items(300):
+                for status in new_search:
+                    if not hasattr(status, "retweeted_status") and (status.coordinates is not None or status.place is not None): 
+                        count +=1
                         
-    #                     if status.coordinates is not None:
-    #                         save_a_tweet(status,  False, area_polygons)
-    #                     else:
-    #                         save_a_tweet(status,  True, area_polygons)
+                        if status.coordinates is not None:
+                            save_a_tweet(status,  False, area_polygons)
+                        else:
+                            save_a_tweet(status,  True, area_polygons)
                         
 
-    #                 max_id = status.id
-    #         except KeyboardInterrupt: 
-    #             print('End Session.')
-    #             break
+                    max_id = status.id
+            except KeyboardInterrupt: 
+                print('End Session.')
+                break
 
-    #         else:
-    #             time.sleep(10)
-    #             continue
+            else:
+                time.sleep(10)
+                continue
     
  
 

@@ -25,6 +25,5 @@ def processTweets(fpath, location):
             line_count +=1
     print("process " + str(number_added) + " tweets!")
 
-    
 
 processTweets("./tweetsCollect/tweets.csv", "Melbourne (C)")
