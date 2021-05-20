@@ -108,6 +108,7 @@ class MyStreamListener(tweepy.StreamListener):
         num_worker_threads = 4
         for i in range(num_worker_threads):
             t = Thread(target=self.do_stuff)
+            
             t.daemon = True
             t.start()
             
@@ -117,10 +118,12 @@ class MyStreamListener(tweepy.StreamListener):
                 item = self.q.get()
                 if item is None:
                     continue
-                try:
-                    process_status(item)
-                finally:
-                    self.q.task_done()
+                #try:
+                print(self)
+                process_status(item)
+
+                #finally:
+                #    self.q.task_done()
 
             except queue.Empty:
                 pass
@@ -172,10 +175,6 @@ if __name__ == "__main__":
             except ProtocolError:
                 print("Something went wrong ... reconnecting")
                 continue
-
-
-
-
 
         
     elif args.search:
