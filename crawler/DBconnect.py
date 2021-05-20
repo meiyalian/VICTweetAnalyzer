@@ -23,3 +23,13 @@ dbserver = connect_to_couch_db_server(host, port, username, password)
 vic_areas_tweets_db = connect_to_database("vic_areas_tweets", dbserver)
 
 
+def send_to_db(tweet, tid,  db = vic_areas_tweets_db):
+    if (tid not in db):
+        db[tid] = tweet
+        print("save!!")
+        return True
+
+    else:
+        print("already in db")
+        return False
+
