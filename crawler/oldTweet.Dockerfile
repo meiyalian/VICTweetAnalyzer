@@ -10,4 +10,5 @@ ENV no_proxy localhost,127.0.0.1,localaddress,172.16.0.0/12,.melbourne.rc.nectar
 COPY . /app/crawler
 WORKDIR /app/crawler
 RUN pip install -r requirements.txt
-CMD ["python3", "-u","TweetCollector.py","--search"]
+RUN pip3 install --user --upgrade -e git+https://github.com/twintproject/twint.git@origin/master#egg=twint
+CMD ["python3", "-u","GetOldTweets.py"]
