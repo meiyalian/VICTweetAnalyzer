@@ -1,4 +1,4 @@
-FROM python:3.8.2
+FROM python:3.8.5
 
 # there lines are dedicate for nectar server
 ENV http_proxy http://wwwproxy.unimelb.edu.au:8000/
