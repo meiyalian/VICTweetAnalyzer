@@ -10,4 +10,4 @@ ENV no_proxy localhost,127.0.0.1,localaddress,172.16.0.0/12,.melbourne.rc.nectar
 COPY . /app/crawler
 WORKDIR /app/crawler
 RUN pip install -r requirements.txt
-CMD ["python3", "-u","TweetCollector.py","--search"]
+ENTRYPOINT ["python3", "-u","TweetCollector.py"]
