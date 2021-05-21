@@ -1,5 +1,4 @@
 # location data of each area represented by a central point + radius 
-
 areas = {'Alpine (S)': {'lat': -36.7532313, 'lng': 147.0111681},
          'Ararat (RC)': {'lat': -37.5401763, 'lng': 142.8741407},
          'Ballarat (C)': {'lat': -37.5621587, 'lng': 143.8502556},

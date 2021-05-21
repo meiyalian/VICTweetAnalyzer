@@ -6,6 +6,7 @@ from torchmoji.global_variables import PRETRAINED_PATH, VOCAB_PATH
 from torchmoji.sentence_tokenizer import SentenceTokenizer
 from torchmoji.model_def import torchmoji_emojis
 import couchdb  # importing couchdb
+from datetime import datetime
 
 
 EMOJIS = ":joy: :unamused: :weary: :sob: :heart_eyes: :pensive: :ok_hand: :blush: :heart: :smirk: :grin: :notes: :flushed: :100: :sleeping: :relieved: :relaxed: :raised_hands: :two_hearts: :expressionless: :sweat_smile: :pray: :confused: :kissing_heart: :heartbeat: :neutral_face: :information_desk_person: :disappointed: :see_no_evil: :tired_face: :v: :sunglasses: :rage: :thumbsup: :cry: :sleepy: :yum: :triumph: :hand: :mask: :clap: :eyes: :gun: :persevere: :smiling_imp: :sweat: :broken_heart: :yellow_heart: :musical_note: :speak_no_evil: :wink: :skull: :confounded: :smile: :stuck_out_tongue_winking_eye: :angry: :no_good: :muscle: :facepunch: :purple_heart: :sparkling_heart: :blue_heart: :grimacing: :sparkles:".split(
@@ -50,6 +51,7 @@ def get_unicode(s):
 
 def process_tweets(text):
     txt = re.sub('@[\w]+','',text)
+    txt = txt.lower()
     rem_txt = re.sub(r"http\S+", "", txt)
     rem_txt_e = give_emoji_free_text(get_unicode(rem_txt))
     return rem_txt_e
@@ -91,6 +93,7 @@ def get_words_from_index(text):
 def get_exact_word(text):
     start = -1
     end = -1
+    
     for i in range(len(text)):
         punctuation_index = '?.!,\'"'.find(text[i])
         if punctuation_index == -1 and start == -1:
@@ -167,35 +170,86 @@ if __name__ == '__main__':
         file_words.close()
 
     dbserver = connect_to_couch_db_server(host, port, username, password)
-    vic_areas_tweets_db = connect_to_database("vic_areas_tweets", dbserver)
-    sentiment_tweets_db = connect_to_database("sentiment_tweets", dbserver)
-    count = 0
-    for item in vic_areas_tweets_db.view('_all_docs'):
-        id = item['id']
-        if id not in sentiment_tweets_db:
-            try:
-                doc = vic_areas_tweets_db[id]
-                txt = doc['text']
-                p_txt = process_tweets(txt)
-                time = doc['time']
-                location = doc['location']
-                score = get_score(p_txt)
-                hash_tag = get_hashtags(p_txt)
-                emojis = get_emoji(p_txt)
-                sentiment = {
-                    "score": score,
-                    "hashtags": hash_tag,
-                    "emoji": emojis,
-                    "time": time,
-                    "location": location
-                }
-                sentiment_tweets_db[id] = sentiment
-                count += 1
-                if count % 100 == 0:
-                    print("save {} tweets.".format(count))
-            except:
-                continue
-    print("successful save {} tweets.".format(count))
+    vic_tweets = connect_to_database("vic_tweets", dbserver)
+    # sentiment_tweets_db = connect_to_database("sentiment_tweets", dbserver)
+    since = 1
+    while True:
+        try:
+            changes = vic_tweets.changes(since=since, limit = 5000,  filter="vic_tweets/important" )
+            since = changes["last_seq"]
+            for changeset in changes["results"]:
+                try:
+                    doc = vic_tweets[changeset["id"]]
+                except couchdb.http.ResourceNotFound:
+                    continue
+                else:
+                    analysis_id = changeset["id"] + "_analysis"
+                    if analysis_id not in vic_tweets:
+                        try:
+                            txt = doc['text']
+                            p_txt = process_tweets(txt)
+                            time = doc['time']
+                            #to do: categorized to hour value 0~24
+                            location = doc['location']
+                            score = get_score(p_txt)
+                            hash_tag = get_hashtags(p_txt)
+                            emojis = get_emoji(p_txt)
+                            sentiment = {
+                                "tid": str(changeset["id"]),
+                                "type": "analysis"
+                                "score": score,
+                                "hashtags": hash_tag,
+                                "emoji": emojis,
+                                "hour": time, #change this 
+                                "location": location,
+                                "ts": datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+                            }
+                            vic_tweets[analysis_id] = sentiment
+                            count += 1
+                            if count % 100 == 0:
+                                print("save {} tweets.".format(count))
+                        except:
+                            continue
+
+
+                            
+        except KeyboardInterrupt:
+            print("End Session.")
+            break
+
+
+
+
+
+
+    # for item in vic_areas_tweets_db.view('_all_docs'):
+    #     id = item['id']
+    #     if id not in sentiment_tweets_db:
+    #         try:
+    #             doc = vic_areas_tweets_db[id]
+    #             txt = doc['text']
+    #             p_txt = process_tweets(txt)
+    #             time = doc['time']
+    #             #to do: categorized to hour value 0~24
+    #             location = doc['location']
+    #             score = get_score(p_txt)
+    #             hash_tag = get_hashtags(p_txt)
+    #             emojis = get_emoji(p_txt)
+    #             sentiment = {
+    #                 "score": score,
+    #                 "hashtags": hash_tag,
+    #                 "emoji": emojis,
+    #                 "hour": time,
+    #                 "location": location,
+    #                 "ts": 
+    #             }
+    #             sentiment_tweets_db[id] = sentiment
+    #             count += 1
+    #             if count % 100 == 0:
+    #                 print("save {} tweets.".format(count))
+    #         except:
+    #             continue
+    # print("successful save {} tweets.".format(count))
 
 
 

@@ -5,7 +5,7 @@ import csv
 import argparse
 import time
 import argparse
-from DBconnect import vic_areas_tweets_db, send_to_db
+from DBconnect import vic_tweets, send_to_db
 from AurinAnalyzer import *
 from TimeConverter import convert_to_local_time
 import time
@@ -14,6 +14,7 @@ from threading import Thread
 import logging
 # the regular imports, as well as this:
 from urllib3.exceptions import ProtocolError
+from datetime import datetime
 # from http.client import IncompleteRead 
 
 
@@ -39,7 +40,7 @@ VIC_geo = "-37.03521,145.23218,400km"
 def initialization(): 
     print("Initializing ....... ")
     areas_polygons = {}
-    area_lst = vic_areas_tweets_db.view('vic_areas_tweets/getAllAreaRanges')
+    area_lst = vic_tweets.view('vic_tweets/getAllAreaRanges')
     for each in area_lst:
         polys = convert_to_multipolygon(each.value)
         areas_polygons[each.id] = polys
@@ -62,7 +63,7 @@ def getAuth(access):
 
 
 
-def save_a_tweet(status, is_polygon,  area_dict , db = vic_areas_tweets_db ):
+def save_a_tweet(status, is_polygon,  area_dict , db = vic_tweets ):
     if (str(status.id) not in db):
         area = "Out Of Bound"
         if is_polygon:
@@ -82,10 +83,12 @@ def save_a_tweet(status, is_polygon,  area_dict , db = vic_areas_tweets_db ):
                 
             #tweet document 
             tweet = {
+                "type": "tweet",
                 "text": tweet,
                 "hashtags": status.entities['hashtags'],
                 "time": convert_to_local_time(status.created_at),
-                "location": area
+                "location": area,
+                "ts": datetime.now().strftime("%d/%m/%Y %H:%M:%S")
             }
 
             send_to_db(tweet, str(status.id))
@@ -119,7 +122,7 @@ class MyStreamListener(tweepy.StreamListener):
                 if item is None:
                     continue
                 #try:
-                print(self)
+     
                 process_status(item)
 
                 #finally:

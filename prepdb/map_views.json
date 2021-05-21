@@ -1,5 +1,5 @@
 {
-    "_id": "_design/vic_areas_tweets",
+    "_id": "_design/vic_tweets",
     "views": {
         "getAllAreaDetails": {
              "map": "function(doc) {if(doc.type == \"area\"){emit(doc.name, {positive: doc.positive, negative: doc.negative, average_income: doc.average_income, age_distribution: doc.age_distribution, population_density: doc.population_density, area_range: doc.area_range})};}"
@@ -12,12 +12,16 @@
 
          "getAllAreaRanges": {
             "map": "function(doc) {if(doc.type == \"area\"){emit(doc.area, doc.area_range)};}"
-        }
+        },
+        "getTweetAreaCount": {
+            "map": "function(doc) {if(doc.type == \"tweet\"){emit(doc.location, 1)};}",
+            "reduce": "_count"
 
-        
+        },
+        "filters": {
+            "important": "function(doc, req) { if(doc.type == 'tweet') { return true; } else { return false; }}"
+          }
 
-        
- 
  
      }
 
