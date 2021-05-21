@@ -7,7 +7,7 @@ from Areas import areas
 import twint
 import os
 from ProcessOldTweet import processTweets
-
+import requests
 parser = argparse.ArgumentParser()
 # parser.add_argument('--geo', type=str, default="-37.80811,144.96071,50mi")
 parser.add_argument('--startdate', type=str, default="2019-01-01")
@@ -27,7 +27,9 @@ for key in areas:
     c.Store_csv = True
     c.Output = "Collected"
     twint.run.Search(c)
-    os.environ['NO_PROXY'] = 'twitter.com'
+
+    session = requests.Session()
+    session.trust_env = False
     print("Start processing collected tweets ..... ")
     processTweets("Collected/tweets.csv", key)
     print("......Finish processing")
