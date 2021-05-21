@@ -47,7 +47,7 @@ export default {
         map.on("click", "LGA", function (e) {
             var ABB_NAME =  e.features[0].properties.ABB_NAME
             new mapboxgl.Popup()
-              .setMaxWidth('500px')
+              .setMaxWidth('640px')
               .setLngLat(e.lngLat)
               .setHTML(
                 '<div id="base-detail"></div>'
