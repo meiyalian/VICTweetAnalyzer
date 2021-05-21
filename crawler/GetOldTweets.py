@@ -18,6 +18,10 @@ args = parser.parse_args()
 for key in areas:
     geo_string = str(areas[key]["lat"]) + "," + str(areas[key]["lng"]) + "," + "15km"
     c = twint.Config()
+    c.Username = "Twitter"
+    c.Proxy_host = "127.0.0.1"
+    c.Proxy_port = "1080"
+    c.Proxy_type = "http"
     c.Since= args.startdate
     c.Until = args.enddate
     c.Limit = args.limit
@@ -28,8 +32,7 @@ for key in areas:
     c.Output = "Collected"
     twint.run.Search(c)
 
-    session = requests.Session()
-    session.trust_env = False
+    
     print("Start processing collected tweets ..... ")
     processTweets("Collected/tweets.csv", key)
     print("......Finish processing")
