@@ -2,7 +2,3 @@ couchdb
 tweepy
 shapely
 matplotlib
-time
-queue
-threading
-twint
