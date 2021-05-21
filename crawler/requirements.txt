@@ -2,4 +2,3 @@ couchdb
 tweepy
 shapely
 matplotlib
-twint
