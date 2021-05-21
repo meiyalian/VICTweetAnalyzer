@@ -3,8 +3,8 @@
     <div class="Echarts" style="width: 100%;height:100%;">
       <div id="title">{{this.ABB_NAME}}</div>
       <el-row>
-        <el-col :span="12"><div id="Map_Pie" style="width: 100%;height:200px;"></div></el-col>
-        <el-col :span="12"><div id="Map_Pie2" style="width: 100%;height:200px;"></div></el-col>
+        <el-col :span="11"><div id="Map_Pie" style="width: 100%;height:200px;"></div></el-col>
+        <el-col :span="13"><div id="Map_Pie2" style="width: 100%;height:200px;"></div></el-col>
       </el-row>
       <el-row>
         <el-col :span="24"><div id="Map_Pie3" style="width: 100%;height:300px;"></div></el-col>
@@ -34,7 +34,6 @@ export default {
           this.myEcharts(),
           this.myEcharts2(),
           this.myEcharts3()
-
   ));
 
   },
@@ -51,7 +50,7 @@ export default {
 
       option = {
         title: {
-          text: 'Sentiment Score',
+          text: 'Sentiment Percentage',
           left: 'center'
         },
         tooltip: {
@@ -60,14 +59,14 @@ export default {
         legend: {
           orient: 'vertical',
           left: '0',
-          top: '10%'
+          top: '14%'
         },
         series: [
           {
             name: 'Sentiment Score',
             type: 'pie',
             radius: ['45%', '80%'],
-            center: ['50%', '55%'],
+            center: ['55%', '55%'],
             avoidLabelOverlap: false,
             itemStyle: {
               borderRadius: 10,
@@ -107,9 +106,10 @@ export default {
         return f.ABB_NAME == ABB_NAME
       })
 
+      console.log(DATA[0].age_distribution[0].five_to_nineteen);
       option = {
         title: {
-          text: 'Sentiment Score',
+          text: 'Age Level',
           left: 'center'
         },
         tooltip: {
@@ -122,10 +122,10 @@ export default {
         },
         series: [
           {
-            name: 'Sentiment Score',
+            name: 'Age Level',
             type: 'pie',
-            radius: ['45%', '80%'],
-            center: ['50%', '55%'],
+            radius: ['60%', '80%'],
+            center: ['60%', '55%'],
             avoidLabelOverlap: false,
             itemStyle: {
               borderRadius: 10,
@@ -147,8 +147,9 @@ export default {
               show: false
             },
             data: [
-              {value: DATA[0].positive, name: 'Positive'},
-              {value: DATA[0].negative, name: 'Negative'},
+              {value: DATA[0].age_distribution[0].five_to_nineteen, name: 'Age level: 5-19'},
+              {value: DATA[0].age_distribution[0].twenty_to_thirtynine, name: 'Age level: 20-39'},
+              {value: DATA[0].age_distribution[0].forty_to_sixty, name: 'Age level: 40-60'},
             ]
           }
         ]
@@ -165,25 +166,27 @@ export default {
         return f.ABB_NAME == ABB_NAME
       })
 
+      console.log(DATA[0].top_five_emojis);
+
       option = {
         title: {
-          text: 'Sentiment Score',
+          text: 'Top 5 Emoji',
           left: 'center'
         },
         tooltip: {
           trigger: 'item'
         },
         legend: {
-          orient: 'vertical',
-          left: '0',
-          top: '14%'
+          orient: 'horizontal',
+          x:'center',
+          top: '8%'
         },
         series: [
           {
-            name: 'Sentiment Score',
+            name: 'Top 5 Emoji',
             type: 'pie',
             radius: ['45%', '80%'],
-            center: ['50%', '55%'],
+            center: ['50%', '60%'],
             avoidLabelOverlap: false,
             itemStyle: {
               borderRadius: 10,
@@ -205,8 +208,11 @@ export default {
               show: false
             },
             data: [
-              {value: DATA[0].positive, name: 'Positive'},
-              {value: DATA[0].negative, name: 'Negative'},
+              {value: DATA[0].top_five_emojis[0].ratio, name: DATA[0].top_five_emojis[0].code},
+              {value: DATA[0].top_five_emojis[1].ratio, name: DATA[0].top_five_emojis[1].code},
+              {value: DATA[0].top_five_emojis[2].ratio, name: DATA[0].top_five_emojis[2].code},
+              {value: DATA[0].top_five_emojis[3].ratio, name: DATA[0].top_five_emojis[3].code},
+              {value: DATA[0].top_five_emojis[4].ratio, name: DATA[0].top_five_emojis[4].code},
             ]
           }
         ]
