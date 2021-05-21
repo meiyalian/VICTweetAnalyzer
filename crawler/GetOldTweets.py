@@ -27,7 +27,7 @@ for key in areas:
     c.Store_csv = True
     c.Output = "Collected"
     twint.run.Search(c)
-
+    os.environ['NO_PROXY'] = 'twitter.com'
     print("Start processing collected tweets ..... ")
     processTweets("Collected/tweets.csv", key)
     print("......Finish processing")
