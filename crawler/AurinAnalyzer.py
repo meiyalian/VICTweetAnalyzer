@@ -4,10 +4,10 @@ import os,sys
 from shapely.geometry import Polygon, Point, MultiPolygon
 import pprint
 import matplotlib.pyplot as plt
-from DBconnect import vic_areas_tweets_db
-#Victoria income analyzer 
-# def process_area_name(name):
-    
+from DBconnect import vic_tweets
+from datetime import datetime
+
+
 
 class VicAreas:
     def __init__(self,areaName):
@@ -69,7 +69,7 @@ class AurinAnalyzer:
                     self.areas[area_name].density = density
                     self.areas[area_name].range = geo
 
-    def store_in_db(self,db = vic_areas_tweets_db):
+    def store_in_db(self,db = vic_tweets):
         print("uploading to db......")
         for key in self.areas:
             area = self.areas[key]
@@ -85,7 +85,8 @@ class AurinAnalyzer:
 
                 },
                 "population_density":area.density,
-                "area_range": area.range
+                "area_range": area.range,
+                "ts": datetime.now().strftime("%d/%m/%Y %H:%M:%S")
             }
 
             db[area.name] = area_doc
@@ -136,5 +137,9 @@ if __name__ == "__main__":
     # first time storing the aea data: 
     analyzer = AurinAnalyzer()
     analyzer.store_in_db()
+
+
+
+    
 
 

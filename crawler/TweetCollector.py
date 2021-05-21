@@ -5,9 +5,18 @@ import csv
 import argparse
 import time
 import argparse
-from DBconnect import vic_areas_tweets_db
+from DBconnect import vic_tweets, send_to_db
 from AurinAnalyzer import *
 from TimeConverter import convert_to_local_time
+import time
+from queue import Queue
+from threading import Thread
+import logging
+# the regular imports, as well as this:
+from urllib3.exceptions import ProtocolError
+from datetime import datetime
+# from http.client import IncompleteRead 
+
 
 
 
@@ -26,12 +35,22 @@ access = {"consumer_key": consumer_key,
 VIC_bounding_box = [141.03,-38.41,148.7,-33.98]
 VIC_geo = "-37.03521,145.23218,400km"
 
-print("Initialization ....... ")
-areas_polygons = {}
-area_lst = vic_areas_tweets_db.view('vic_areas_tweets/getAllAreaRanges')
-for each in area_lst:
-    polys = convert_to_multipolygon(each.value)
-    areas_polygons[each.id] = polys
+
+
+def initialization(): 
+    print("Initializing ....... ")
+    areas_polygons = {}
+    area_lst = vic_tweets.view('vic_tweets/getAllAreaRanges')
+    for each in area_lst:
+        polys = convert_to_multipolygon(each.value)
+        areas_polygons[each.id] = polys
+    print(".......Initialization completed")
+    return areas_polygons
+
+   
+
+
+area_polygons = initialization()
 
 
 # Get the authentication
@@ -41,9 +60,11 @@ def getAuth(access):
     return auth
 
 
-def save_a_tweet(status, is_polygon,  area_dict = areas_polygons , db = vic_areas_tweets_db ):
+
+
+
+def save_a_tweet(status, is_polygon,  area_dict , db = vic_tweets ):
     if (str(status.id) not in db):
-        # print("not in db")
         area = "Out Of Bound"
         if is_polygon:
             area = determine_location(area_dict,status.place.bounding_box.coordinates[0], isBoundingBox = True ) 
@@ -62,43 +83,60 @@ def save_a_tweet(status, is_polygon,  area_dict = areas_polygons , db = vic_area
                 
             #tweet document 
             tweet = {
+                "type": "tweet",
                 "text": tweet,
                 "hashtags": status.entities['hashtags'],
                 "time": convert_to_local_time(status.created_at),
-                "location": area
+                "location": area,
+                "ts": datetime.now().strftime("%d/%m/%Y %H:%M:%S")
             }
 
-            db[str(status.id)] = tweet
-            print("save!")
+            send_to_db(tweet, str(status.id))
         else:
             print("area out of bound")
-   
 
 
+def process_status(status):
+    if not hasattr(status, "retweeted_status")and status.lang=="en" and (status.coordinates is not None or status.place is not None) :  # if its not Retweet and is in English
+        if status.coordinates is not None:
+            save_a_tweet(status,  False, area_polygons)
+        else:
+             save_a_tweet(status, True, area_polygons)
 
 class MyStreamListener(tweepy.StreamListener):
-    def __init__(self, time_limit=300):
-        self.start_time = time.time()
-        self.limit = time_limit
-        super(MyStreamListener, self).__init__()
-        # self.file = open('crawler/OutputStreaming.csv', 'a')
-        # self.writer = csv.writer(self.file)
-        self.collected = 0
-        # self.num_tweets = 0
-    def on_status(self, status):
-
-        
-        if not hasattr(status, "retweeted_status")and status.lang=="en" and (status.coordinates is not None or status.place is not None) :  # if its not Retweet and is in English
-            self.collected +=1 
-            if status.coordinates is not None:
-                save_a_tweet(status, is_polygon = False)
-                # self.writer.writerow([status.id, status.created_at, tweet, status.coordinates, "coordinates"])
-            else:
-                 save_a_tweet(status, is_polygon = True)
-                # self.writer.writerow([status.id, status.created_at, tweet, status.place.bounding_box.coordinates[0], "polygon"])
+    def __init__(self, q = Queue()):
+        super().__init__()
+        # super(MyStreamListener, self).__init__()
+        self.q = q
+        num_worker_threads = 4
+        for i in range(num_worker_threads):
+            t = Thread(target=self.do_stuff)
             
-            print(str(self.collected) + " collected")
- 
+            t.daemon = True
+            t.start()
+            
+    def do_stuff(self):
+        while True:
+            try:
+                item = self.q.get()
+                if item is None:
+                    continue
+                #try:
+     
+                process_status(item)
+
+                #finally:
+                #    self.q.task_done()
+
+            except queue.Empty:
+                pass
+            except:
+                logging.exception('error while processing item')
+      
+
+
+    def on_status(self, status): 
+        self.q.put(status)
     
        
     def on_error(self, status_code):
@@ -125,51 +163,58 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
 
-
     if args.stream:
         print("Start streaming ....... ")
-        locations = [float(args.location[0]),float(args.location[1]),float(args.location[2]),float(args.location[3])]
-        myStreamListener = MyStreamListener()
-        myStream = tweepy.Stream(auth = getAuth(access), listener=myStreamListener)
-        myStream.filter(locations=locations) #filter tweets from vic using https://boundingbox.klokantech.com/
+        while True:
+            try:
+                locations = [float(args.location[0]),float(args.location[1]),float(args.location[2]),float(args.location[3])]
+                myStreamListener = MyStreamListener()
+                myStream = tweepy.Stream(auth = getAuth(access), listener=myStreamListener)
+                myStream.filter(locations=locations, stall_warnings=True) #filter tweets from vic using https://boundingbox.klokantech.com/
+            except KeyboardInterrupt: 
+                myStream.disconnect()
+                print('End Session.')
+                break
+            except ProtocolError:
+                print("Something went wrong ... reconnecting")
+                continue
+
         
     elif args.search:
-        # process_areas(areas)
-        # csvFile = open('crawler/tweets.csv', 'a')
-        #Use csv Writer
         print("Start searching ....... ")
-        # csvWriter = csv.writer(csvFile)
+
         api = tweepy.API(getAuth(access), wait_on_rate_limit=True)
         recent = api.search(geocode=VIC_geo, count=1, result_type='recent')
-        # print(len(recent))
-        # print(recent[0])
+
 
         max_id = recent[0].id+1
 
         collected = 0
         count = 0
         while True:
-            new_search = api.search(q='*', count=300, lang="en", geocode=VIC_geo, tweet_mode="extended", max_id=str(max_id-1))
-            # for status in tweepy.Cursor(api.search, q='*', lang="en",geocode=VIC_geo,tweet_mode="extended", max_id=max_id).items(300):
-            for status in new_search:
-                if not hasattr(status, "retweeted_status") and (status.coordinates is not None or status.place is not None): 
-                    count +=1
-                    
-                    if status.coordinates is not None:
-                        save_a_tweet(status, is_polygon = False)
-                        # csvWriter.writerow([status.id, status.created_at, status.full_text.lower(), status.coordinates, "coordinates"])
-                    else:
-                        save_a_tweet(status, is_polygon = True)
-                       
-                        # csvWriter.writerow([status.id, status.created_at, status.full_text.lower(), status.place.bounding_box.coordinates[0], "polygon"])
-                        print("collected " + str(count))
-                max_id = status.id
+            try:
+                new_search = api.search(q='*', count=300, lang="en", geocode=VIC_geo, tweet_mode="extended", max_id=str(max_id-1))
+                # for status in tweepy.Cursor(api.search, q='*', lang="en",geocode=VIC_geo,tweet_mode="extended", max_id=max_id).items(300):
+                for status in new_search:
+                    if not hasattr(status, "retweeted_status") and (status.coordinates is not None or status.place is not None): 
+                        count +=1
+                        
+                        if status.coordinates is not None:
+                            save_a_tweet(status,  False, area_polygons)
+                        else:
+                            save_a_tweet(status,  True, area_polygons)
+                        
+
+                    max_id = status.id
+            except KeyboardInterrupt: 
+                print('End Session.')
+                break
+
+            else:
+                time.sleep(10)
+                continue
     
  
-
-    # print(a["age_distribution"]["teenagers_and_young_adults_ratio"])
-    # print("Alpine (S)" in  vic_areas_tweets_db)
-
 
 
 

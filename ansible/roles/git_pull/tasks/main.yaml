@@ -1,4 +1,6 @@
 - name: git pull
-  shell: sudo git pull 
+  become: yes
+  become_method: sudo
+  shell: git pull 
   args:
     chdir: '{{ git_dir }}'
