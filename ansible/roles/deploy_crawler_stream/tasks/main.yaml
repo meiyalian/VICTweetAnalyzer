@@ -1,13 +1,12 @@
-- name: Shut down previous server
+- name: build docker
   become:
     yes
-  shell: docker-compose down --rmi local
+  shell: docker build -t comp90024/crawler-stream .
   args:
     chdir: /home/ubuntu/COMP90024/comp90024/crawler
-#
-- name: Start server
+- name: run docker
   become:
     yes
-  shell: docker-compose up  --build -d
+  shell: docker run comp90024/crawler-stream --stream
   args:
     chdir: /home/ubuntu/COMP90024/comp90024/crawler

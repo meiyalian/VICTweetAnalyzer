@@ -1,0 +1,19 @@
+# - name: Shut down previous server
+#   become:
+#     yes
+#   shell: docker-compose down --rmi local
+#   args:
+#     chdir: /home/ubuntu/COMP90024/comp90024/crawler
+#
+- name: build docker
+  become:
+    yes
+  shell: docker build -t comp90024/crawler-search .
+  args:
+    chdir: /home/ubuntu/COMP90024/comp90024/crawler
+- name: run docker
+  become:
+    yes
+  shell: docker run comp90024/crawler-search --search
+  args:
+    chdir: /home/ubuntu/COMP90024/comp90024/crawler
