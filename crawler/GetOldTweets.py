@@ -19,7 +19,7 @@ for key in areas:
     geo_string = str(areas[key]["lat"]) + "," + str(areas[key]["lng"]) + "," + "15km"
     c = twint.Config()
     
-    c.Proxy_host = "http://wwwproxy.unimelb.edu.au:8000/"
+    c.Proxy_host = "127.0.0.1"
     c.Proxy_port = "9324"
     c.Proxy_type = "http"
     c.Since= args.startdate
@@ -31,15 +31,15 @@ for key in areas:
     c.Store_csv = True
     c.Output = "Collected"
 
-    url = 'https://twitter.com'
-    _session = requests.Session()
-    _session.proxies = {
-    "http":"http://wwwproxy.unimelb.edu.au:8000/",
-    "https":"http://wwwproxy.unimelb.edu.au:8000/"
-    }
+    # url = 'https://twitter.com'
+    # _session = requests.Session()
+    # _session.proxies = {
+    # "http":"http://wwwproxy.unimelb.edu.au:8000/",
+    # "https":"http://wwwproxy.unimelb.edu.au:8000/"
+    # }
 
-    req = _session.prepare_request(requests.Request('GET', url))
-    r = _session.send(req, allow_redirects=True, timeout=25)
+    # req = _session.prepare_request(requests.Request('GET', url))
+    # r = _session.send(req, allow_redirects=True, timeout=25)
     
     twint.run.Search(c)
 
