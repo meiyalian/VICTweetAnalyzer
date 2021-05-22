@@ -19,7 +19,7 @@ for key in areas:
     geo_string = str(areas[key]["lat"]) + "," + str(areas[key]["lng"]) + "," + "15km"
     c = twint.Config()
     
-    c.Proxy_host = "127.0.0.1"
+    c.Proxy_host = "http://wwwproxy.unimelb.edu.au:8000/"
     c.Proxy_port = "9324"
     c.Proxy_type = "http"
     c.Since= args.startdate
