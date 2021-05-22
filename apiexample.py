@@ -79,3 +79,18 @@
     ]
     ]
 }
+
+###############  api: /totalCollected
+
+{
+    "ok": True,
+    "data": {
+        "total": "int", # total number of tweets collected 
+        "areas": [
+            {
+                "name": "string" , #area name,
+                "number": "int " # number of tweet collected in this area 
+            }
+        ]
+    }
+}

@@ -15,10 +15,12 @@ def convert_to_local_time(utc, isString = False):
 
 
 def convert_to_timestring(string):
-    ts = string.replace(" AEST", "")
-    ts = ts.replace(" AEDT", "")
-    ts =  datetime.strptime(ts, '%Y-%m-%d %H:%M:%S')
-    return ts.strftime('%Y-%m-%d %H:%M:%S')
+    try:
+        ts = string.replace(" AEST", "")
+        ts = ts.replace(" AEDT", "")
+        ts =  datetime.strptime(ts, '%Y-%m-%d %H:%M:%S')
+        return ts.strftime('%Y-%m-%d %H:%M:%S')
+    except:
+        print("cannot convert : " +string )
 
 
-print(convert_to_timestring("2020-02-07 08:27:21 AEDT"))

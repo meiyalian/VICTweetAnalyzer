@@ -29,6 +29,7 @@ def processTweets(fpath, location):
                                 number_added +=1 
                         except: 
                             print("cannot store this result")
+                            print(tweet_obj)
                             pass
             line_count +=1
     print("process " + str(number_added) + " tweets!")

@@ -1,28 +1,32 @@
 {
     "_id": "_design/vic_tweets",
+    "_rev": "7-0f062fdf98b3ef267ae2c66d2241a7b7",
     "views": {
-        "getAllAreaDetails": {
-             "map": "function(doc) {if(doc.type == \"area\"){emit(doc.name, {positive: doc.positive, negative: doc.negative, average_income: doc.average_income, age_distribution: doc.age_distribution, population_density: doc.population_density, area_range: doc.area_range})};}"
-         },
+      "getAllAreaDetails": {
+        "map": "function(doc) {if(doc.type == \"area\"){emit(doc.name, {positive: doc.positive, negative: doc.negative, average_income: doc.average_income, age_distribution: doc.age_distribution, population_density: doc.population_density, area_range: doc.area_range})};}"
+      },
+      "getTweetCountByArea": {
+        "map": "function(doc) {if(doc.type == \"tweet\") emit(doc.area, 1)}",
+        "reduce": "_count"
+      },
+      "getAllAreaRanges": {
+        "map": "function(doc) {if(doc.type == \"area\"){emit(doc.area, doc.area_range)};}"
+      },
+      "getTweetAreaCount": {
+        "map": "function(doc) {if(doc.type == \"tweet\"){emit(doc.location, 1)};}",
+        "reduce": "_count"
+      },
+      "getFaulty": {
+        "map": "function(doc) {if(doc.location == \"Queenscliffe (B)\"){emit(doc._id, doc.ts)};}"
+      },
 
-         "getTweetCountByArea":{
-             "map": "function(doc) {if(doc.type == \"tweet\") emit(doc.area, 1)}",
-             "reduce" : "_count"
-         },
+      "getTweetbyHour": {
+        "map": "function(doc){if(doc.type == \"tweet\"){emit(doc.hour, {score: doc.score, emoji: doc.emoji[0]}}; }"
+      }
 
-         "getAllAreaRanges": {
-            "map": "function(doc) {if(doc.type == \"area\"){emit(doc.area, doc.area_range)};}"
-        },
-        "getTweetAreaCount": {
-            "map": "function(doc) {if(doc.type == \"tweet\"){emit(doc.location, 1)};}",
-            "reduce": "_count"
-
-        },
-        "filters": {
-            "important": "function(doc, req) { if(doc.type == 'tweet') { return true; } else { return false; }}"
-          }
-
- 
-     }
-
-}
+   
+    },
+    "filters": {
+      "important": "function(doc, req) { if(doc.type == 'tweet') { return true; } else { return false; }}"
+    }
+  }

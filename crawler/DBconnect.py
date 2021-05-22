@@ -24,10 +24,13 @@ vic_tweets = connect_to_database("vic_tweets", dbserver)
 
 
 def send_to_db(tweet, tid,  db = vic_tweets):
-    if (tid not in db):
-        db[tid] = tweet
-        print("save!!")
-        return True
+    try:
+        if (tid not in db):
+            db[tid] = tweet
+            print("save!!")
+            return True
+    except:
+        print("connection problem: " + str(tid))
 
     else:
         print("already in db")
