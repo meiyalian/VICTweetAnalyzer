@@ -10,9 +10,9 @@ from ProcessOldTweet import processTweets
 
 parser = argparse.ArgumentParser()
 # parser.add_argument('--geo', type=str, default="-37.80811,144.96071,50mi")
-parser.add_argument('--startdate', type=str, default="2016-01-01")
-parser.add_argument('--enddate', type=str, default="2017-6-30")
-parser.add_argument('--limit', type=int, default=0000)
+parser.add_argument('--startdate', type=str, default="2013-12-01")
+parser.add_argument('--enddate', type=str, default="2016-1-1")
+parser.add_argument('--limit', type=int, default=50000)
 args = parser.parse_args()
 
 for key in areas:
@@ -26,7 +26,10 @@ for key in areas:
     c.Geo = geo_string
     c.Store_csv = True
     c.Output = "Collected"
-    twint.run.Search(c)
+    try:
+        twint.run.Search(c)
+    except: 
+        twint.run.Search(c)
 
     print("Start processing collected tweets ..... ")
     
