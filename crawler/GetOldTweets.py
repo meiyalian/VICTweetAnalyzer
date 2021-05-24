@@ -1,4 +1,4 @@
-# import GetOldTweets3 as got
+# import GetOldTweets3 as got 
 import argparse
 from TweetCollector import initialization
 from DBconnect import vic_tweets, send_to_db
@@ -10,9 +10,9 @@ from ProcessOldTweet import processTweets
 import requests
 parser = argparse.ArgumentParser()
 # parser.add_argument('--geo', type=str, default="-37.80811,144.96071,50mi")
-parser.add_argument('--startdate', type=str, default="2019-01-01")
-parser.add_argument('--enddate', type=str, default="2021-5-15")
-parser.add_argument('--limit', type=int, default=10000)
+parser.add_argument('--startdate', type=str, default="2016-01-01")
+parser.add_argument('--enddate', type=str, default="2017-6-30")
+parser.add_argument('--limit', type=int, default=0000)
 args = parser.parse_args()
 
 for key in areas:
@@ -45,7 +45,11 @@ for key in areas:
 
     
     print("Start processing collected tweets ..... ")
+    
     processTweets("Collected/tweets.csv", key)
     print("......Finish processing")
-    os.remove("Collected/tweets.csv")
-    print("Collected data Uploaded to DB --> Local File Removed!")
+    try:
+        os.remove("Collected/tweets.csv")
+        print("Collected data Uploaded to DB --> Local File Removed!")
+    except: 
+        pass

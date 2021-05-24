@@ -171,11 +171,20 @@ if __name__ == '__main__':
 
     dbserver = connect_to_couch_db_server(host, port, username, password)
     vic_tweets = connect_to_database("vic_tweets", dbserver)
+    test_db = connect_to_database("test_db", dbserver)
     # sentiment_tweets_db = connect_to_database("sentiment_tweets", dbserver)
-    since = 1
+    # since = 1
+    firstTime = True
+    since = ""
     while True:
         try:
-            changes = vic_tweets.changes(since=since, limit = 5000,  filter="vic_tweets/important" )
+            if firstTime:
+                changes = vic_tweets.changes( limit = 5000,  filter="vic_tweets/important" )
+                firstTime = False
+            else: 
+                changes = vic_tweets.changes(since=since, limit = 5000,  filter="vic_tweets/important" )
+
+            
             since = changes["last_seq"]
             for changeset in changes["results"]:
                 try:
@@ -184,11 +193,14 @@ if __name__ == '__main__':
                     continue
                 else:
                     analysis_id = changeset["id"] + "_analysis"
-                    if analysis_id not in vic_tweets:
+                    if analysis_id not in test_db:
                         try:
                             txt = doc['text']
                             p_txt = process_tweets(txt)
                             time = doc['time']
+
+                            datetime_t = datetime.strptime(time, '%Y-%m-%d %H:%M:%S')
+                            hour = datetime_t.hour
                             #to do: categorized to hour value 0~24
                             location = doc['location']
                             score = get_score(p_txt)
@@ -196,15 +208,15 @@ if __name__ == '__main__':
                             emojis = get_emoji(p_txt)
                             sentiment = {
                                 "tid": str(changeset["id"]),
-                                "type": "analysis"
+                                "type": "analysis",
                                 "score": score,
                                 "hashtags": hash_tag,
                                 "emoji": emojis,
-                                "hour": time, #change this 
+                                "hour": hour, #change this 
                                 "location": location,
                                 "ts": datetime.now().strftime("%d/%m/%Y %H:%M:%S")
                             }
-                            vic_tweets[analysis_id] = sentiment
+                            test_db[analysis_id] = sentiment
                             count += 1
                             if count % 100 == 0:
                                 print("save {} tweets.".format(count))
@@ -212,7 +224,7 @@ if __name__ == '__main__':
                             continue
 
 
-                            
+
         except KeyboardInterrupt:
             print("End Session.")
             break

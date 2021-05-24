@@ -178,6 +178,9 @@ if __name__ == "__main__":
             except ProtocolError:
                 print("Something went wrong ... reconnecting")
                 continue
+            except Exception as e:
+                pass 
+            
 
         
     elif args.search:
@@ -210,9 +213,11 @@ if __name__ == "__main__":
                 print('End Session.')
                 break
 
-            else:
+            except Exception as e:
+                
                 time.sleep(10)
-                continue
+                pass
+
     
  
 
