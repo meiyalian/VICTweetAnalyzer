@@ -31,7 +31,7 @@ ENV PATH /app/frontend/node_modules/.bin:$PATH
 # install and cache app dependencies
 COPY package.json /app/frontend/package.json
 RUN npm install
-RUN npm install @vue/cli@3.7.0 -g
+RUN npm install -g @vue/cli
 
 # start app
 CMD ["npm", "start"]
