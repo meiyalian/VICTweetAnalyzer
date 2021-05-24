@@ -14,7 +14,7 @@ RUN pip install --upgrade setuptools
 RUN pip install -r requirements.txt
 RUN pip3 install torch torchvision 
 RUN pip install emoji numpy scipy scikit-learn text-unidecode
-WORKDIR /app/analysis/torchMoji
+WORKDIR /app/analysis
 RUN pip install .
 RUN echo 'y' | python scripts/download_weights.py 
 
