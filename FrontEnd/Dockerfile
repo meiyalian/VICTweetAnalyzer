@@ -22,7 +22,6 @@ ENV no_proxy localhost,127.0.0.1,localaddress,172.16.0.0/12,.melbourne.rc.nectar
 WORKDIR /app/frontend
 COPY package*.json ./
 RUN npm install
-COPY ./dist .
 EXPOSE 80
 # start app
 CMD ["npm", "start"]
