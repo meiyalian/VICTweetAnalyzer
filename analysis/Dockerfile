@@ -9,7 +9,7 @@ ENV no_proxy localhost,127.0.0.1,localaddress,172.16.0.0/12,.melbourne.rc.nectar
 
 COPY . /app/analysis 
 WORKDIR /app/analysis
-RUN pip3 install torch==1.0.1 -f https://download.pytorch.org/whl/cpu/stable 
+RUN pip3 install torch torchvision torchaudio
 RUN sudo git clone https://github.com/huggingface/torchMoji
 RUN import os 
 RUN os.chdir('torchMoji')
