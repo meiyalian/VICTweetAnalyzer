@@ -13,7 +13,7 @@ export default {
   name: 'Map',
   mounted() {
     this.axios
-      .get('http://0.0.0.0:8080/static/twitterAPI.json')
+      .get('http://172.26.133.228:8080/static/twitterAPI.json')
       .then(response => (
         this.twitterAPI = response.data.LGA,
           this.init()
@@ -32,7 +32,7 @@ export default {
         map.addSource("LGA", {
           type: "geojson",
           data:
-            "http://0.0.0.0:8080/static/LGA.geojson",
+            "http://172.26.133.228:8080/static/LGA.geojson",
         });
         map.addLayer({
           id: "LGA",
