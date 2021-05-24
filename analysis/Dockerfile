@@ -13,7 +13,7 @@ RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
 RUN pip3 install torch torchvision
 WORKDIR /app/analysis/torchMoji
-RUN pip3 setup.py install
+RUN python3 setup.py install
 # RUN pip install emoji numpy scipy scikit-learn text-unidecode
 WORKDIR /app/analysis
 CMD ["python3", "-u","sentiment.py"]
