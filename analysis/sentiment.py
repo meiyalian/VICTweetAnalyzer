@@ -219,12 +219,16 @@ if __name__ == '__main__':
                                 "ts": datetime.now().strftime("%d/%m/%Y %H:%M:%S")
                             }
                             analysis[analysis_id] = sentiment
+                            print("save!")
                             count += 1
+
                             if count % 100 == 0:
                                 print("save {} tweets.".format(count))
                             time.sleep(50)
-                        except:
+
+                        except Exception:
                             continue
+                            print("SOMETHING WENT WRONG!")
 
 
 
