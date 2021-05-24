@@ -15,7 +15,6 @@ RUN pip3 install torch torchvision
 RUN pip install emoji numpy scipy scikit-learn text-unidecode
 WORKDIR /app/analysis/torchMoji
 RUN pip install .
-RUN python scripts/download_weights.py
 
 WORKDIR /app/analysis
 CMD ["python3", "-u","sentiment.py"]
