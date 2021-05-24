@@ -23,13 +23,12 @@ ENV no_proxy localhost,127.0.0.1,localaddress,172.16.0.0/12,.melbourne.rc.nectar
 
 EXPOSE 80
 # set working directory
+RUN mkdir /app/frontend
+
 WORKDIR /app/frontend
 
-# add `/app/node_modules/.bin` to $PATH
-ENV PATH /app/frontend/node_modules/.bin:$PATH
+COPY . /app/frontend
 
-# install and cache app dependencies
-COPY package.json /app/frontend/package.json
 RUN npm install
 RUN npm install -g @vue/cli
 
