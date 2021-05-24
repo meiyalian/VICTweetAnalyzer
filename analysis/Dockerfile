@@ -11,7 +11,6 @@ COPY . /app/analysis
 WORKDIR /app/analysis
 RUN pip3 install torch torchvision
 RUN git clone https://github.com/huggingface/torchMoji
-RUN import os 
-RUN os.chdir('torchMoji')
-RUN pip3 install -e
+WORKDIR /app/analysis/torchMoji
+RUN pip3 install -e .
 CMD ["python3", "-u","sentiment.py"]
