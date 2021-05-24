@@ -10,9 +10,10 @@ ENV no_proxy localhost,127.0.0.1,localaddress,172.16.0.0/12,.melbourne.rc.nectar
 COPY . /app/analysis 
 WORKDIR /app/analysis
 RUN pip install --upgrade pip
+RUN pip install --upgrade setuptools
 RUN pip3 install torch torchvision
-# WORKDIR /app/analysis/torchMoji
-# RUN pip3 install -e .
-RUN pip install emoji numpy scipy scikit-learn text-unidecode
-
+WORKDIR /app/analysis/torchMoji
+RUN pip3 setup.py install
+# RUN pip install emoji numpy scipy scikit-learn text-unidecode
+WORKDIR /app/analysis
 CMD ["python3", "-u","sentiment.py"]
