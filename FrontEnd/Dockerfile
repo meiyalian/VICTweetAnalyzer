@@ -11,4 +11,4 @@ COPY . /app/fronend
 WORKDIR /app/fronend
 
 RUN npm install -g @vue/cli
-CMD ['npm','run','dev']
+ENTRYPOINT ["npm", "run"]
