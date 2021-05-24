@@ -9,6 +9,25 @@ import couchdb  # importing couchdb
 from datetime import datetime
 import time
 
+host = "172.26.132.110"
+port = "5984"
+username = password = "admin"
+
+
+def connect_to_couch_db_server(host, port, username, password):
+    return couchdb.Server('http://' + username + ':' + password + '@' + host + ':' + port)
+
+
+def connect_to_database(database_name, server):
+    try:
+        return server[database_name]
+    except:
+        return server.create(database_name)
+
+
+dbserver = connect_to_couch_db_server(host, port, username, password)
+vic_tweets = connect_to_database("vic_tweets", dbserver)
+analysis = connect_to_database("analysis", dbserver)
 
 EMOJIS = ":joy: :unamused: :weary: :sob: :heart_eyes: :pensive: :ok_hand: :blush: :heart: :smirk: :grin: :notes: :flushed: :100: :sleeping: :relieved: :relaxed: :raised_hands: :two_hearts: :expressionless: :sweat_smile: :pray: :confused: :kissing_heart: :heartbeat: :neutral_face: :information_desk_person: :disappointed: :see_no_evil: :tired_face: :v: :sunglasses: :rage: :thumbsup: :cry: :sleepy: :yum: :triumph: :hand: :mask: :clap: :eyes: :gun: :persevere: :smiling_imp: :sweat: :broken_heart: :yellow_heart: :musical_note: :speak_no_evil: :wink: :skull: :confounded: :smile: :stuck_out_tongue_winking_eye: :angry: :no_good: :muscle: :facepunch: :purple_heart: :sparkling_heart: :blue_heart: :grimacing: :sparkles:".split(
     ' ')
@@ -130,20 +149,6 @@ def get_hashtags(text):
 
 
 
-host = "172.26.132.110"
-port = "5984"
-username = password = "admin"
-
-
-def connect_to_couch_db_server(host, port, username, password):
-    return couchdb.Server('http://' + username + ':' + password + '@' + host + ':' + port)
-
-
-def connect_to_database(database_name, server):
-    try:
-        return server[database_name]
-    except:
-        return server.create(database_name)
 
 
 if __name__ == '__main__':
@@ -170,9 +175,6 @@ if __name__ == '__main__':
     finally:
         file_words.close()
 
-    dbserver = connect_to_couch_db_server(host, port, username, password)
-    vic_tweets = connect_to_database("vic_tweets", dbserver)
-    analysis = connect_to_database("analysis", dbserver)
 
     # sentiment_tweets_db = connect_to_database("sentiment_tweets", dbserver)
     # since = 1
