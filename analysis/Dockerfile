@@ -11,7 +11,7 @@ COPY . /app/analysis
 WORKDIR /app/analysis
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
-RUN pip3 install torch torchvision
+RUN pip3 install torch torchvision numpy
 WORKDIR /app/analysis/torchMoji
 RUN pip install .
 RUN python scripts/download_weights.py
