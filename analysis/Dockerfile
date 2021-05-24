@@ -11,7 +11,8 @@ COPY . /app/analysis
 WORKDIR /app/analysis
 RUN pip install --upgrade pip
 RUN pip3 install torch torchvision
-WORKDIR /app/analysis/torchMoji
-RUN pip3 install -e .
-WORKDIR /app/analysis
+# WORKDIR /app/analysis/torchMoji
+# RUN pip3 install -e .
+RUN pip install emoji numpy scipy scikit-learn text-unidecode
+
 CMD ["python3", "-u","sentiment.py"]
