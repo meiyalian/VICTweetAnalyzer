@@ -11,7 +11,8 @@ COPY . /app/analysis
 WORKDIR /app/analysis
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
-RUN TMPDIR=/data/vincents/ pip3 install --cache-dir=/data/vincents/ torch torchvision
+RUN pip3 uninstall torch torchvision
+RUN pip3 install torch torchvision
 WORKDIR /app/analysis/torchMoji
 RUN python3 setup.py install
 # RUN pip install emoji numpy scipy scikit-learn text-unidecode
