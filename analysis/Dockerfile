@@ -9,6 +9,7 @@ ENV no_proxy localhost,127.0.0.1,localaddress,172.16.0.0/12,.melbourne.rc.nectar
 
 COPY . /app/analysis 
 WORKDIR /app/analysis
+RUN pip install --upgrade pip
 RUN pip3 install torch torchvision
 RUN git clone https://github.com/huggingface/torchMoji.git
 RUN pip3 install -e ./torchMoji
