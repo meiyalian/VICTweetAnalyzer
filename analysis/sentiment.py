@@ -7,6 +7,7 @@ from torchmoji.sentence_tokenizer import SentenceTokenizer
 from torchmoji.model_def import torchmoji_emojis
 import couchdb  # importing couchdb
 from datetime import datetime
+import time
 
 
 EMOJIS = ":joy: :unamused: :weary: :sob: :heart_eyes: :pensive: :ok_hand: :blush: :heart: :smirk: :grin: :notes: :flushed: :100: :sleeping: :relieved: :relaxed: :raised_hands: :two_hearts: :expressionless: :sweat_smile: :pray: :confused: :kissing_heart: :heartbeat: :neutral_face: :information_desk_person: :disappointed: :see_no_evil: :tired_face: :v: :sunglasses: :rage: :thumbsup: :cry: :sleepy: :yum: :triumph: :hand: :mask: :clap: :eyes: :gun: :persevere: :smiling_imp: :sweat: :broken_heart: :yellow_heart: :musical_note: :speak_no_evil: :wink: :skull: :confounded: :smile: :stuck_out_tongue_winking_eye: :angry: :no_good: :muscle: :facepunch: :purple_heart: :sparkling_heart: :blue_heart: :grimacing: :sparkles:".split(
@@ -171,7 +172,8 @@ if __name__ == '__main__':
 
     dbserver = connect_to_couch_db_server(host, port, username, password)
     vic_tweets = connect_to_database("vic_tweets", dbserver)
-    test_db = connect_to_database("test_db", dbserver)
+    analysis = connect_to_database("analysis", dbserver)
+
     # sentiment_tweets_db = connect_to_database("sentiment_tweets", dbserver)
     # since = 1
     firstTime = True
@@ -193,7 +195,7 @@ if __name__ == '__main__':
                     continue
                 else:
                     analysis_id = changeset["id"] + "_analysis"
-                    if analysis_id not in test_db:
+                    if analysis_id not in analysis:
                         try:
                             txt = doc['text']
                             p_txt = process_tweets(txt)
@@ -216,52 +218,22 @@ if __name__ == '__main__':
                                 "location": location,
                                 "ts": datetime.now().strftime("%d/%m/%Y %H:%M:%S")
                             }
-                            test_db[analysis_id] = sentiment
+                            analysis[analysis_id] = sentiment
+                            print("save!")
                             count += 1
+
                             if count % 100 == 0:
                                 print("save {} tweets.".format(count))
-                        except:
+                            time.sleep(50)
+
+                        except Exception:
                             continue
+                            print("SOMETHING WENT WRONG!")
+
 
 
 
         except KeyboardInterrupt:
             print("End Session.")
             break
-
-
-
-
-
-
-    # for item in vic_areas_tweets_db.view('_all_docs'):
-    #     id = item['id']
-    #     if id not in sentiment_tweets_db:
-    #         try:
-    #             doc = vic_areas_tweets_db[id]
-    #             txt = doc['text']
-    #             p_txt = process_tweets(txt)
-    #             time = doc['time']
-    #             #to do: categorized to hour value 0~24
-    #             location = doc['location']
-    #             score = get_score(p_txt)
-    #             hash_tag = get_hashtags(p_txt)
-    #             emojis = get_emoji(p_txt)
-    #             sentiment = {
-    #                 "score": score,
-    #                 "hashtags": hash_tag,
-    #                 "emoji": emojis,
-    #                 "hour": time,
-    #                 "location": location,
-    #                 "ts": 
-    #             }
-    #             sentiment_tweets_db[id] = sentiment
-    #             count += 1
-    #             if count % 100 == 0:
-    #                 print("save {} tweets.".format(count))
-    #         except:
-    #             continue
-    # print("successful save {} tweets.".format(count))
-
-
 
