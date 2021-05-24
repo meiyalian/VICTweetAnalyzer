@@ -176,6 +176,7 @@ if __name__ == '__main__':
 
     # sentiment_tweets_db = connect_to_database("sentiment_tweets", dbserver)
     # since = 1
+    count = 0
     firstTime = True
     since = ""
     while True:
