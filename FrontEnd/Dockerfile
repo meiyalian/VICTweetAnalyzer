@@ -22,12 +22,8 @@ ENV HTTPS_PROXY http://wwwproxy.unimelb.edu.au:8000/
 ENV no_proxy localhost,127.0.0.1,localaddress,172.16.0.0/12,.melbourne.rc.nectar.org.au,.storage.u nimelb.edu.au,.cloud.unimelb.edu.au
 
 EXPOSE 80
-# set working directory
-RUN mkdir /app/frontend
-
-WORKDIR /app/frontend
-
-COPY . /app/frontend
+COPY . /app/fronend
+WORKDIR /app/fronend
 
 RUN npm install
 RUN npm install -g @vue/cli
