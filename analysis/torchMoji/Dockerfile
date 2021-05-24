@@ -18,5 +18,4 @@ WORKDIR /app/analysis/torchMoji
 RUN pip install .
 RUN echo 'y' | python scripts/download_weights.py 
 
-WORKDIR /app/analysis
 CMD ["python3", "-u","sentiment.py"]
