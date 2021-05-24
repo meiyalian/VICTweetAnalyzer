@@ -71,14 +71,14 @@ while True:
         area_stas = {
             "type": "statistics",
             "ts": datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
-            "areas": area_dict
+            "data": area_dict
         }
 
 
         hour_stas = {
             "type": "statistics",
             "ts": datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
-            "hours": hour_dict
+            "data": hour_dict
         }
         print(hour_dict)
         try:
@@ -93,7 +93,7 @@ while True:
                 analysis.save(doc)
      
             if hour_doc is None:
-                analysis["hour_doc"] = hour_stas
+                analysis["hour_stas"] = hour_stas
             else:
                 hour_doc["ts"] = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
                 hour_doc["hours"] = hour_dict
