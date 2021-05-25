@@ -39,7 +39,7 @@ export default new Router({
           path: '/statisticsmain',
           name: 'StatisticsMain',
           component: StatisticsMain,
-          redirect: '/twitterpie',
+          redirect: '/twitterinfo',
           children:
             [
               {

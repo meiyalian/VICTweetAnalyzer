@@ -31,7 +31,6 @@
 
 <script>
 import * as echarts from "echarts";
-
 export default {
   name: 'MapStatistics',
   props: ['ABB_NAME'],
@@ -48,7 +47,7 @@ export default {
   },
   mounted() {
     this.axios
-      .get('http://localhost:80/static/twitterAPI_All.json')
+      .get('/api/allstatistics')
       .then(response => (
         this.twitterAPI = response.data.data,
           this.number = this.LGANumber(),
@@ -56,7 +55,6 @@ export default {
           this.myEcharts(),
           this.myEcharts2()
       ));
-
   },
   methods:{
     myEcharts(){
@@ -64,11 +62,9 @@ export default {
       var myChart = echarts.init(chartDom);
       var option;
       var ABB_NAME = this.ABB_NAME
-
       var DATA = this.twitterAPI.filter(function (f) {
         return f.area == ABB_NAME
       })
-
       option = {
         title: {
           text: 'Sentiment Percentage',
@@ -122,15 +118,12 @@ export default {
       var myChart = echarts.init(chartDom);
       var option;
       var ABB_NAME = this.ABB_NAME
-
       var DATA = this.twitterAPI.filter(function (f) {
         return f.area == ABB_NAME
       })
-
       // console.log(DATA[0].age_distribution[0].five_to_nineteen);
       // console.log(DATA[0].age_distribution.adults_ratio)
       option = {
-
         title: {
           text: 'Age Level',
           left: 'center'
@@ -170,10 +163,10 @@ export default {
               show: false
             },
             data: [
-              {value: DATA[0].age_distribution.median_age, name: 'Age level: 5-19'},
-              {value: DATA[0].age_distribution.teenagers_and_young_adults_ratio, name: 'Age level: 20-39'},
-              {value: DATA[0].age_distribution.adults_ratio, name: 'Age level: 40-60'},
-              {value: DATA[0].age_distribution.middle_age_and_above_ratio, name: 'Age level: 40-60'},
+              //{value: DATA[0].age_distribution.median_age, name: 'Age level: 5-19'},
+              {value: DATA[0].age_distribution.teenagers_and_young_adults_ratio, name: 'Age level: 5-19'},
+              {value: DATA[0].age_distribution.adults_ratio, name: 'Age level: 20-39'},
+              {value: DATA[0].age_distribution.middle_age_and_above_ratio, name: 'Age level: 40+'},
             ]
           }
         ]
@@ -188,7 +181,6 @@ export default {
       }
     }
   },
-
 };
 </script>
 

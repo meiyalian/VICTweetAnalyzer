@@ -4,18 +4,19 @@
       <el-menu
                :default-active="this.$router.path"
                router
-               default-active="/twitterpie"
+               default-active="/twitterinfo"
                class="el-menu-demo"
                mode="horizontal"
                @select="handleSelect">
-        <el-menu-item index="/twitterpie">TwitterAPI-Pie</el-menu-item>
-        <el-menu-item index="/twitterchart">TwitterAPI-Chart</el-menu-item>
-        <el-menu-item index="/twittertime">TwitterAPI-Time</el-menu-item>
-        <el-menu-item index="/twitterage">TwitterAPI-Age</el-menu-item>
-        <el-menu-item index="/twitterincome">TwitterAPI-Income</el-menu-item>
-        <el-menu-item index="/twitterdensity">TwitterAPI-Density</el-menu-item>
-        <el-menu-item index="/twitterinfo">TwitterAPI-Information</el-menu-item>
+        <!-- <el-menu-item index="/twitterpie">TwitterAPI-Pie</el-menu-item>
+        <el-menu-item index="/twitterchart">TwitterAPI-Chart</el-menu-item> -->
+        <el-menu-item index="/twitterinfo">Tweet-Amount</el-menu-item>
         <el-menu-item index="/twitteremoji">Top-Five-Emoji</el-menu-item>
+        <el-menu-item index="/twittertime">Time&Sentiment</el-menu-item>
+        <el-menu-item index="/twitterage">Age&Sentiment</el-menu-item>
+        <el-menu-item index="/twitterincome">Income&Sentiment</el-menu-item>
+        <el-menu-item index="/twitterdensity">Population-Density&Sentiment</el-menu-item>
+        
 
         <!-- <el-menu-item index="4" disabled >Aurin</el-menu-item>
         <el-menu-item index="5" disabled>TwitterAPI</el-menu-item>
