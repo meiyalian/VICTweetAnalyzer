@@ -1,27 +1,28 @@
 {
-    "_id": "_design/vic_tweets",
-  
-    "views": {
-      "getAllAreaDetails": {
-        "map": "function(doc) {if(doc.type == \"area\"){emit(doc.name, {positive: doc.positive, negative: doc.negative, average_income: doc.average_income, age_distribution: doc.age_distribution, population_density: doc.population_density, area_range: doc.area_range})};}"
-      },
-      "getTweetCountByArea": {
-        "map": "function(doc) {if(doc.type == \"tweet\") emit(doc.area, 1)}",
-        "reduce": "_count"
-      },
-      "getAllAreaRanges": {
-        "map": "function(doc) {if(doc.type == \"area\"){emit(doc.area, doc.area_range)};}"
-      },
-      "getTweetAreaCount": {
-        "map": "function(doc) {if(doc.type == \"tweet\"){emit(doc.location, 1)};}",
-        "reduce": "_count"
-      },
-      "getFaulty": {
-        "map": "function(doc) {if(doc.location == \"Queenscliffe (B)\"){emit(doc._id, doc.ts)};}"
-      }
-
+  "_id": "_design/vic_tweets",
+  "views": {
+    "getAllAreaIncome": {
+      "map": "function(doc) {if(doc.type == \"area\"){emit(doc.area_name, doc.average_income)};}"
     },
-    "filters": {
-      "important": "function(doc, req) { if(doc.type == 'tweet') { return true; } else { return false; }}"
+    "getAllAreaDetails": {
+      "map": "function(doc) {if(doc.type == \"area\"){emit(doc.area_name, {age_distribution: doc.age_distribution, population_density :doc.population_density, average_income:doc.average_income })};}"
+    },
+    "getTweetCountByArea": {
+      "map": "function(doc) {if(doc.type == \"tweet\") emit(doc.location, 1)}",
+      "reduce": "_count"
+    },
+    "getAllAreaRanges": {
+      "map": "function(doc) {if(doc.type == \"area\"){emit(doc.area, doc.area_range)};}"
+    },
+    "getTweetAreaCount": {
+      "map": "function(doc) {if(doc.type == \"tweet\"){emit(doc.location, 1)};}",
+      "reduce": "_count"
+    },
+    "getFaulty": {
+      "map": "function(doc) {if(doc.type == \"analysis\"){emit(doc._id, doc.ts)};}"
     }
+  },
+  "filters": {
+    "important": "function(doc, req) { if(doc.type == 'tweet') { return true; } else { return false; }}"
   }
+}
