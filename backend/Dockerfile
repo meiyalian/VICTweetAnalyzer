@@ -8,7 +8,7 @@ ENV HTTPS_PROXY http://wwwproxy.unimelb.edu.au:8000/
 ENV no_proxy localhost,127.0.0.1,localaddress,172.16.0.0/12,.melbourne.rc.nectar.org.au,.storage.u nimelb.edu.au,.cloud.unimelb.edu.au
 
 RUN apt-get update -y && \
-    apt-get install -y python-pip python-dev
+    apt-get install -y python-pip python-dev python3-pip python3-dev
 
 # https://hub.docker.com/r/library/python/tags/
 # FROM python:3-onbuild
