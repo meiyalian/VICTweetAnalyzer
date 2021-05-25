@@ -237,38 +237,6 @@ api.add_resource(getAllStats, '/allstatistics', endpoint = 'allstatistics')
 
 
 
-
-
-
-# {
-#     "ok": True,
-    
-#     "data": [
-#         "area": "String",
-#         "positive": "float 0-100" ,# ratio of positive tweet
-#         "negative": "float 0-100",
-#         "income_average": "int",  #annual income average
-
-#         "age_distribution": {
-#             "five_to_nineteen": "float",
-#             "twenty_to_thirtynine": "float",
-#             "forty_to_sixty": "float",
-#             "medium_age": "float"
-#         }，
-#         "population_density": "float",
-        
-#         # 5 emojis
-#         "top_five_emojis": []
-#             {
-#                 "code": "emojicode",
-#                 "number": "float 0-100"
-#             }
-#     ]
-#     ]
-# }
-
-
-
 if __name__ == '__main__':
     app.run( debug = True,host="0.0.0.0",port=5000)
 
