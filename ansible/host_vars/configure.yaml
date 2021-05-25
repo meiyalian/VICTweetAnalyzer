@@ -13,3 +13,4 @@ couchdb_port: 5984
 couchdb_db_name: "live-tweets"
 ubuntu_working_dir: /home/ubuntu/COMP90024
 git_dir: /home/ubuntu/COMP90024/comp90024
+prepare_dir: /home/ubuntu/COMP90024/comp90024/prepdb

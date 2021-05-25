@@ -1,0 +1,5 @@
+- name: prepare_database
+  become: yes
+  shell: python previews.py 
+  args:
+    chdir: '{{ prepare_dir }}'

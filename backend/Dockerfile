@@ -17,9 +17,9 @@ RUN apt-get update -y && \
 # python:3-onbuild expects the source in /usr/src/app
 COPY . /app/backend
 WORKDIR /app/backend
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 EXPOSE 5000
-ENTRYPOINT [ "python" ]
+ENTRYPOINT [ "python3" ]
 CMD [ "app.py" ]
 
 # # Commands in a list
