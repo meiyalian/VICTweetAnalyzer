@@ -177,7 +177,7 @@ if __name__ == '__main__':
    #since = 1
     count = 0
     firstTime = True
-    analysis_count = 0
+    #analysis_count = 0
     since =""
     while True:
         try:
@@ -195,9 +195,9 @@ if __name__ == '__main__':
                     continue
                 else:
                     analysis_id = changeset["id"] + "_analysis"
-                    analysis_count +=1
-                    if analysis_count % 2000 == 0:
-                        print("check {} tweets.".format(analysis_count))
+              #      analysis_count +=1
+              #      if analysis_count % 2000 == 0:
+              #          print("check {} tweets.".format(analysis_count))
                     if analysis_id not in analysis:
                         try:
                             txt = doc['text']
@@ -229,3 +229,37 @@ if __name__ == '__main__':
         except KeyboardInterrupt:
             print("End Session.")
             break
+
+
+
+
+
+
+    # for item in vic_areas_tweets_db.view('_all_docs'):
+    #     id = item['id']
+    #     if id not in sentiment_tweets_db:
+    #         try:
+    #             doc = vic_areas_tweets_db[id]
+    #             txt = doc['text']
+    #             p_txt = process_tweets(txt)
+    #             time = doc['time']
+    #             #to do: categorized to hour value 0~24
+    #             location = doc['location']
+    #             score = get_score(p_txt)
+    #             hash_tag = get_hashtags(p_txt)
+    #             emojis = get_emoji(p_txt)
+    #             sentiment = {
+    #                 "score": score,
+    #                 "hashtags": hash_tag,
+    #                 "emoji": emojis,
+    #                 "hour": time,
+    #                 "location": location,
+    #                 "ts": 
+    #             }
+    #             sentiment_tweets_db[id] = sentiment
+    #             count += 1
+    #             if count % 100 == 0:
+    #                 print("save {} tweets.".format(count))
+    #         except:
+    #             continue
+    # print("successful save {} tweets.".format(count))
