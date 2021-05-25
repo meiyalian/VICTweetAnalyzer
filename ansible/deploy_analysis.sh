@@ -1,0 +1,1 @@
+. ./openrc.sh; ansible-playbook --ask-become-pass deploy_analysis.yaml -i inventory/host_job.ini

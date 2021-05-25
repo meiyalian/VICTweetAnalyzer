@@ -1,0 +1,22 @@
+- name: stop previous 
+  become:
+    yes
+  shell: docker ps -q --filter ancestor="comp90024:analysis" | xargs -r docker stop
+- name: build docker
+  become:
+    yes
+  shell: docker build -t comp90024:analysis .
+  args:
+    chdir: /home/ubuntu/COMP90024/comp90024/analysis/torchMoji
+- name: run docker for analysis
+  become:
+    yes
+  shell: docker run -d comp90024:analysis sentiment.py
+  args:
+    chdir: /home/ubuntu/COMP90024/comp90024/analysis/torchMoji
+- name: run docker for statistics
+  become:
+    yes
+  shell: docker run -d comp90024:analysis statistics.py
+  args:
+    chdir: /home/ubuntu/COMP90024/comp90024/analysis/torchMoji

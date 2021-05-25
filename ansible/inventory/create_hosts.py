@@ -64,7 +64,13 @@ def create_jobs_frontend(hosts,worker):
             file.write("[frontend]\n")
             file.write("{}".format(hosts[worker]))
             file.write("\n")  
-            file.write("\n")          
+            file.write("\n")      
+def create_jobs_analysis(hosts,worker):
+    with open("inventory/host_job.ini", "a") as file:
+            file.write("[analysis]\n")
+            file.write("{}".format(hosts[worker]))
+            file.write("\n")  
+            file.write("\n")        
 if __name__ == "__main__":
     hosts=read_hosts(4)
     create_jobs_couchdb(hosts,1,[2,3])
@@ -72,3 +78,4 @@ if __name__ == "__main__":
     create_jobs_crawler_search(hosts,2)
     create_jobs_backend(hosts,0)
     create_jobs_frontend(hosts,2)
+    create_jobs_analysis(hosts,3)
