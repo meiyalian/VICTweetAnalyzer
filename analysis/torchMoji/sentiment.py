@@ -171,7 +171,7 @@ if __name__ == '__main__':
 
     dbserver = connect_to_couch_db_server(host, port, username, password)
     vic_tweets = connect_to_database("vic_tweets", dbserver)
-    analysis = connect_to_database("analysis", dbserver)
+    analysis = connect_to_database("sentiment", dbserver)
     #test_db = connect_to_database("test_db",dbserver)
     # sentiment_tweets_db = connect_to_database("sentiment_tweets", dbserver)
    #since = 1
