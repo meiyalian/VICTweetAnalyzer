@@ -114,17 +114,17 @@ option && myChart.setOption(option);
     },
   mounted() {
     var that = this;
-    const path = 'http://172.26.130.110:5000/totalcollected';
-    that.axios.get(path).then(function(response){
+    const path = '/api/totalcollected';
+    that.axios.get(path).then(res=>{
         var msg = response.data.data;
         that.twitterAPI = msg;
         that.myEcharts()
           
 
     }
-    .catch(function(err){
-    console.log(err)
-   })
+//     .catch(function(err){
+//     console.log(err)
+//    })
     
     )
     //   .get('http://localhost:80/static/twitterAPI.json')
