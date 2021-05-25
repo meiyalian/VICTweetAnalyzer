@@ -37,7 +37,8 @@ export default {
           xAxis:
             {
               type: 'category',
-              data: timeData
+              data: timeData,
+              name: 'time'
             },
           yAxis:
             {
@@ -54,7 +55,7 @@ export default {
             {
               type: 'pie',
               id: 'pie',
-              radius: '30%',
+              radius: '35%',
               center: ['50%', '25%'],
               data: data.top_five_emojis[0],
               label: {
