@@ -89,6 +89,7 @@ class AurinAnalyzer:
                 "ts": datetime.now().strftime("%d/%m/%Y %H:%M:%S")
             }
 
+
             db[area.name] = area_doc
         print("....uploading data complete")
         
@@ -132,11 +133,6 @@ def determine_location(areas_dict, coordinates, isBoundingBox = False):
 
 
 
-if __name__ == "__main__":  
-
-    # first time storing the aea data: 
-    analyzer = AurinAnalyzer()
-    analyzer.store_in_db()
 
 
 
