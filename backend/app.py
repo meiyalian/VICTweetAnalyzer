@@ -201,7 +201,7 @@ class getAllStats(Resource):
             for each in detail_stats["rows"]:
                 areas_dict[each["key"]] = {"area":each["key"], "positive": 0, "negative": 0 }
                 areas_dict[each["key"]]["age_distribution"] = each["value"]["age_distribution"]
-                areas_dict[each["key"]]
+                areas_dict[each["key"]]["population_density"] = each["value"]["population_density"]
             
             for key in area_stats:
                 pos_ratio,neg_ratio =  calculateRatio(area_stats[key]["positive"], area_stats[key]["negative"] )
@@ -238,20 +238,17 @@ api.add_resource(getAllStats, '/allstatistics', endpoint = 'allstatistics')
 
 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+>>>>>>> origin/meiya
 if __name__ == '__main__':
     app.run( debug = True,host="0.0.0.0",port=5000)
 
-# app = Flask(__name__)
-
-# @app.route('/')
-# def index():
-#     return "Hello, World!"
-
-# @app.route('/')
-
-
-# if __name__ == '__main__':
-#     app.run(debug=True,host="0.0.0.0",port=5000)
 
 
 
