@@ -244,7 +244,7 @@ api.add_resource(getAllStats, '/allstatistics', endpoint = 'allstatistics')
 #     "ok": True,
     
 #     "data": [
-#         「"area": "String",
+#         "area": "String",
 #         "positive": "float 0-100" ,# ratio of positive tweet
 #         "negative": "float 0-100",
 #         "income_average": "int",  #annual income average
