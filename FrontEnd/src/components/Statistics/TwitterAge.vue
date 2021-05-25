@@ -17,8 +17,7 @@ export default {
 
       var data = genData(this.twitterAPI);
 
-       var colors = [ '#91CC75', '#EE6666','#5470C6'];
-      // ['#5470C6', '#91CC75', '#EE6666'];
+       var colors = [ '#E5E338', '#E24E42','#008F95'];
 
       option = {
           color: colors,
@@ -178,8 +177,7 @@ export default {
 
       var data = genData(this.twitterAPI);
 
-      var colors = [ '#91CC75', '#5470C6']
-      // ['#5470C6', '#91CC75', '#EE6666'];
+      var colors = [ '#E5E338','#008F95'];
 
       option = {
           color: colors,

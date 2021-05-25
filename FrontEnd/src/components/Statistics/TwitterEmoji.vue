@@ -47,7 +47,7 @@ export default {
         axisLabel: {
             show: true,
                 textStyle: {
-                fontSize : 16      //change the front size
+                fontSize : 25      //change the front size
                 }
             },
     },
@@ -69,7 +69,7 @@ export default {
                 }
                 
                 },
-            barWidth:100,    
+            barWidth:60,    
             data: data.seriesData
             
         },
@@ -144,28 +144,26 @@ option && myChart.setOption(option);
         };
       }
 
-      function reverseArray(arr) {
-          newArr = [],
-          arr.forEach(element => {
-              newArr.unshift(element)
-          })
-          return newArr
-
-      }
+      
 
 
 
       option && myChart.setOption(option);
     },
     },
+
+    
+
   mounted() {
-    this.axios
-      .get('http://localhost:80/static/twitterAPI.json')
-      .then(response => (
-        this.twitterAPI = response.data.data,
-          // console.log(this.twitterAPI),
-          this.myEcharts()
-      ));
+    var that = this;
+    const path = '/api/getTopFiveEmoji';
+    that.axios.get(path).then(function(response){
+        var msg = response.data.data;
+        that.twitterAPI = msg;
+        that.myEcharts()
+          
+
+    })
 
   }
 }

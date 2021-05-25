@@ -19,7 +19,7 @@ export default {
 
       var data = genData(this.twitterAPI);
 
-      var colors = [ '#91CC75', '#EE6666','#5470C6'];
+      var colors = [ '#E5E338', '#E24E42','#008F95'];
 
       option = {
           color: colors,
@@ -44,7 +44,7 @@ export default {
               }
           },
           legend: {
-              data: ['Average Income', 'Positive', 'Negative']
+              data: ['Average Income', 'Positive (%)', 'Negative']
           },
           xAxis: [
               {
@@ -100,7 +100,7 @@ export default {
 
               },
               {
-                  name: 'Positive',
+                  name: 'Positive (%)',
                   type: 'line',
                   smooth: true,
                   yAxisIndex: 1,
@@ -117,36 +117,38 @@ export default {
 
 
       function genData(twitterAPI) {
-        var legendData = [];
+        var legendData = [twitterAPI[0]];
         var seriesData = [];
         var negativeScore = [];
         var positiveScore = [];
         var incomeData = [];
 
-        for (var obj in twitterAPI){
-          legendData.push(twitterAPI[obj].ABB_NAME);
-          seriesData.push({
-            name: twitterAPI[obj].ABB_NAME,
-            value: twitterAPI[obj].sentiment_score ,
+       
 
-          }
-          );
+        for (var obj in twitterAPI){
+          //legendData.push(twitterAPI[obj].area);
+          // seriesData.push({
+          //   name: twitterAPI[obj].ABB_NAME,
+          //   value: twitterAPI[obj].sentiment_score ,
+
+          // }
+          // );
           positiveScore.push(
             {
-              name: twitterAPI[obj].ABB_NAME,
+              name: twitterAPI[obj].area,
               value: twitterAPI[obj].positive
             }
           );
           negativeScore.push(
             {
-              name: twitterAPI[obj].ABB_NAME,
+              name: twitterAPI[obj].area,
               value: twitterAPI[obj].negative
             }
           );
           incomeData.push(
             {
-              name: twitterAPI[obj].ABB_NAME,
-              value: twitterAPI[obj].income
+              name: twitterAPI[obj].area,
+              value: twitterAPI[obj].income_average
             }
           );
 
@@ -172,7 +174,7 @@ export default {
 
       var data = genData(this.twitterAPI);
 
-      var colors = [ '#91CC75', '#5470C6'];
+      var colors = [ '#E5E338','#008F95'];
 
       option = {
           color: colors,
@@ -197,7 +199,7 @@ export default {
               }
           },
           legend: {
-              data: ['Average Income', 'Positive', 'Negative']
+              data: ['Average Income', 'Positive (%)', 'Negative (%)']
           },
           xAxis: [
               {
@@ -255,7 +257,7 @@ export default {
               
 
               {
-                  name: 'Negative',
+                  name: 'Negative (%)',
                   type: 'line',
                   smooth: true,
                   yAxisIndex: 1,
@@ -320,14 +322,20 @@ export default {
     }
   },
   mounted() {
-    this.axios
-      .get('http://localhost:80/static/twitterAPI.json')
-      .then(response => (
-        this.twitterAPI = response.data.LGA,
-          // console.log(this.twitterAPI),
-          this.myEcharts(),
-           this.myEchart2()
-      ));
+    var that = this;
+    const path = '/api/incomesentiment';
+    that.axios.get(path).then(function(response){
+        var msg =response.data.data;
+        console.log(response.data);
+        that.twitterAPI = msg;
+        that.myEcharts();
+        that.myEchart2()
+          
+
+    }
+    
+    
+    )
 
   }
 }

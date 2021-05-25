@@ -57,6 +57,7 @@ export default {
             type: 'bar',
             itemStyle:{
                 barBorderRadius: [0,5,5,0],
+                
                 normal: {
                     label: {
                         show: true, //show
@@ -81,27 +82,11 @@ option && myChart.setOption(option);
 
 
       function genData(twitterAPI) {
-        //var legendData = twitterAPI[obj].total_collected;
+        
         var seriesData = [twitterAPI.total_analysis,twitterAPI.total_collected];
-        var negativeScore = [];
-        var positiveScore = [];
-        var incomeData = [];
 
-        // for (var obj in twitterAPI){
-        //   //legendData.push(twitterAPI[obj].ABB_NAME);
-        //   seriesData.push(
-        //     // name: twitterAPI[obj].ABB_NAME,
-        //     // name:['Total Collected', 'Total Collected'],
-        //     // value: 
-        //     twitterAPI[obj].total_collected,
-
-          
-        //   );
-          
-
-        // }
         return {
-          //legendData: legendData,
+          
           seriesData: seriesData,
           
         };
@@ -115,24 +100,17 @@ option && myChart.setOption(option);
   mounted() {
     var that = this;
     const path = '/api/totalcollected';
-    that.axios.get(path).then(res=>{
+    that.axios.get(path).then(function(response){
         var msg = response.data.data;
         that.twitterAPI = msg;
         that.myEcharts()
           
 
     }
-//     .catch(function(err){
-//     console.log(err)
-//    })
+    
     
     )
-    //   .get('http://localhost:80/static/twitterAPI.json')
-    //   .then(response => (
-    //     this.twitterAPI = response.data,
-    //       // console.log(this.twitterAPI),
-    //       this.myEcharts()
-    //   ));
+  
 
   }
 }

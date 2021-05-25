@@ -18,7 +18,7 @@ export default {
 
       var data = genData(this.twitterAPI);
 
-      var colors = [ '#91CC75', '#EE6666','#5470C6'];
+      var colors = [ '#E5E338', '#E24E42','#008F95'];
 
       option = {
           color: colors,
@@ -44,7 +44,7 @@ export default {
               }
           },
           legend: {
-              data: ['Population Density', 'Positive', 'Negative']
+              data: ['Population Density', 'Positive (%)', 'Negative (%)']
           },
           xAxis: [
               {
@@ -100,7 +100,7 @@ export default {
 
               },
               {
-                  name: 'Positive',
+                  name: 'Positive (%)',
                   type: 'line',
                   smooth: true,
                   yAxisIndex: 1,
@@ -171,7 +171,7 @@ export default {
 
       var data = genData(this.twitterAPI);
 
-      var colors = [ '#91CC75', '#5470C6'];
+      var colors = [ '#E5E338','#008F95'];
 
       option = {
           color: colors,
@@ -196,7 +196,7 @@ export default {
               }
           },
           legend: {
-              data: ['Population Density', 'Positive', 'Negative']
+              data: ['Population Density', 'Positive', 'Negative (%)']
           },
           xAxis: [
               {
@@ -254,7 +254,7 @@ export default {
               
 
               {
-                  name: 'Negative',
+                  name: 'Negative (%)',
                   type: 'line',
                   smooth: true,
                   yAxisIndex: 1,
