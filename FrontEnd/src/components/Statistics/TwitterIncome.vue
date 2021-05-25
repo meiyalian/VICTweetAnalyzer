@@ -1,6 +1,7 @@
 <template>
   <div class="Echarts" style="height: 100%">
-    <div id="main" style="width: 100%;height:100%;"></div>
+    <div ref="positive" style="width: 100%;height:100%;"></div>
+    <div id="negative" style="width: 100%;height:100%;"></div>
   </div>
 </template>
 
@@ -12,13 +13,13 @@ export default {
     myEcharts(){
 
       var chartDom = document.getElementById('main');
-      var myChart = echarts.init(chartDom);
+      var myChart = echarts.init(this.$refs.positive);
       var option;
 
 
       var data = genData(this.twitterAPI);
 
-      var colors = ['#5470C6', '#91CC75', '#EE6666'];
+      var colors = [ '#91CC75', '#EE6666','#5470C6'];
 
       option = {
           color: colors,
@@ -32,6 +33,9 @@ export default {
           grid: {
               right: '20%'
           },
+          title:{
+            text:"The Relation Between Income And Positive Sentiment"
+          },
           toolbox: {
               feature: {
                   dataView: {show: true, readOnly: false},
@@ -40,7 +44,7 @@ export default {
               }
           },
           legend: {
-              data: ['income level', 'positive score', 'negative score']
+              data: ['Average Income', 'Positive', 'Negative']
           },
           xAxis: [
               {
@@ -54,7 +58,7 @@ export default {
           yAxis: [
               {
                   type: 'value',
-                  name: 'income level',
+                  name: 'Average Income',
 
                   axisLabel: {
                       formatter: '{value} AUD'
@@ -62,10 +66,10 @@ export default {
               },
               {
                   type: 'value',
-                  name: 'score',
+                  name: 'Percentage',
 
                   axisLabel: {
-                      formatter: '{value} points'
+                      formatter: '{value} %'
                   }
               },
 
@@ -87,28 +91,27 @@ export default {
           },
         ],
           series: [
-              {
-                  name: 'negative score',
-                  type: 'line',
-                  yAxisIndex: 1,
-                  data: data.negativeScore
-
-              },
-              {
-                  name: 'income level',
+            {
+                  name: 'Average Income',
                   type: 'bar',
+                  itemStyle:{barBorderRadius: [3,3,0,0]},
                   data: data.incomeData
 
 
               },
-
               {
-                  name: 'positive score',
+                  name: 'Positive',
                   type: 'line',
+                  smooth: true,
                   yAxisIndex: 1,
                   data: data.positiveScore
 
-              }
+              },
+
+              
+              
+
+              
           ]
       };
 
@@ -161,7 +164,158 @@ export default {
 
       option && myChart.setOption(option);
     },
-    myEcharts2(){
+    myEchart2(){
+      var chartDom = document.getElementById('negative');
+      var myChart = echarts.init(chartDom);
+      var option;
+
+
+      var data = genData(this.twitterAPI);
+
+      var colors = [ '#91CC75', '#5470C6'];
+
+      option = {
+          color: colors,
+          title:{
+            text:"The Relation Between Income And Negative Sentiment"
+          },
+
+          tooltip: {
+              trigger: 'axis',
+              axisPointer: {
+                  type: 'cross'
+              }
+          },
+          grid: {
+              right: '20%'
+          },
+          toolbox: {
+              feature: {
+                  dataView: {show: true, readOnly: false},
+                  restore: {show: true},
+                  saveAsImage: {show: true}
+              }
+          },
+          legend: {
+              data: ['Average Income', 'Positive', 'Negative']
+          },
+          xAxis: [
+              {
+                  type: 'category',
+                  axisTick: {
+                      alignWithLabel: true
+                  },
+                  data: data.legendData,
+              }
+          ],
+          yAxis: [
+              {
+                  type: 'value',
+                  name: 'Average Income',
+
+                  axisLabel: {
+                      formatter: '{value} AUD'
+                  }
+              },
+              {
+                  type: 'value',
+                  name: 'Percentage',
+
+                  axisLabel: {
+                      formatter: '{value} %'
+                  }
+              },
+
+
+          ],
+          dataZoom: [
+          {
+            type: 'inside'
+          },
+          {
+            show: true,
+            start: 0,
+            end: 100
+          },
+          {
+            type: 'inside',
+            start: 0,
+            end: 100
+          },
+        ],
+          series: [
+            {
+                  name: 'Average Income',
+                  type: 'bar',
+                  itemStyle:{barBorderRadius: [3,3,0,0]},
+                  data: data.incomeData
+
+
+              },
+              
+
+              {
+                  name: 'Negative',
+                  type: 'line',
+                  smooth: true,
+                  yAxisIndex: 1,
+                  data: data.negativeScore
+
+              },
+              
+
+              
+          ]
+      };
+
+
+      function genData(twitterAPI) {
+        var legendData = [];
+        var seriesData = [];
+        var negativeScore = [];
+        var positiveScore = [];
+        var incomeData = [];
+
+        for (var obj in twitterAPI){
+          legendData.push(twitterAPI[obj].ABB_NAME);
+          seriesData.push({
+            name: twitterAPI[obj].ABB_NAME,
+            value: twitterAPI[obj].sentiment_score ,
+
+          }
+          );
+          positiveScore.push(
+            {
+              name: twitterAPI[obj].ABB_NAME,
+              value: twitterAPI[obj].positive
+            }
+          );
+          negativeScore.push(
+            {
+              name: twitterAPI[obj].ABB_NAME,
+              value: twitterAPI[obj].negative
+            }
+          );
+          incomeData.push(
+            {
+              name: twitterAPI[obj].ABB_NAME,
+              value: twitterAPI[obj].income
+            }
+          );
+
+        }
+        return {
+          legendData: legendData,
+          seriesData: seriesData,
+          positiveScore : positiveScore,
+          negativeScore : negativeScore,
+          incomeData:incomeData
+        };
+      }
+
+
+
+      option && myChart.setOption(option);
 
     }
   },
@@ -171,7 +325,8 @@ export default {
       .then(response => (
         this.twitterAPI = response.data.LGA,
           // console.log(this.twitterAPI),
-          this.myEcharts()
+          this.myEcharts(),
+           this.myEchart2()
       ));
 
   }
