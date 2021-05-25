@@ -4,7 +4,7 @@ import os,sys
 from shapely.geometry import Polygon, Point, MultiPolygon
 import pprint
 import matplotlib.pyplot as plt
-from DBconnect import aurin
+from DBconnect import vic_tweets
 from datetime import datetime
 
 
@@ -69,7 +69,7 @@ class AurinAnalyzer:
                     self.areas[area_name].density = density
                     self.areas[area_name].range = geo
 
-    def store_in_db(self,db = aurin):
+    def store_in_db(self,db = vic_tweets):
         print("uploading to db......")
         for key in self.areas:
             area = self.areas[key]
@@ -88,7 +88,6 @@ class AurinAnalyzer:
                 "area_range": area.range,
                 "ts": datetime.now().strftime("%d/%m/%Y %H:%M:%S")
             }
-
 
             db[area.name] = area_doc
         print("....uploading data complete")
@@ -133,6 +132,11 @@ def determine_location(areas_dict, coordinates, isBoundingBox = False):
 
 
 
+if __name__ == "__main__":  
+
+    # first time storing the aea data: 
+    analyzer = AurinAnalyzer()
+    analyzer.store_in_db()
 
 
 
