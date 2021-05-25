@@ -191,16 +191,20 @@ if __name__ == "__main__":
         print("Start searching ....... ")
 
         api = tweepy.API(getAuth(access), wait_on_rate_limit=True)
-        recent = api.search(geocode=VIC_geo, count=1, result_type='recent')
 
 
-        max_id = recent[0].id+1
+        first_time = True
 
         collected = 0
         count = 0
+        max_id = 0
         while True:
             try:
-                new_search = api.search(q='*', count=300, lang="en", geocode=VIC_geo, tweet_mode="extended", max_id=str(max_id-1))
+                if first_time:
+                    new_search = api.search(q='*', count=300, lang="en", geocode=VIC_geo, tweet_mode="extended")
+                    first_time = False
+                else:
+                    new_search = api.search(q='*', count=300, lang="en", geocode=VIC_geo, tweet_mode="extended", max_id=str(max_id-1))
                 # for status in tweepy.Cursor(api.search, q='*', lang="en",geocode=VIC_geo,tweet_mode="extended", max_id=max_id).items(300):
                 for status in new_search:
                     if not hasattr(status, "retweeted_status") and (status.coordinates is not None or status.place is not None): 
