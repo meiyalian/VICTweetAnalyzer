@@ -175,14 +175,6 @@ if __name__ == '__main__':
     finally:
         file_words.close()
 
-<<<<<<< HEAD:analysis/torchMoji/sentiment.py
-    dbserver = connect_to_couch_db_server(host, port, username, password)
-    vic_tweets = connect_to_database("vic_tweets", dbserver)
-    analysis = connect_to_database("sentiment", dbserver)
-    #test_db = connect_to_database("test_db",dbserver)
-=======
-
->>>>>>> origin/meiya:analysis/sentiment.py
     # sentiment_tweets_db = connect_to_database("sentiment_tweets", dbserver)
    #since = 1
     count = 0
@@ -197,11 +189,6 @@ if __name__ == '__main__':
                 firstTime = False
             else:
                 changes = vic_tweets.changes(since=since, limit = 5000,  filter="vic_tweets/important" )
-<<<<<<< HEAD:analysis/torchMoji/sentiment.py
-            
-=======
-
->>>>>>> origin/meiya:analysis/sentiment.py
             since = changes["last_seq"]
             for changeset in changes["results"]:
                 try:
@@ -211,12 +198,6 @@ if __name__ == '__main__':
                     continue
                 else:
                     analysis_id = changeset["id"] + "_analysis"
-<<<<<<< HEAD:analysis/torchMoji/sentiment.py
-              #      analysis_count +=1
-              #      if analysis_count % 2000 == 0:
-              #          print("check {} tweets.".format(analysis_count))
-=======
->>>>>>> origin/meiya:analysis/sentiment.py
                     if analysis_id not in analysis:
                         try:
                             txt = doc['text']
@@ -239,19 +220,11 @@ if __name__ == '__main__':
                                 "ts": datetime.now().strftime("%d/%m/%Y %H:%M:%S")
                             }
                             analysis[analysis_id] = sentiment
-<<<<<<< HEAD:analysis/torchMoji/sentiment.py
-=======
                             print("save!")
->>>>>>> origin/meiya:analysis/sentiment.py
                             count += 1
 
                             if count % 100 == 0:
                                 print("save {} tweets.".format(count))
-<<<<<<< HEAD:analysis/torchMoji/sentiment.py
-                        except:
-                            continue
-                            
-=======
                             time.sleep(10)
 
                         except Exception as e:
@@ -259,7 +232,6 @@ if __name__ == '__main__':
                             print(e)
                             print("SOMETHING WENT WRONG!")
 
->>>>>>> origin/meiya:analysis/sentiment.py
         except KeyboardInterrupt:
             print("End Session.")
             break

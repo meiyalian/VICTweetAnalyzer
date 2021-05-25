@@ -18,7 +18,7 @@ RUN apt-get update -y && \
 COPY . /app/backend
 WORKDIR /app/backend
 RUN pip install -r requirements.txt
-EXPOSE 5001
+EXPOSE 5000
 ENTRYPOINT [ "python" ]
 CMD [ "app.py" ]
 

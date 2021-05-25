@@ -30,25 +30,10 @@ for key in areas:
     c.Geo = geo_string
     c.Store_csv = True
     c.Output = "Collected"
-<<<<<<< HEAD
-
-    # url = 'https://twitter.com'
-    # _session = requests.Session()
-    # _session.proxies = {
-    # "http":"http://wwwproxy.unimelb.edu.au:8000/",
-    # "https":"http://wwwproxy.unimelb.edu.au:8000/"
-    # }
-
-    # req = _session.prepare_request(requests.Request('GET', url))
-    # r = _session.send(req, allow_redirects=True, timeout=25)
-    
-    twint.run.Search(c)
-=======
     try:
         twint.run.Search(c)
     except: 
         twint.run.Search(c)
->>>>>>> origin/meiya
 
     
     print("Start processing collected tweets ..... ")
