@@ -127,12 +127,19 @@ export default {
     },
   },
   mounted() {
-    this.axios
-      .get('http://localhost:80/static/time.json')
-      .then(response => (
-        this.twitterAPI = response.data.data,
-          this.myEcharts()
-      ));
+     var that = this;
+    const path = '/api/time';
+    that.axios.get(path).then(function(response){
+        var msg = response.data.data;
+        that.twitterAPI = msg;
+        that.myEcharts();
+        that.myEcharts2()
+          
+
+    }
+    
+    
+    )
 
   }
 

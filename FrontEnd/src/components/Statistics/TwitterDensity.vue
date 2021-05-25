@@ -124,28 +124,28 @@ export default {
         var densityData = [];
 
         for (var obj in twitterAPI){
-          legendData.push(twitterAPI[obj].ABB_NAME);
+          legendData.push(twitterAPI[obj].area);
           seriesData.push({
-            name: twitterAPI[obj].ABB_NAME,
+            name: twitterAPI[obj].area,
             value: twitterAPI[obj].sentiment_score ,
 
           }
           );
           positiveScore.push(
             {
-              name: twitterAPI[obj].ABB_NAME,
+              name: twitterAPI[obj].area,
               value: twitterAPI[obj].positive
             }
           );
           negativeScore.push(
             {
-              name: twitterAPI[obj].ABB_NAME,
+              name: twitterAPI[obj].area,
               value: twitterAPI[obj].negative
             }
           );
           densityData.push(
             {
-              name: twitterAPI[obj].ABB_NAME,
+              name: twitterAPI[obj].area,
               value: twitterAPI[obj].population_density
             }
           );
@@ -276,28 +276,28 @@ export default {
         var densityData = [];
 
         for (var obj in twitterAPI){
-          legendData.push(twitterAPI[obj].ABB_NAME);
-          seriesData.push({
-            name: twitterAPI[obj].ABB_NAME,
-            value: twitterAPI[obj].sentiment_score ,
+          legendData.push(twitterAPI[obj].area);
+          // seriesData.push({
+          //   name: twitterAPI[obj].ABB_NAME,
+          //   value: twitterAPI[obj].sentiment_score ,
 
-          }
-          );
+          // }
+          // );
           positiveScore.push(
             {
-              name: twitterAPI[obj].ABB_NAME,
+              name: twitterAPI[obj].area,
               value: twitterAPI[obj].positive
             }
           );
           negativeScore.push(
             {
-              name: twitterAPI[obj].ABB_NAME,
+              name: twitterAPI[obj].area,
               value: twitterAPI[obj].negative
             }
           );
           densityData.push(
             {
-              name: twitterAPI[obj].ABB_NAME,
+              name: twitterAPI[obj].area,
               value: twitterAPI[obj].population_density
             }
           );
@@ -319,14 +319,19 @@ export default {
     }
   },
   mounted() {
-    this.axios
-      .get('http://localhost:80/static/twitterAPI.json')
-      .then(response => (
-        this.twitterAPI = response.data.LGA,
-          // console.log(this.twitterAPI),
-          this.myEcharts(),
-          this.myEcharts2()
-      ));
+    var that = this;
+    const path = '/api/allstatistics';
+    that.axios.get(path).then(function(response){
+        var msg = response.data.data;
+        that.twitterAPI = msg;
+        that.myEcharts();
+        that.myEcharts2()
+          
+
+    }
+    
+    
+    )
 
   }
 }
