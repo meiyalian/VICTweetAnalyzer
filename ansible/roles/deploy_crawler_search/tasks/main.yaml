@@ -5,6 +5,10 @@
 #   args:
 #     chdir: /home/ubuntu/COMP90024/comp90024/crawler
 #
+- name: stop previous 
+  become:
+    yes
+  shell: docker stop $(docker ps -a -q --filter ancestor=<comp90024/crawler-search>)
 - name: build docker
   become:
     yes
