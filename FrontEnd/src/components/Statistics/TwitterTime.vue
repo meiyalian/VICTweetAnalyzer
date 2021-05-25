@@ -32,7 +32,7 @@ export default {
           },
           tooltip: {
             trigger: 'axis',
-            showContent: false
+            showContent: true
           },
           xAxis:
             {
