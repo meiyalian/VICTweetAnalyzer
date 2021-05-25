@@ -25,7 +25,7 @@ export default {
 <style scoped>
 
 #cover{
-  background: url("http://localhost:80/static/background.jpg") center no-repeat;
+  background: url("http://172.26.133.228:8080/static/background.jpg") center no-repeat;
   background-size: 100% 100%;
   height: 100%;
   width: 100%;
