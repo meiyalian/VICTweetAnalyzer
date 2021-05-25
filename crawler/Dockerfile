@@ -11,4 +11,4 @@ COPY . /app/crawler
 WORKDIR /app/crawler
 RUN pip install -r requirements.txt
 RUN python3 AurinAnalyzer.py
-CMD ["python3", "-u","TweetCollector.py","--search"]
+ENTRYPOINT ["python3", "-u","TweetCollector.py"]

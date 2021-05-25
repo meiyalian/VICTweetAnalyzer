@@ -18,6 +18,6 @@
 - name: run docker
   become:
     yes
-  shell: docker run -d comp90024/crawler-search
+  shell: docker run -d comp90024/crawler-search --search
   args:
     chdir: /home/ubuntu/COMP90024/comp90024/crawler
