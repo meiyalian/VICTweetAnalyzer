@@ -10,6 +10,7 @@ import TwitterAge from "../components/Statistics/TwitterAge";
 import TwitterIncome from "../components/Statistics/TwitterIncome";
 import TwitterDensity from "../components/Statistics/TwitterDensity";
 import TwitterInfo from "../components/Statistics/TwitterInfo";
+import TwitterEmoji from "../components/Statistics/TwitterEmoji";
 import CoverPage from "../components/CoverPage";
 
 Vue.use(Router)
@@ -75,6 +76,11 @@ export default new Router({
                 path: '/twitterinfo',
                 name: 'TwitterInfo',
                 component: TwitterInfo,
+              },
+              {
+                path: '/twitteremoji',
+                name: 'TwitterEmoji',
+                component: TwitterEmoji,
               },
 
             ]

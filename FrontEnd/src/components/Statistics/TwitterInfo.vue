@@ -5,11 +5,6 @@
   </div>
 </template>
 
-
-
-
-
-
 <script>
 import * as echarts from 'echarts';
 export default {
@@ -24,47 +19,61 @@ export default {
 
       var data = genData(this.twitterAPI);
 
-      var colors = [ '#91CC75'];
+      var colors = [ '#BFD8D2'];
 
       option = {
+          color:colors,
+
     title: {
-        text: '世界人口总量',
-        subtext: '数据来自网络'
+        text: 'The Number Of Tweets',
+        
     },
     tooltip: {
         trigger: 'axis',
         axisPointer: {
-            type: 'shadow'
+            type: 'cross'
         }
     },
-    legend: {
-        data: ['2011年', '2012年']
-    },
-    grid: {
-        left: '3%',
-        right: '4%',
-        bottom: '3%',
-        containLabel: true
-    },
+    
+    
     xAxis: {
         type: 'value',
-        boundaryGap: [0, 0.01]
+        //boundaryGap: [0, 0.01],
+        
     },
     yAxis: {
         type: 'category',
-        data: ['巴西', '印尼', '美国', '印度', '中国', '世界人口(万)']
+        data: ['Total Analysed', 'Total Collected'],
+        axisLabel: {
+       show: true,
+        textStyle: {
+          fontSize : 16      //change the front size
+        }
+     },
     },
     series: [
         {
-            name: '2011年',
+            name: 'Number',
             type: 'bar',
-            data: [18203, 23489, 29034, 104970, 131744, 630230]
+            itemStyle:{
+                barBorderRadius: [0,5,5,0],
+                normal: {
+                    label: {
+                        show: true, //show
+                        position: 'right', 
+                        textStyle: { 
+                            color: 'black',
+                            fontSize: 16
+                        }
+                    }
+                }
+                
+                },
+            barWidth:100,    
+            data: data.seriesData
+            
         },
-        {
-            name: '2012年',
-            type: 'bar',
-            data: [19325, 23438, 31000, 121594, 134141, 681807]
-        }
+        
     ]
 };
 
@@ -72,46 +81,29 @@ option && myChart.setOption(option);
 
 
       function genData(twitterAPI) {
-        var legendData = [];
-        var seriesData = [];
+        //var legendData = twitterAPI[obj].total_collected;
+        var seriesData = [twitterAPI.total_analysis,twitterAPI.total_collected];
         var negativeScore = [];
         var positiveScore = [];
         var incomeData = [];
 
-        for (var obj in twitterAPI){
-          legendData.push(twitterAPI[obj].ABB_NAME);
-          seriesData.push({
-            name: twitterAPI[obj].ABB_NAME,
-            value: twitterAPI[obj].sentiment_score ,
+        // for (var obj in twitterAPI){
+        //   //legendData.push(twitterAPI[obj].ABB_NAME);
+        //   seriesData.push(
+        //     // name: twitterAPI[obj].ABB_NAME,
+        //     // name:['Total Collected', 'Total Collected'],
+        //     // value: 
+        //     twitterAPI[obj].total_collected,
 
-          }
-          );
-          positiveScore.push(
-            {
-              name: twitterAPI[obj].ABB_NAME,
-              value: twitterAPI[obj].positive
-            }
-          );
-          negativeScore.push(
-            {
-              name: twitterAPI[obj].ABB_NAME,
-              value: twitterAPI[obj].negative
-            }
-          );
-          incomeData.push(
-            {
-              name: twitterAPI[obj].ABB_NAME,
-              value: twitterAPI[obj].income
-            }
-          );
+          
+        //   );
+          
 
-        }
+        // }
         return {
-          legendData: legendData,
+          //legendData: legendData,
           seriesData: seriesData,
-          positiveScore : positiveScore,
-          negativeScore : negativeScore,
-          incomeData:incomeData
+          
         };
       }
 
@@ -121,13 +113,26 @@ option && myChart.setOption(option);
     },
     },
   mounted() {
-    this.axios
-      .get('http://localhost:80/static/twitterAPI.json')
-      .then(response => (
-        this.twitterAPI = response.data.LGA,
-          // console.log(this.twitterAPI),
-          this.myEcharts()
-      ));
+    var that = this;
+    const path = 'http://172.26.130.110:5000/totalcollected';
+    that.axios.get(path).then(function(response){
+        var msg = response.data.data;
+        that.twitterAPI = msg;
+        that.myEcharts()
+          
+
+    }
+    .catch(function(err){
+    console.log(err)
+   })
+    
+    )
+    //   .get('http://localhost:80/static/twitterAPI.json')
+    //   .then(response => (
+    //     this.twitterAPI = response.data,
+    //       // console.log(this.twitterAPI),
+    //       this.myEcharts()
+    //   ));
 
   }
 }
