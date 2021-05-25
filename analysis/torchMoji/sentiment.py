@@ -7,33 +7,8 @@ from torchmoji.sentence_tokenizer import SentenceTokenizer
 from torchmoji.model_def import torchmoji_emojis
 import couchdb  # importing couchdb
 from datetime import datetime
-<<<<<<< HEAD
-import time
-
-host = "172.26.132.110"
-port = "5984"
-username = password = "admin"
 
 
-def connect_to_couch_db_server(host, port, username, password):
-    return couchdb.Server('http://' + username + ':' + password + '@' + host + ':' + port)
-
-
-def connect_to_database(database_name, server):
-    try:
-        return server[database_name]
-    except:
-        return server.create(database_name)
-
-
-dbserver = connect_to_couch_db_server(host, port, username, password)
-vic_tweets = connect_to_database("vic_tweets", dbserver)
-analysis = connect_to_database("analysis", dbserver)
-
-=======
-
-
->>>>>>> origin/sentiment
 EMOJIS = ":joy: :unamused: :weary: :sob: :heart_eyes: :pensive: :ok_hand: :blush: :heart: :smirk: :grin: :notes: :flushed: :100: :sleeping: :relieved: :relaxed: :raised_hands: :two_hearts: :expressionless: :sweat_smile: :pray: :confused: :kissing_heart: :heartbeat: :neutral_face: :information_desk_person: :disappointed: :see_no_evil: :tired_face: :v: :sunglasses: :rage: :thumbsup: :cry: :sleepy: :yum: :triumph: :hand: :mask: :clap: :eyes: :gun: :persevere: :smiling_imp: :sweat: :broken_heart: :yellow_heart: :musical_note: :speak_no_evil: :wink: :skull: :confounded: :smile: :stuck_out_tongue_winking_eye: :angry: :no_good: :muscle: :facepunch: :purple_heart: :sparkling_heart: :blue_heart: :grimacing: :sparkles:".split(
     ' ')
 model = torchmoji_emojis(PRETRAINED_PATH)
@@ -154,8 +129,6 @@ def get_hashtags(text):
 
 
 
-<<<<<<< HEAD
-=======
 host = "172.26.132.110"
 port = "5984"
 username = password = "admin"
@@ -170,7 +143,6 @@ def connect_to_database(database_name, server):
         return server[database_name]
     except:
         return server.create(database_name)
->>>>>>> origin/sentiment
 
 
 if __name__ == '__main__':
@@ -197,56 +169,35 @@ if __name__ == '__main__':
     finally:
         file_words.close()
 
-<<<<<<< HEAD
-=======
     dbserver = connect_to_couch_db_server(host, port, username, password)
     vic_tweets = connect_to_database("vic_tweets", dbserver)
-    analysis = connect_to_database("analysis", dbserver)
-    #test_db = connect_to_database("test_db",dbserver)
->>>>>>> origin/sentiment
+    # analysis = connect_to_database("analysis", dbserver)
+    test_db = connect_to_database("test_db",dbserver)
     # sentiment_tweets_db = connect_to_database("sentiment_tweets", dbserver)
    #since = 1
     count = 0
     firstTime = True
-<<<<<<< HEAD
-    #analysis_count = 0
-    since =""
-    while True:
-        try:
-            
-=======
     analysis_count = 0
     since =""
     while True:
         try:
->>>>>>> origin/sentiment
             if firstTime:
                 changes = vic_tweets.changes(limit = 5000,  filter="vic_tweets/important" )
                 firstTime = False
             else:
                 changes = vic_tweets.changes(since=since, limit = 5000,  filter="vic_tweets/important" )
-<<<<<<< HEAD
-=======
             
->>>>>>> origin/sentiment
             since = changes["last_seq"]
             for changeset in changes["results"]:
                 try:
                     doc = vic_tweets[changeset["id"]]
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/sentiment
                 except couchdb.http.ResourceNotFound:
                     continue
                 else:
                     analysis_id = changeset["id"] + "_analysis"
-<<<<<<< HEAD
-=======
                     analysis_count +=1
                     if analysis_count % 2000 == 0:
                         print("check {} tweets.".format(analysis_count))
->>>>>>> origin/sentiment
                     if analysis_id not in analysis:
                         try:
                             txt = doc['text']
@@ -269,27 +220,12 @@ if __name__ == '__main__':
                                 "ts": datetime.now().strftime("%d/%m/%Y %H:%M:%S")
                             }
                             analysis[analysis_id] = sentiment
-<<<<<<< HEAD
-                            print("save!")
-                            count += 1
-
-                            if count % 100 == 0:
-                                print("save {} tweets.".format(count))
-                            time.sleep(10)
-
-                        except Exception as e:
-                            continue
-                            print(e)
-                            print("SOMETHING WENT WRONG!")
-
-=======
                             count += 1
                             if count % 100 == 0:
                                 print("save {} tweets.".format(count))
                         except:
                             continue
                             
->>>>>>> origin/sentiment
         except KeyboardInterrupt:
             print("End Session.")
             break
@@ -326,11 +262,7 @@ if __name__ == '__main__':
     #                 print("save {} tweets.".format(count))
     #         except:
     #             continue
-<<<<<<< HEAD
-    # print("successful save {} tweets.".format(count))
-=======
     # print("successful save {} tweets.".format(count))
 
 
 
->>>>>>> origin/sentiment
