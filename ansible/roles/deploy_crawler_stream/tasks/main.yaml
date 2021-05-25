@@ -1,7 +1,7 @@
 - name: stop previous 
   become:
     yes
-  shell: docker ps -q --filter ancestor="comp90024/crawler-stream"
+  shell: docker ps -q --filter ancestor="comp90024/crawler-stream" | xargs -r docker stop
 - name: build docker
   become:
     yes
