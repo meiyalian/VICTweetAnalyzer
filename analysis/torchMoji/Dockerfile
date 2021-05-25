@@ -12,7 +12,7 @@ WORKDIR /app/analysis
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
 RUN pip install -r requirements.txt
-RUN python3 -m pip install torch==1.0.1 -f https://download.pytorch.org/whl/cpu/stable
+RUN python3 -m pip install torch torchvision 
 RUN python3 -m pip install emoji numpy scipy scikit-learn text-unidecode
 WORKDIR /app/analysis
 RUN pip install .
