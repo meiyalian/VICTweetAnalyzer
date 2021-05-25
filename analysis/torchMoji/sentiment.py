@@ -7,7 +7,27 @@ from torchmoji.sentence_tokenizer import SentenceTokenizer
 from torchmoji.model_def import torchmoji_emojis
 import couchdb  # importing couchdb
 from datetime import datetime
+import time
 
+host = "172.26.132.110"
+port = "5984"
+username = password = "admin"
+
+
+def connect_to_couch_db_server(host, port, username, password):
+    return couchdb.Server('http://' + username + ':' + password + '@' + host + ':' + port)
+
+
+def connect_to_database(database_name, server):
+    try:
+        return server[database_name]
+    except:
+        return server.create(database_name)
+
+
+dbserver = connect_to_couch_db_server(host, port, username, password)
+vic_tweets = connect_to_database("vic_tweets", dbserver)
+analysis = connect_to_database("analysis", dbserver)
 
 EMOJIS = ":joy: :unamused: :weary: :sob: :heart_eyes: :pensive: :ok_hand: :blush: :heart: :smirk: :grin: :notes: :flushed: :100: :sleeping: :relieved: :relaxed: :raised_hands: :two_hearts: :expressionless: :sweat_smile: :pray: :confused: :kissing_heart: :heartbeat: :neutral_face: :information_desk_person: :disappointed: :see_no_evil: :tired_face: :v: :sunglasses: :rage: :thumbsup: :cry: :sleepy: :yum: :triumph: :hand: :mask: :clap: :eyes: :gun: :persevere: :smiling_imp: :sweat: :broken_heart: :yellow_heart: :musical_note: :speak_no_evil: :wink: :skull: :confounded: :smile: :stuck_out_tongue_winking_eye: :angry: :no_good: :muscle: :facepunch: :purple_heart: :sparkling_heart: :blue_heart: :grimacing: :sparkles:".split(
     ' ')
@@ -129,20 +149,6 @@ def get_hashtags(text):
 
 
 
-host = "172.26.132.110"
-port = "5984"
-username = password = "admin"
-
-
-def connect_to_couch_db_server(host, port, username, password):
-    return couchdb.Server('http://' + username + ':' + password + '@' + host + ':' + port)
-
-
-def connect_to_database(database_name, server):
-    try:
-        return server[database_name]
-    except:
-        return server.create(database_name)
 
 
 if __name__ == '__main__':
@@ -169,10 +175,14 @@ if __name__ == '__main__':
     finally:
         file_words.close()
 
+<<<<<<< HEAD:analysis/torchMoji/sentiment.py
     dbserver = connect_to_couch_db_server(host, port, username, password)
     vic_tweets = connect_to_database("vic_tweets", dbserver)
     analysis = connect_to_database("sentiment", dbserver)
     #test_db = connect_to_database("test_db",dbserver)
+=======
+
+>>>>>>> origin/meiya:analysis/sentiment.py
     # sentiment_tweets_db = connect_to_database("sentiment_tweets", dbserver)
    #since = 1
     count = 0
@@ -181,23 +191,32 @@ if __name__ == '__main__':
     since =""
     while True:
         try:
+            
             if firstTime:
                 changes = vic_tweets.changes(limit = 5000,  filter="vic_tweets/important" )
                 firstTime = False
             else:
                 changes = vic_tweets.changes(since=since, limit = 5000,  filter="vic_tweets/important" )
+<<<<<<< HEAD:analysis/torchMoji/sentiment.py
             
+=======
+
+>>>>>>> origin/meiya:analysis/sentiment.py
             since = changes["last_seq"]
             for changeset in changes["results"]:
                 try:
                     doc = vic_tweets[changeset["id"]]
+
                 except couchdb.http.ResourceNotFound:
                     continue
                 else:
                     analysis_id = changeset["id"] + "_analysis"
+<<<<<<< HEAD:analysis/torchMoji/sentiment.py
               #      analysis_count +=1
               #      if analysis_count % 2000 == 0:
               #          print("check {} tweets.".format(analysis_count))
+=======
+>>>>>>> origin/meiya:analysis/sentiment.py
                     if analysis_id not in analysis:
                         try:
                             txt = doc['text']
@@ -220,12 +239,27 @@ if __name__ == '__main__':
                                 "ts": datetime.now().strftime("%d/%m/%Y %H:%M:%S")
                             }
                             analysis[analysis_id] = sentiment
+<<<<<<< HEAD:analysis/torchMoji/sentiment.py
+=======
+                            print("save!")
+>>>>>>> origin/meiya:analysis/sentiment.py
                             count += 1
+
                             if count % 100 == 0:
                                 print("save {} tweets.".format(count))
+<<<<<<< HEAD:analysis/torchMoji/sentiment.py
                         except:
                             continue
                             
+=======
+                            time.sleep(10)
+
+                        except Exception as e:
+                            continue
+                            print(e)
+                            print("SOMETHING WENT WRONG!")
+
+>>>>>>> origin/meiya:analysis/sentiment.py
         except KeyboardInterrupt:
             print("End Session.")
             break

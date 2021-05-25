@@ -2,7 +2,7 @@ import couchdb  # importing couchdb
 
 
 
-host = "172.26.132.110"
+host = "172.26.133.228"
 port = "5984"
 username = password = "admin"
 

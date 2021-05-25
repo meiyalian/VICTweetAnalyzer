@@ -10,9 +10,9 @@ from ProcessOldTweet import processTweets
 import requests
 parser = argparse.ArgumentParser()
 # parser.add_argument('--geo', type=str, default="-37.80811,144.96071,50mi")
-parser.add_argument('--startdate', type=str, default="2016-01-01")
-parser.add_argument('--enddate', type=str, default="2017-6-30")
-parser.add_argument('--limit', type=int, default=0000)
+parser.add_argument('--startdate', type=str, default="2019-12-01")
+parser.add_argument('--enddate', type=str, default="2021-5-20")
+parser.add_argument('--limit', type=int, default=50000)
 args = parser.parse_args()
 
 for key in areas:
@@ -30,6 +30,7 @@ for key in areas:
     c.Geo = geo_string
     c.Store_csv = True
     c.Output = "Collected"
+<<<<<<< HEAD
 
     # url = 'https://twitter.com'
     # _session = requests.Session()
@@ -42,6 +43,12 @@ for key in areas:
     # r = _session.send(req, allow_redirects=True, timeout=25)
     
     twint.run.Search(c)
+=======
+    try:
+        twint.run.Search(c)
+    except: 
+        twint.run.Search(c)
+>>>>>>> origin/meiya
 
     
     print("Start processing collected tweets ..... ")

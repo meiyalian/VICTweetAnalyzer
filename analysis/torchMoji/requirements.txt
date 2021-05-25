@@ -1,5 +1,0 @@
-couchdb
-tweepy
-shapely
-matplotlib
-requests

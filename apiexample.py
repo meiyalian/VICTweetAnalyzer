@@ -57,7 +57,7 @@
     "ok": True,
     
     "data": [
-        "area": "String",
+        「"area": "String",
         "positive": "float 0-100" ,# ratio of positive tweet
         "negative": "float 0-100",
         "income_average": "int",  #annual income average
@@ -74,7 +74,7 @@
         "top_five_emojis": []
             {
                 "code": "emojicode",
-                "ratio": "float 0-100"
+                "number": "float 0-100"
             }
     ]
     ]
@@ -85,12 +85,8 @@
 {
     "ok": True,
     "data": {
-        "total": "int", # total number of tweets collected 
-        "areas": [
-            {
-                "name": "string" , #area name,
-                "number": "int " # number of tweet collected in this area 
-            }
-        ]
+        "total_collected": "int", # total number of tweets collected , 
+        "total_analysis": "int"
+
     }
 }
