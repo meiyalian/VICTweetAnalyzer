@@ -1,0 +1,653 @@
+{
+  "ok": true,
+  "data": [
+    {
+      "time": 0,
+      "positive": 67.68665850673194,
+      "negative": 32.313341493268055,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 171
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 63
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 42
+        },
+        {
+          "emojicode": "\ud83d\ude22",
+          "number": 34
+        },
+        {
+          "emojicode": "\ud83d\ude15",
+          "number": 34
+        }
+      ]
+    },
+    {
+      "time": 1,
+      "positive": 65.61181434599156,
+      "negative": 34.38818565400844,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 71
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 25
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 24
+        },
+        {
+          "emojicode": "\ud83d\ude15",
+          "number": 23
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 23
+        }
+      ]
+    },
+    {
+      "time": 2,
+      "positive": 63.37662337662338,
+      "negative": 36.62337662337662,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 45
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 38
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 29
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 21
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 14
+        }
+      ]
+    },
+    {
+      "time": 3,
+      "positive": 64.20664206642066,
+      "negative": 35.79335793357934,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 39
+        },
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 36
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 16
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 15
+        },
+        {
+          "emojicode": "\ud83d\ude33",
+          "number": 14
+        }
+      ]
+    },
+    {
+      "time": 4,
+      "positive": 64.64208242950107,
+      "negative": 35.35791757049891,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 57
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 38
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 33
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 22
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 22
+        }
+      ]
+    },
+    {
+      "time": 5,
+      "positive": 69.06906906906907,
+      "negative": 30.930930930930934,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 81
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 54
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 51
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 45
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 29
+        }
+      ]
+    },
+    {
+      "time": 6,
+      "positive": 68.00584368151937,
+      "negative": 31.994156318480645,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 177
+        },
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 163
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 126
+        },
+        {
+          "emojicode": "\ud83d\ude15",
+          "number": 58
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 54
+        }
+      ]
+    },
+    {
+      "time": 7,
+      "positive": 68.22916666666666,
+      "negative": 31.770833333333332,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 376
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 206
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 150
+        },
+        {
+          "emojicode": "\ud83d\ude15",
+          "number": 108
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 93
+        }
+      ]
+    },
+    {
+      "time": 8,
+      "positive": 65.10510510510511,
+      "negative": 34.8948948948949,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 556
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 317
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 185
+        },
+        {
+          "emojicode": "\ud83d\ude15",
+          "number": 169
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 140
+        }
+      ]
+    },
+    {
+      "time": 9,
+      "positive": 66.94429984383133,
+      "negative": 33.05570015616866,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 639
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 385
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 189
+        },
+        {
+          "emojicode": "\ud83d\ude15",
+          "number": 177
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 164
+        }
+      ]
+    },
+    {
+      "time": 10,
+      "positive": 69.62351727694688,
+      "negative": 30.376482723053122,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 394
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 162
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 129
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 86
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 78
+        }
+      ]
+    },
+    {
+      "time": 11,
+      "positive": 68.98238747553816,
+      "negative": 31.01761252446184,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 406
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 179
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 122
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 98
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 83
+        }
+      ]
+    },
+    {
+      "time": 12,
+      "positive": 67.7931387608807,
+      "negative": 32.206861239119306,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 366
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 168
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 102
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 88
+        },
+        {
+          "emojicode": "\ud83d\ude15",
+          "number": 82
+        }
+      ]
+    },
+    {
+      "time": 13,
+      "positive": 69.17841516771998,
+      "negative": 30.82158483228002,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 393
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 164
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 100
+        },
+        {
+          "emojicode": "\ud83d\ude15",
+          "number": 97
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 92
+        }
+      ]
+    },
+    {
+      "time": 14,
+      "positive": 70.16546018614271,
+      "negative": 29.83453981385729,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 381
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 179
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 90
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 84
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 82
+        }
+      ]
+    },
+    {
+      "time": 15,
+      "positive": 69.11121903836815,
+      "negative": 30.888780961631863,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 408
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 174
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 124
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 113
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 81
+        }
+      ]
+    },
+    {
+      "time": 16,
+      "positive": 68.89867841409692,
+      "negative": 31.101321585903086,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 479
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 186
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 108
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 108
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 86
+        }
+      ]
+    },
+    {
+      "time": 17,
+      "positive": 72.29102167182663,
+      "negative": 27.708978328173373,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 562
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 207
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 127
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 111
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 109
+        }
+      ]
+    },
+    {
+      "time": 18,
+      "positive": 71.53982300884955,
+      "negative": 28.460176991150444,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 595
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 223
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 138
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 123
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 121
+        }
+      ]
+    },
+    {
+      "time": 19,
+      "positive": 72.3440712816998,
+      "negative": 27.655928718300203,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 630
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 212
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 131
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 130
+        },
+        {
+          "emojicode": "\ud83d\ude15",
+          "number": 117
+        }
+      ]
+    },
+    {
+      "time": 20,
+      "positive": 70.30908523259444,
+      "negative": 29.69091476740556,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 638
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 216
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 151
+        },
+        {
+          "emojicode": "\ud83d\ude15",
+          "number": 144
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 135
+        }
+      ]
+    },
+    {
+      "time": 21,
+      "positive": 70.00993048659384,
+      "negative": 29.99006951340616,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 565
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 225
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 153
+        },
+        {
+          "emojicode": "\ud83d\ude15",
+          "number": 129
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 116
+        }
+      ]
+    },
+    {
+      "time": 22,
+      "positive": 68.71218668971478,
+      "negative": 31.287813310285223,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 440
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 180
+        },
+        {
+          "emojicode": "\ud83d\ude15",
+          "number": 113
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 112
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 97
+        }
+      ]
+    },
+    {
+      "time": 23,
+      "positive": 70.08227374719522,
+      "negative": 29.917726252804787,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 245
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 99
+        },
+        {
+          "emojicode": "\ud83d\ude15",
+          "number": 59
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 56
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 50
+        }
+      ]
+    }
+  ]
+}

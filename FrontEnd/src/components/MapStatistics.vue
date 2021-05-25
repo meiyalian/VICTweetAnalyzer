@@ -128,6 +128,7 @@ export default {
 
       console.log(DATA[0].age_distribution[0].five_to_nineteen);
       option = {
+
         title: {
           text: 'Age Level',
           left: 'center'
