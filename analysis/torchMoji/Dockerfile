@@ -17,4 +17,4 @@ WORKDIR /app/analysis
 RUN pip install .
 RUN echo 'y' | python scripts/download_weights.py
 
-CMD ["python3", "-u","sentiment.py"]
+ENTRYPOINT ["python3", "-u"]
