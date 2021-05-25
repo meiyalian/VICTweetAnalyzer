@@ -159,9 +159,13 @@ if __name__ == "__main__":
     parser.add_argument("--stream",  help="streaming twitter" , action = 'store_true')
     parser.add_argument("--location",  help="streaming twitter --> specify (x1, y1, x2, y2), default set to Victoria" , nargs=4 , metavar=('x1', 'y1', 'x2', 'y2'), default = VIC_bounding_box)
     parser.add_argument("--search",  help="search twitter" ,action = 'store_true')
+    parser.add_argument("--storeAurinData",  help="store data from Aurin" ,action = 'store_true')
     parser.add_argument("--area",  help="search twitter --> specify search area using string or default set to Victoria) " , default =VIC_geo)
     args = parser.parse_args()
 
+    if args.storeAurinData:
+        analyzer = AurinAnalyzer()
+        analyzer.store_in_db()
 
     if args.stream:
         print("Start streaming ....... ")
