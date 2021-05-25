@@ -8,6 +8,8 @@ import TwitterChart from "../components/Statistics/TwitterChart";
 import TwitterTime from "../components/Statistics/TwitterTime";
 import TwitterAge from "../components/Statistics/TwitterAge";
 import TwitterIncome from "../components/Statistics/TwitterIncome";
+import TwitterDensity from "../components/Statistics/TwitterDensity";
+import TwitterInfo from "../components/Statistics/TwitterInfo";
 import CoverPage from "../components/CoverPage";
 
 Vue.use(Router)
@@ -63,6 +65,16 @@ export default new Router({
                 path: '/twitterincome',
                 name: 'TwitterIncome',
                 component: TwitterIncome,
+              },
+              {
+                path: '/twitterdensity',
+                name: 'TwitterDensity',
+                component: TwitterDensity,
+              },
+              {
+                path: '/twitterinfo',
+                name: 'TwitterInfo',
+                component: TwitterInfo,
               },
 
             ]

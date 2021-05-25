@@ -13,6 +13,8 @@
         <el-menu-item index="/twittertime">TwitterAPI-Time</el-menu-item>
         <el-menu-item index="/twitterage">TwitterAPI-Age</el-menu-item>
         <el-menu-item index="/twitterincome">TwitterAPI-Income</el-menu-item>
+        <el-menu-item index="/twitterdensity">TwitterAPI-Density</el-menu-item>
+        <el-menu-item index="/twitterinfo">TwitterAPI-Information</el-menu-item>
 
         <!-- <el-menu-item index="4" disabled >Aurin</el-menu-item>
         <el-menu-item index="5" disabled>TwitterAPI</el-menu-item>

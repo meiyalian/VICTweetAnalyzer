@@ -8,17 +8,17 @@
 <script>
 import * as echarts from 'echarts';
 export default {
-  name: "twitterAge",
+  name: "twitterDensity",
   methods:{
     myEcharts(){
+
       var myChart = echarts.init(this.$refs.positive);
       var option;
 
 
       var data = genData(this.twitterAPI);
 
-       var colors = [ '#91CC75', '#EE6666','#5470C6'];
-      // ['#5470C6', '#91CC75', '#EE6666'];
+      var colors = [ '#91CC75', '#EE6666','#5470C6'];
 
       option = {
           color: colors,
@@ -33,7 +33,8 @@ export default {
               right: '20%'
           },
           title:{
-            text:"The Relation Between Age And Positive Sentiment"
+              text:"The Relation Between Density And Positive Sentiment"
+
           },
           toolbox: {
               feature: {
@@ -43,7 +44,7 @@ export default {
               }
           },
           legend: {
-              data: ['Average Age', 'Positive', 'Negative']
+              data: ['Population Density', 'Positive', 'Negative']
           },
           xAxis: [
               {
@@ -57,10 +58,10 @@ export default {
           yAxis: [
               {
                   type: 'value',
-                  name: 'Average Age',
+                  name: 'Population Density',
 
                   axisLabel: {
-                      formatter: '{value} years old'
+                      formatter: '{value} '
                   }
               },
               {
@@ -90,16 +91,14 @@ export default {
           },
         ],
           series: [
-              
-              {
-                  name: 'Average Age',
+            {
+                  name: 'Population Density',
                   type: 'bar',
                   itemStyle:{barBorderRadius: [3,3,0,0]},
-                  data: data.ageData
+                  data: data.densityData
 
 
               },
-
               {
                   name: 'Positive',
                   type: 'line',
@@ -108,16 +107,21 @@ export default {
                   data: data.positiveScore
 
               },
+
+              
+              
+
               
           ]
-      };   
-  
+      };
+
+
       function genData(twitterAPI) {
         var legendData = [];
         var seriesData = [];
         var negativeScore = [];
         var positiveScore = [];
-        var ageData = [];
+        var densityData = [];
 
         for (var obj in twitterAPI){
           legendData.push(twitterAPI[obj].ABB_NAME);
@@ -139,10 +143,10 @@ export default {
               value: twitterAPI[obj].negative
             }
           );
-          ageData.push(
+          densityData.push(
             {
               name: twitterAPI[obj].ABB_NAME,
-              value: twitterAPI[obj].age_distribution[0].medium_age
+              value: twitterAPI[obj].population_density
             }
           );
 
@@ -152,34 +156,22 @@ export default {
           seriesData: seriesData,
           positiveScore : positiveScore,
           negativeScore : negativeScore,
-          ageData:ageData
+          densityData:densityData
         };
       }
-
-       var zoomSize = 6;
-      myChart.on('click', function (params) {
-        console.log(dataAxis[Math.max(params.dataIndex - zoomSize / 2, 0)]);
-        myChart.dispatchAction({
-          type: 'dataZoom',
-          startValue: dataAxis[Math.max(params.dataIndex - zoomSize / 2, 0)],
-          endValue: dataAxis[Math.min(params.dataIndex + zoomSize / 2, data.length - 1)]
-        });
-      });
 
 
 
       option && myChart.setOption(option);
     },
     myEcharts2(){
-      var chartDom = document.getElementById('main');
       var myChart = echarts.init(this.$refs.negative);
       var option;
 
 
       var data = genData(this.twitterAPI);
 
-      var colors = [ '#91CC75', '#5470C6']
-      // ['#5470C6', '#91CC75', '#EE6666'];
+      var colors = [ '#91CC75', '#5470C6'];
 
       option = {
           color: colors,
@@ -194,7 +186,7 @@ export default {
               right: '20%'
           },
           title:{
-            text:"The Relation Between Age And Negative Sentiment"
+            text:"The Relation Between Density And Negative Sentiment"
           },
           toolbox: {
               feature: {
@@ -204,7 +196,7 @@ export default {
               }
           },
           legend: {
-              data: ['Average Age', 'Positive', 'Negative']
+              data: ['Population Density', 'Positive', 'Negative']
           },
           xAxis: [
               {
@@ -218,10 +210,10 @@ export default {
           yAxis: [
               {
                   type: 'value',
-                  name: 'Average Age',
+                  name: 'Population Density',
 
                   axisLabel: {
-                      formatter: '{value} years old'
+                      formatter: '{value} '
                   }
               },
               {
@@ -251,17 +243,16 @@ export default {
           },
         ],
           series: [
-              
-              {
-                  name: 'Average Age',
+            {
+                  name: 'Population Density',
                   type: 'bar',
                   itemStyle:{barBorderRadius: [3,3,0,0]},
-                  data: data.ageData
+                  data: data.densityData
 
 
               },
-
               
+
               {
                   name: 'Negative',
                   type: 'line',
@@ -270,15 +261,19 @@ export default {
                   data: data.negativeScore
 
               },
+              
+
+              
           ]
-      };   
-  
+      };
+
+
       function genData(twitterAPI) {
         var legendData = [];
         var seriesData = [];
         var negativeScore = [];
         var positiveScore = [];
-        var ageData = [];
+        var densityData = [];
 
         for (var obj in twitterAPI){
           legendData.push(twitterAPI[obj].ABB_NAME);
@@ -300,10 +295,10 @@ export default {
               value: twitterAPI[obj].negative
             }
           );
-          ageData.push(
+          densityData.push(
             {
               name: twitterAPI[obj].ABB_NAME,
-              value: twitterAPI[obj].age_distribution[0].medium_age
+              value: twitterAPI[obj].population_density
             }
           );
 
@@ -313,19 +308,9 @@ export default {
           seriesData: seriesData,
           positiveScore : positiveScore,
           negativeScore : negativeScore,
-          ageData:ageData
+          densityData:densityData
         };
       }
-
-       var zoomSize = 6;
-      myChart.on('click', function (params) {
-        console.log(dataAxis[Math.max(params.dataIndex - zoomSize / 2, 0)]);
-        myChart.dispatchAction({
-          type: 'dataZoom',
-          startValue: dataAxis[Math.max(params.dataIndex - zoomSize / 2, 0)],
-          endValue: dataAxis[Math.min(params.dataIndex + zoomSize / 2, data.length - 1)]
-        });
-      });
 
 
 
@@ -333,9 +318,6 @@ export default {
 
     }
   },
-
-  
-
   mounted() {
     this.axios
       .get('http://localhost:80/static/twitterAPI.json')
