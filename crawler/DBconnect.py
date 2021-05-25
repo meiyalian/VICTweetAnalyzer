@@ -21,8 +21,7 @@ def connect_to_database(database_name, server):
 
 dbserver = connect_to_couch_db_server(host, port, username, password)
 vic_tweets = connect_to_database("vic_tweets", dbserver)
-#test 
-aurin = connect_to_database("aurin", dbserver)
+
 
 def send_to_db(tweet, tid,  db = vic_tweets):
     try:

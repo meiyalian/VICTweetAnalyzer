@@ -132,11 +132,11 @@ def determine_location(areas_dict, coordinates, isBoundingBox = False):
 
 
 
-if __name__ == "__main__":  
+# if __name__ == "__main__":  
 
-    # first time storing the aea data: 
-    analyzer = AurinAnalyzer()
-    analyzer.store_in_db()
+#     # first time storing the aea data: 
+#     analyzer = AurinAnalyzer()
+#     analyzer.store_in_db()
 
 
 
