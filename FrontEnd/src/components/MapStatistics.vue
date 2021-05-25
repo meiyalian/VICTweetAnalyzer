@@ -12,11 +12,11 @@
             <div class="title">Top 5 Emoji</div>
             <el-row class="emoji">
               <el-col :span="2" style="color: white">a</el-col>
-              <el-col :span="4"> {{top_five_emojis[0].code}} </el-col>
-              <el-col :span="4"> {{top_five_emojis[1].code}} </el-col>
-              <el-col :span="4"> {{top_five_emojis[2].code}} </el-col>
-              <el-col :span="4"> {{top_five_emojis[3].code}} </el-col>
-              <el-col :span="4"> {{top_five_emojis[4].code}} </el-col>
+              <el-col :span="4"> {{top_five_emojis[0].emojicode}} </el-col>
+              <el-col :span="4"> {{top_five_emojis[1].emojicode}} </el-col>
+              <el-col :span="4"> {{top_five_emojis[2].emojicode}} </el-col>
+              <el-col :span="4"> {{top_five_emojis[3].emojicode}} </el-col>
+              <el-col :span="4"> {{top_five_emojis[4].emojicode}} </el-col>
               <el-col :span="2"></el-col>
             </el-row>
 
@@ -37,23 +37,24 @@ export default {
   props: ['ABB_NAME'],
   data() {
     return {
-      top_five_emojis:[{"code": '', ",ratio": null},
-        {"code": '', ",ratio": null},
-        {"code": '', ",ratio": null},
-        {"code": '', ",ratio": null},
-        {"code": '', ",ratio": null},
+      top_five_emojis:[
+        {"emojicode": '', ",number": null},
+        {"emojicode": '', ",number": null},
+        {"emojicode": '', ",number": null},
+        {"emojicode": '', ",number": null},
+        {"emojicode": '', ",number": null},
       ]
     }
   },
   mounted() {
     this.axios
-      .get('http://localhost:80/static/twitterAPI.json')
+      .get('http://localhost:80/static/twitterAPI_All.json')
       .then(response => (
-        this.twitterAPI = response.data.LGA,
-          this.myEcharts(),
-          this.myEcharts2(),
+        this.twitterAPI = response.data.data,
           this.number = this.LGANumber(),
-          this.top_five_emojis = response.data.LGA[this.number].top_five_emojis
+          this.top_five_emojis = response.data.data[this.number].top_five_emojis,
+          this.myEcharts(),
+          this.myEcharts2()
       ));
 
   },
@@ -65,7 +66,7 @@ export default {
       var ABB_NAME = this.ABB_NAME
 
       var DATA = this.twitterAPI.filter(function (f) {
-        return f.ABB_NAME == ABB_NAME
+        return f.area == ABB_NAME
       })
 
       option = {
@@ -123,10 +124,11 @@ export default {
       var ABB_NAME = this.ABB_NAME
 
       var DATA = this.twitterAPI.filter(function (f) {
-        return f.ABB_NAME == ABB_NAME
+        return f.area == ABB_NAME
       })
 
-      console.log(DATA[0].age_distribution[0].five_to_nineteen);
+      // console.log(DATA[0].age_distribution[0].five_to_nineteen);
+      // console.log(DATA[0].age_distribution.adults_ratio)
       option = {
 
         title: {
@@ -168,9 +170,10 @@ export default {
               show: false
             },
             data: [
-              {value: DATA[0].age_distribution[0].five_to_nineteen, name: 'Age level: 5-19'},
-              {value: DATA[0].age_distribution[0].twenty_to_thirtynine, name: 'Age level: 20-39'},
-              {value: DATA[0].age_distribution[0].forty_to_sixty, name: 'Age level: 40-60'},
+              {value: DATA[0].age_distribution.median_age, name: 'Age level: 5-19'},
+              {value: DATA[0].age_distribution.teenagers_and_young_adults_ratio, name: 'Age level: 20-39'},
+              {value: DATA[0].age_distribution.adults_ratio, name: 'Age level: 40-60'},
+              {value: DATA[0].age_distribution.middle_age_and_above_ratio, name: 'Age level: 40-60'},
             ]
           }
         ]
@@ -179,7 +182,7 @@ export default {
     },
     LGANumber(){
       for (var obj in this.twitterAPI){
-        if(this.twitterAPI[obj].ABB_NAME == this.ABB_NAME){
+        if(this.twitterAPI[obj].area == this.ABB_NAME){
           return obj;
         }
       }

@@ -1,0 +1,2624 @@
+{
+  "ok": true,
+  "data": [
+    {
+      "area": "Alpine (S)",
+      "positive": 69.92638036809817,
+      "negative": 30.07361963190184,
+      "age_distribution": {
+        "median_age": 48.4,
+        "teenagers_and_young_adults_ratio": 17.2,
+        "adults_ratio": 17.799999999999997,
+        "middle_age_and_above_ratio": 28.1
+      },
+      "population_density": 2.6761999130249,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 1825
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 656
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 381
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 357
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 292
+        }
+      ]
+    },
+    {
+      "area": "Ararat (RC)",
+      "positive": 70.37037037037037,
+      "negative": 29.629629629629626,
+      "age_distribution": {
+        "median_age": 46.5,
+        "teenagers_and_young_adults_ratio": 15.8,
+        "adults_ratio": 21.3,
+        "middle_age_and_above_ratio": 27
+      },
+      "population_density": 2.81279993057251,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 8
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 8
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 3
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 1
+        },
+        {
+          "emojicode": "\u2728",
+          "number": 1
+        }
+      ]
+    },
+    {
+      "area": "Ballarat (C)",
+      "positive": 67.82006920415225,
+      "negative": 32.17993079584775,
+      "age_distribution": {
+        "median_age": 37.4,
+        "teenagers_and_young_adults_ratio": 19,
+        "adults_ratio": 27.8,
+        "middle_age_and_above_ratio": 24
+      },
+      "population_density": 148.173492431641,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 887
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 384
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 256
+        },
+        {
+          "emojicode": "\ud83d\ude15",
+          "number": 231
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 224
+        }
+      ]
+    },
+    {
+      "area": "Banyule (C)",
+      "positive": 64.23590356644749,
+      "negative": 35.7640964335525,
+      "age_distribution": {
+        "median_age": 39.2,
+        "teenagers_and_young_adults_ratio": 17.6,
+        "adults_ratio": 27.599999999999998,
+        "middle_age_and_above_ratio": 25.799999999999997
+      },
+      "population_density": 2104.7421875,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 726
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 457
+        },
+        {
+          "emojicode": "\ud83d\ude15",
+          "number": 259
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 219
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 196
+        }
+      ]
+    },
+    {
+      "area": "Bass Coast (S)",
+      "positive": 66.76152532726238,
+      "negative": 33.238474672737624,
+      "age_distribution": {
+        "median_age": 49.7,
+        "teenagers_and_young_adults_ratio": 16.3,
+        "adults_ratio": 18,
+        "middle_age_and_above_ratio": 24.5
+      },
+      "population_density": 41.9491996765137,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 380
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 142
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 89
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 72
+        },
+        {
+          "emojicode": "\u2728",
+          "number": 55
+        }
+      ]
+    },
+    {
+      "area": "Baw Baw (S)",
+      "positive": 73.23943661971832,
+      "negative": 26.76056338028169,
+      "age_distribution": {
+        "median_age": 41,
+        "teenagers_and_young_adults_ratio": 19.4,
+        "adults_ratio": 23.4,
+        "middle_age_and_above_ratio": 24.700000000000003
+      },
+      "population_density": 13.257399559021,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 16
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 7
+        },
+        {
+          "emojicode": "\ud83d\udc80",
+          "number": 5
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 4
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 4
+        }
+      ]
+    },
+    {
+      "area": "Bayside (C)",
+      "positive": 64.12862687118832,
+      "negative": 35.871373128811676,
+      "age_distribution": {
+        "median_age": 43.8,
+        "teenagers_and_young_adults_ratio": 20.3,
+        "adults_ratio": 20.1,
+        "middle_age_and_above_ratio": 29.4
+      },
+      "population_density": 2871.77758789062,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 833
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 505
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 263
+        },
+        {
+          "emojicode": "\ud83d\ude15",
+          "number": 242
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 236
+        }
+      ]
+    },
+    {
+      "area": "Benalla (RC)",
+      "positive": 80.19801980198021,
+      "negative": 19.801980198019802,
+      "age_distribution": {
+        "median_age": 49.7,
+        "teenagers_and_young_adults_ratio": 16.5,
+        "adults_ratio": 18.6,
+        "middle_age_and_above_ratio": 25
+      },
+      "population_density": 5.96649980545044,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 45
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 8
+        },
+        {
+          "emojicode": "\ud83d\ude0b",
+          "number": 5
+        },
+        {
+          "emojicode": "\ud83d\ude0e",
+          "number": 4
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 4
+        }
+      ]
+    },
+    {
+      "area": "Boroondara (C)",
+      "positive": 62.5,
+      "negative": 37.5,
+      "age_distribution": {
+        "median_age": 37.5,
+        "teenagers_and_young_adults_ratio": 19.4,
+        "adults_ratio": 29.1,
+        "middle_age_and_above_ratio": 25.8
+      },
+      "population_density": 3044.31567382812,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 15
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 10
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 6
+        },
+        {
+          "emojicode": "\ud83c\udfb5",
+          "number": 4
+        },
+        {
+          "emojicode": "\ud83d\ude08",
+          "number": 3
+        }
+      ]
+    },
+    {
+      "area": "Brimbank (C)",
+      "positive": 82.06867316659601,
+      "negative": 17.931326833403986,
+      "age_distribution": {
+        "median_age": 35.7,
+        "teenagers_and_young_adults_ratio": 17.6,
+        "adults_ratio": 31.800000000000004,
+        "middle_age_and_above_ratio": 24.3
+      },
+      "population_density": 1697.9296875,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 1389
+        },
+        {
+          "emojicode": "\u2728",
+          "number": 319
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 262
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 230
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 186
+        }
+      ]
+    },
+    {
+      "area": "Buloke (S)",
+      "positive": 82.90598290598291,
+      "negative": 17.094017094017094,
+      "age_distribution": {
+        "median_age": 51.2,
+        "teenagers_and_young_adults_ratio": 17.7,
+        "adults_ratio": 15.1,
+        "middle_age_and_above_ratio": 26.299999999999997
+      },
+      "population_density": 0.765500009059906,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 87
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 16
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 14
+        },
+        {
+          "emojicode": "\ud83d\udc99",
+          "number": 9
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 7
+        }
+      ]
+    },
+    {
+      "area": "Campaspe (S)",
+      "positive": 71.71717171717171,
+      "negative": 28.28282828282828,
+      "age_distribution": {
+        "median_age": 45.6,
+        "teenagers_and_young_adults_ratio": 18.7,
+        "adults_ratio": 20.1,
+        "middle_age_and_above_ratio": 25.6
+      },
+      "population_density": 8.32559967041016,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 32
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 15
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 5
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 4
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 4
+        }
+      ]
+    },
+    {
+      "area": "Cardinia (S)",
+      "positive": 69.35048765304005,
+      "negative": 30.649512346959952,
+      "age_distribution": {
+        "median_age": 33.8,
+        "teenagers_and_young_adults_ratio": 21.2,
+        "adults_ratio": 29.8,
+        "middle_age_and_above_ratio": 24.4
+      },
+      "population_density": 87.4487991333008,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 987
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 529
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 253
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 240
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 161
+        }
+      ]
+    },
+    {
+      "area": "Casey (C)",
+      "positive": 71.37176938369781,
+      "negative": 28.628230616302186,
+      "age_distribution": {
+        "median_age": 33.6,
+        "teenagers_and_young_adults_ratio": 21.4,
+        "adults_ratio": 31.5,
+        "middle_age_and_above_ratio": 24.6
+      },
+      "population_density": 864.306396484375,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 769
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 395
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 220
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 204
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 137
+        }
+      ]
+    },
+    {
+      "area": "Central Goldfields (S)",
+      "positive": 69.43661971830986,
+      "negative": 30.56338028169014,
+      "age_distribution": {
+        "median_age": 50.6,
+        "teenagers_and_young_adults_ratio": 16.5,
+        "adults_ratio": 17.5,
+        "middle_age_and_above_ratio": 24.5
+      },
+      "population_density": 8.60260009765625,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 125
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 78
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 44
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 30
+        },
+        {
+          "emojicode": "\ud83d\ude33",
+          "number": 30
+        }
+      ]
+    },
+    {
+      "area": "Colac-Otway (S)",
+      "positive": 83.68794326241135,
+      "negative": 16.312056737588655,
+      "age_distribution": {
+        "median_age": 45.1,
+        "teenagers_and_young_adults_ratio": 18,
+        "adults_ratio": 21.4,
+        "middle_age_and_above_ratio": 24.9
+      },
+      "population_density": 6.27320003509521,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 51
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 10
+        },
+        {
+          "emojicode": "\ud83d\udc93",
+          "number": 9
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 8
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 8
+        }
+      ]
+    },
+    {
+      "area": "Corangamite (S)",
+      "positive": 67.53246753246754,
+      "negative": 32.467532467532465,
+      "age_distribution": {
+        "median_age": 46.8,
+        "teenagers_and_young_adults_ratio": 18.9,
+        "adults_ratio": 18.699999999999996,
+        "middle_age_and_above_ratio": 26.5
+      },
+      "population_density": 3.63470005989075,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 63
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 26
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 15
+        },
+        {
+          "emojicode": "\ud83d\ude15",
+          "number": 11
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 8
+        }
+      ]
+    },
+    {
+      "area": "Darebin (C)",
+      "positive": 69.98624011007912,
+      "negative": 30.013759889920884,
+      "age_distribution": {
+        "median_age": 35.7,
+        "teenagers_and_young_adults_ratio": 14.2,
+        "adults_ratio": 37.5,
+        "middle_age_and_above_ratio": 24.599999999999998
+      },
+      "population_density": 3070.5185546875,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 1483
+        },
+        {
+          "emojicode": "\ud83d\ude13",
+          "number": 441
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 434
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 315
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 310
+        }
+      ]
+    },
+    {
+      "area": "East Gippsland (S)",
+      "positive": 62.5,
+      "negative": 37.5,
+      "age_distribution": {
+        "median_age": 50.6,
+        "teenagers_and_young_adults_ratio": 16.5,
+        "adults_ratio": 17.299999999999997,
+        "middle_age_and_above_ratio": 23.9
+      },
+      "population_density": 2.25959992408752,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 14
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 6
+        },
+        {
+          "emojicode": "\ud83d\ude22",
+          "number": 5
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 4
+        },
+        {
+          "emojicode": "\ud83d\udc93",
+          "number": 3
+        }
+      ]
+    },
+    {
+      "area": "Frankston (C)",
+      "positive": 70.96286701208982,
+      "negative": 29.03713298791019,
+      "age_distribution": {
+        "median_age": 38.5,
+        "teenagers_and_young_adults_ratio": 17.7,
+        "adults_ratio": 27.8,
+        "middle_age_and_above_ratio": 26.6
+      },
+      "population_density": 1100.65734863281,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 1081
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 478
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 312
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 234
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 197
+        }
+      ]
+    },
+    {
+      "area": "Gannawarra (S)",
+      "positive": 79.38808373590982,
+      "negative": 20.611916264090176,
+      "age_distribution": {
+        "median_age": 50.2,
+        "teenagers_and_young_adults_ratio": 17.200000000000003,
+        "adults_ratio": 17,
+        "middle_age_and_above_ratio": 24.700000000000003
+      },
+      "population_density": 2.8034999370575,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 159
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 41
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 27
+        },
+        {
+          "emojicode": "\ud83d\ude0d",
+          "number": 27
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 26
+        }
+      ]
+    },
+    {
+      "area": "Glen Eira (C)",
+      "positive": 67.58324382384532,
+      "negative": 32.41675617615467,
+      "age_distribution": {
+        "median_age": 36.4,
+        "teenagers_and_young_adults_ratio": 17.7,
+        "adults_ratio": 31.9,
+        "middle_age_and_above_ratio": 24.9
+      },
+      "population_density": 4045.1943359375,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 757
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 408
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 275
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 203
+        },
+        {
+          "emojicode": "\ud83d\ude15",
+          "number": 197
+        }
+      ]
+    },
+    {
+      "area": "Glenelg (S)",
+      "positive": 40.0,
+      "negative": 60.0,
+      "age_distribution": {
+        "median_age": 48.4,
+        "teenagers_and_young_adults_ratio": 17.1,
+        "adults_ratio": 17.8,
+        "middle_age_and_above_ratio": 28.1
+      },
+      "population_density": 3.16370010375977,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc93",
+          "number": 1
+        },
+        {
+          "emojicode": "\ud83d\udc94",
+          "number": 1
+        },
+        {
+          "emojicode": "\ud83d\ude45",
+          "number": 1
+        },
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 1
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 1
+        }
+      ]
+    },
+    {
+      "area": "Golden Plains (S)",
+      "positive": 82.14285714285714,
+      "negative": 17.857142857142858,
+      "age_distribution": {
+        "median_age": 39.1,
+        "teenagers_and_young_adults_ratio": 23.2,
+        "adults_ratio": 21.8,
+        "middle_age_and_above_ratio": 28.5
+      },
+      "population_density": 8.77490043640137,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 9
+        },
+        {
+          "emojicode": "\ud83d\ude04",
+          "number": 3
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 2
+        },
+        {
+          "emojicode": "\ud83d\ude0c",
+          "number": 1
+        },
+        {
+          "emojicode": "\u2764",
+          "number": 1
+        }
+      ]
+    },
+    {
+      "area": "Greater Bendigo (C)",
+      "positive": 67.18223279793773,
+      "negative": 32.817767202062264,
+      "age_distribution": {
+        "median_age": 38.4,
+        "teenagers_and_young_adults_ratio": 19.5,
+        "adults_ratio": 26.200000000000003,
+        "middle_age_and_above_ratio": 24.4
+      },
+      "population_density": 39.3647003173828,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 937
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 426
+        },
+        {
+          "emojicode": "\ud83d\ude15",
+          "number": 349
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 229
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 203
+        }
+      ]
+    },
+    {
+      "area": "Greater Dandenong (C)",
+      "positive": 65.17113783533766,
+      "negative": 34.82886216466235,
+      "age_distribution": {
+        "median_age": 34.9,
+        "teenagers_and_young_adults_ratio": 17.1,
+        "adults_ratio": 33.99999999999999,
+        "middle_age_and_above_ratio": 22.5
+      },
+      "population_density": 1298.37915039062,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 649
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 445
+        },
+        {
+          "emojicode": "\ud83d\ude15",
+          "number": 187
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 185
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 172
+        }
+      ]
+    },
+    {
+      "area": "Greater Geelong (C)",
+      "positive": 69.99234009957871,
+      "negative": 30.007659900421295,
+      "age_distribution": {
+        "median_age": 38.8,
+        "teenagers_and_young_adults_ratio": 18,
+        "adults_ratio": 27.400000000000002,
+        "middle_age_and_above_ratio": 24.4
+      },
+      "population_density": 207.481201171875,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 807
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 327
+        },
+        {
+          "emojicode": "\ud83d\ude15",
+          "number": 326
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 252
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 239
+        }
+      ]
+    },
+    {
+      "area": "Greater Shepparton (C)",
+      "positive": 76.4905021628738,
+      "negative": 23.5094978371262,
+      "age_distribution": {
+        "median_age": 38.8,
+        "teenagers_and_young_adults_ratio": 20.2,
+        "adults_ratio": 24.5,
+        "middle_age_and_above_ratio": 24.9
+      },
+      "population_density": 27.4568004608154,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 894
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 778
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 353
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 322
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 210
+        }
+      ]
+    },
+    {
+      "area": "Hepburn (S)",
+      "positive": 49.816332297259116,
+      "negative": 50.183667702740884,
+      "age_distribution": {
+        "median_age": 50.5,
+        "teenagers_and_young_adults_ratio": 16,
+        "adults_ratio": 16.1,
+        "middle_age_and_above_ratio": 28.2
+      },
+      "population_density": 10.8452997207642,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\ude13",
+          "number": 1067
+        },
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 528
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 169
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 125
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 92
+        }
+      ]
+    },
+    {
+      "area": "Hindmarsh (S)",
+      "positive": 55.00000000000001,
+      "negative": 45.0,
+      "age_distribution": {
+        "median_age": 50.3,
+        "teenagers_and_young_adults_ratio": 16.3,
+        "adults_ratio": 17.5,
+        "middle_age_and_above_ratio": 25.200000000000003
+      },
+      "population_density": 0.742699980735779,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 39
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 38
+        },
+        {
+          "emojicode": "\ud83d\ude15",
+          "number": 19
+        },
+        {
+          "emojicode": "\ud83d\ude33",
+          "number": 10
+        },
+        {
+          "emojicode": "\ud83d\ude22",
+          "number": 9
+        }
+      ]
+    },
+    {
+      "area": "Hobsons Bay (C)",
+      "positive": 73.06409043374335,
+      "negative": 26.93590956625666,
+      "age_distribution": {
+        "median_age": 38.4,
+        "teenagers_and_young_adults_ratio": 16.9,
+        "adults_ratio": 28.8,
+        "middle_age_and_above_ratio": 26.900000000000002
+      },
+      "population_density": 1521.64367675781,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 5579
+        },
+        {
+          "emojicode": "\ud83d\ude13",
+          "number": 1699
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 1318
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 1062
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 1035
+        }
+      ]
+    },
+    {
+      "area": "Horsham (RC)",
+      "positive": 66.66666666666666,
+      "negative": 33.33333333333333,
+      "age_distribution": {
+        "median_age": 41.1,
+        "teenagers_and_young_adults_ratio": 19.1,
+        "adults_ratio": 23.3,
+        "middle_age_and_above_ratio": 24.400000000000002
+      },
+      "population_density": 4.66890001296997,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 565
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 309
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 137
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 115
+        },
+        {
+          "emojicode": "\ud83d\ude15",
+          "number": 95
+        }
+      ]
+    },
+    {
+      "area": "Hume (C)",
+      "positive": 56.96175787027256,
+      "negative": 43.03824212972744,
+      "age_distribution": {
+        "median_age": 33.1,
+        "teenagers_and_young_adults_ratio": 21,
+        "adults_ratio": 32.199999999999996,
+        "middle_age_and_above_ratio": 24
+      },
+      "population_density": 463.373596191406,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 861
+        },
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 750
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 199
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 195
+        },
+        {
+          "emojicode": "\ud83d\ude15",
+          "number": 181
+        }
+      ]
+    },
+    {
+      "area": "Indigo (S)",
+      "positive": 75.57289127254998,
+      "negative": 24.427108727450026,
+      "age_distribution": {
+        "median_age": 46.7,
+        "teenagers_and_young_adults_ratio": 19.1,
+        "adults_ratio": 17.099999999999998,
+        "middle_age_and_above_ratio": 29.099999999999998
+      },
+      "population_density": 8.18649959564209,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 695
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 148
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 88
+        },
+        {
+          "emojicode": "\ud83d\ude15",
+          "number": 77
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 74
+        }
+      ]
+    },
+    {
+      "area": "Kingston (C) (Vic.)",
+      "positive": 28.945601074546673,
+      "negative": 71.05439892545333,
+      "age_distribution": {
+        "median_age": 39.7,
+        "teenagers_and_young_adults_ratio": 17.2,
+        "adults_ratio": 27.5,
+        "middle_age_and_above_ratio": 27.200000000000003
+      },
+      "population_density": 1814.44873046875,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\ude13",
+          "number": 856
+        },
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 142
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 38
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 37
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 27
+        }
+      ]
+    },
+    {
+      "area": "Knox (C)",
+      "positive": 66.77577741407529,
+      "negative": 33.224222585924714,
+      "age_distribution": {
+        "median_age": 38.8,
+        "teenagers_and_young_adults_ratio": 17.9,
+        "adults_ratio": 28,
+        "middle_age_and_above_ratio": 26.6
+      },
+      "population_density": 1444.43713378906,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 766
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 614
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 238
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 179
+        },
+        {
+          "emojicode": "\u2728",
+          "number": 111
+        }
+      ]
+    },
+    {
+      "area": "Latrobe (C) (Vic.)",
+      "positive": 65.11627906976744,
+      "negative": 34.883720930232556,
+      "age_distribution": {
+        "median_age": 40.5,
+        "teenagers_and_young_adults_ratio": 17.9,
+        "adults_ratio": 25.500000000000004,
+        "middle_age_and_above_ratio": 24.9
+      },
+      "population_density": 53.002498626709,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 12
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 6
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 4
+        },
+        {
+          "emojicode": "\u270b",
+          "number": 3
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 2
+        }
+      ]
+    },
+    {
+      "area": "Loddon (S)",
+      "positive": 33.33333333333333,
+      "negative": 66.66666666666666,
+      "age_distribution": {
+        "median_age": 52.7,
+        "teenagers_and_young_adults_ratio": 17.200000000000003,
+        "adults_ratio": 13.5,
+        "middle_age_and_above_ratio": 27.5
+      },
+      "population_density": 1.12059998512268,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 2
+        },
+        {
+          "emojicode": "\ud83d\ude22",
+          "number": 1
+        }
+      ]
+    },
+    {
+      "area": "Macedon Ranges (S)",
+      "positive": 65.1754864520822,
+      "negative": 34.8245135479178,
+      "age_distribution": {
+        "median_age": 41.9,
+        "teenagers_and_young_adults_ratio": 21.5,
+        "adults_ratio": 19.9,
+        "middle_age_and_above_ratio": 29.4
+      },
+      "population_density": 28.7315998077393,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 1064
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 576
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 291
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 225
+        },
+        {
+          "emojicode": "\ud83d\ude15",
+          "number": 201
+        }
+      ]
+    },
+    {
+      "area": "Manningham (C)",
+      "positive": 72.90545734050731,
+      "negative": 27.0945426594927,
+      "age_distribution": {
+        "median_age": 41.8,
+        "teenagers_and_young_adults_ratio": 18,
+        "adults_ratio": 24.9,
+        "middle_age_and_above_ratio": 25.9
+      },
+      "population_density": 1125.50048828125,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 578
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 269
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 189
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 138
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 124
+        }
+      ]
+    },
+    {
+      "area": "Mansfield (S)",
+      "positive": 73.03370786516854,
+      "negative": 26.96629213483146,
+      "age_distribution": {
+        "median_age": 47.7,
+        "teenagers_and_young_adults_ratio": 19.700000000000003,
+        "adults_ratio": 17.5,
+        "middle_age_and_above_ratio": 25
+      },
+      "population_density": 2.38720011711121,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 81
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 31
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 23
+        },
+        {
+          "emojicode": "\ud83d\ude0e",
+          "number": 20
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 19
+        }
+      ]
+    },
+    {
+      "area": "Maribyrnong (C)",
+      "positive": 60.0,
+      "negative": 40.0,
+      "age_distribution": {
+        "median_age": 34,
+        "teenagers_and_young_adults_ratio": 13,
+        "adults_ratio": 42.6,
+        "middle_age_and_above_ratio": 24.000000000000004
+      },
+      "population_density": 2992.69189453125,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\ude0d",
+          "number": 1
+        },
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 1
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 1
+        },
+        {
+          "emojicode": "\ud83d\ude2c",
+          "number": 1
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 1
+        }
+      ]
+    },
+    {
+      "area": "Maroondah (C)",
+      "positive": 74.53027139874739,
+      "negative": 25.469728601252612,
+      "age_distribution": {
+        "median_age": 38.2,
+        "teenagers_and_young_adults_ratio": 18,
+        "adults_ratio": 28.200000000000003,
+        "middle_age_and_above_ratio": 26.1
+      },
+      "population_density": 1930.60705566406,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 364
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 171
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 113
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 59
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 58
+        }
+      ]
+    },
+    {
+      "area": "Melbourne (C)",
+      "positive": 77.77777777777779,
+      "negative": 22.22222222222222,
+      "age_distribution": {
+        "median_age": 28.5,
+        "teenagers_and_young_adults_ratio": 9.7,
+        "adults_ratio": 63.7,
+        "middle_age_and_above_ratio": 14.2
+      },
+      "population_density": 4791.1318359375,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 76
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 13
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 7
+        },
+        {
+          "emojicode": "\ud83d\ude37",
+          "number": 7
+        },
+        {
+          "emojicode": "\ud83d\ude0b",
+          "number": 7
+        }
+      ]
+    },
+    {
+      "area": "Melton (C)",
+      "positive": 65.26996625421823,
+      "negative": 34.73003374578178,
+      "age_distribution": {
+        "median_age": 32.8,
+        "teenagers_and_young_adults_ratio": 22.6,
+        "adults_ratio": 31.6,
+        "middle_age_and_above_ratio": 24.700000000000003
+      },
+      "population_density": 312.575012207031,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 538
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 471
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 200
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 149
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 133
+        }
+      ]
+    },
+    {
+      "area": "Mildura (RC)",
+      "positive": 71.41052631578947,
+      "negative": 28.589473684210525,
+      "age_distribution": {
+        "median_age": 38.9,
+        "teenagers_and_young_adults_ratio": 19,
+        "adults_ratio": 25.6,
+        "middle_age_and_above_ratio": 24.199999999999996
+      },
+      "population_density": 2.52579998970032,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 712
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 323
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 263
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 210
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 152
+        }
+      ]
+    },
+    {
+      "area": "Mitchell (S)",
+      "positive": 64.37104708362614,
+      "negative": 35.628952916373855,
+      "age_distribution": {
+        "median_age": 36.6,
+        "teenagers_and_young_adults_ratio": 20.6,
+        "adults_ratio": 26.900000000000002,
+        "middle_age_and_above_ratio": 25.799999999999997
+      },
+      "population_density": 16.1009006500244,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 247
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 148
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 89
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 67
+        },
+        {
+          "emojicode": "\ud83d\ude15",
+          "number": 55
+        }
+      ]
+    },
+    {
+      "area": "Moira (S)",
+      "positive": 63.42412451361867,
+      "negative": 36.57587548638132,
+      "age_distribution": {
+        "median_age": 47.2,
+        "teenagers_and_young_adults_ratio": 17.799999999999997,
+        "adults_ratio": 19.400000000000002,
+        "middle_age_and_above_ratio": 24.6
+      },
+      "population_density": 7.39550018310547,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 725
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 610
+        },
+        {
+          "emojicode": "\ud83d\ude15",
+          "number": 222
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 86
+        },
+        {
+          "emojicode": "\ud83d\ude33",
+          "number": 85
+        }
+      ]
+    },
+    {
+      "area": "Monash (C)",
+      "positive": 65.06849315068493,
+      "negative": 34.93150684931507,
+      "age_distribution": {
+        "median_age": 35.1,
+        "teenagers_and_young_adults_ratio": 17.200000000000003,
+        "adults_ratio": 34.5,
+        "middle_age_and_above_ratio": 22.9
+      },
+      "population_density": 2489.44262695312,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 46
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 42
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 15
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 14
+        },
+        {
+          "emojicode": "\ud83d\ude15",
+          "number": 12
+        }
+      ]
+    },
+    {
+      "area": "Moonee Valley (C)",
+      "positive": 50.0,
+      "negative": 50.0,
+      "age_distribution": {
+        "median_age": 37.7,
+        "teenagers_and_young_adults_ratio": 16.3,
+        "adults_ratio": 31.5,
+        "middle_age_and_above_ratio": 25.8
+      },
+      "population_density": 3020.35766601562,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 2
+        },
+        {
+          "emojicode": "\ud83d\udc99",
+          "number": 2
+        }
+      ]
+    },
+    {
+      "area": "Moorabool (S)",
+      "positive": 68.9090909090909,
+      "negative": 31.09090909090909,
+      "age_distribution": {
+        "median_age": 39.6,
+        "teenagers_and_young_adults_ratio": 20.2,
+        "adults_ratio": 24.2,
+        "middle_age_and_above_ratio": 27.6
+      },
+      "population_density": 16.6065998077393,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 90
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 32
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 27
+        },
+        {
+          "emojicode": "\ud83d\ude37",
+          "number": 26
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 25
+        }
+      ]
+    },
+    {
+      "area": "Moreland (C)",
+      "positive": 71.42857142857143,
+      "negative": 28.57142857142857,
+      "age_distribution": {
+        "median_age": 34.6,
+        "teenagers_and_young_adults_ratio": 13.799999999999999,
+        "adults_ratio": 40.3,
+        "middle_age_and_above_ratio": 23
+      },
+      "population_density": 3645.9287109375,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 3
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 1
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 1
+        },
+        {
+          "emojicode": "\ud83d\udc99",
+          "number": 1
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 1
+        }
+      ]
+    },
+    {
+      "area": "Mornington Peninsula (S)",
+      "positive": 78.77870300277567,
+      "negative": 21.221296997224325,
+      "age_distribution": {
+        "median_age": 46.3,
+        "teenagers_and_young_adults_ratio": 17.9,
+        "adults_ratio": 19.6,
+        "middle_age_and_above_ratio": 25.799999999999997
+      },
+      "population_density": 231.48779296875,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 1149
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 276
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 226
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 213
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 178
+        }
+      ]
+    },
+    {
+      "area": "Mount Alexander (S)",
+      "positive": 65.49364613880742,
+      "negative": 34.50635386119257,
+      "age_distribution": {
+        "median_age": 49.7,
+        "teenagers_and_young_adults_ratio": 15.7,
+        "adults_ratio": 17.4,
+        "middle_age_and_above_ratio": 28.6
+      },
+      "population_density": 12.9142999649048,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 932
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 474
+        },
+        {
+          "emojicode": "\ud83d\ude15",
+          "number": 285
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 191
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 179
+        }
+      ]
+    },
+    {
+      "area": "Moyne (S)",
+      "positive": 81.55932203389831,
+      "negative": 18.440677966101696,
+      "age_distribution": {
+        "median_age": 43.5,
+        "teenagers_and_young_adults_ratio": 21.1,
+        "adults_ratio": 19.2,
+        "middle_age_and_above_ratio": 26.9
+      },
+      "population_density": 3.09270000457764,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 261
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 238
+        },
+        {
+          "emojicode": "\ud83d\ude15",
+          "number": 158
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 152
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 112
+        }
+      ]
+    },
+    {
+      "area": "Murrindindi (S)",
+      "positive": 80.76923076923077,
+      "negative": 19.230769230769234,
+      "age_distribution": {
+        "median_age": 48.1,
+        "teenagers_and_young_adults_ratio": 16.5,
+        "adults_ratio": 19.1,
+        "middle_age_and_above_ratio": 27.599999999999998
+      },
+      "population_density": 3.75539994239807,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 18
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 8
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 4
+        },
+        {
+          "emojicode": "\ud83d\udc99",
+          "number": 4
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 3
+        }
+      ]
+    },
+    {
+      "area": "Nillumbik (S)",
+      "positive": 72.69911504424779,
+      "negative": 27.300884955752213,
+      "age_distribution": {
+        "median_age": 41,
+        "teenagers_and_young_adults_ratio": 21.4,
+        "adults_ratio": 22.3,
+        "middle_age_and_above_ratio": 30
+      },
+      "population_density": 150.563003540039,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 557
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 242
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 131
+        },
+        {
+          "emojicode": "\u2728",
+          "number": 93
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 84
+        }
+      ]
+    },
+    {
+      "area": "Northern Grampians (S)",
+      "positive": 77.67857142857143,
+      "negative": 22.321428571428573,
+      "age_distribution": {
+        "median_age": 48.9,
+        "teenagers_and_young_adults_ratio": 16.2,
+        "adults_ratio": 19.1,
+        "middle_age_and_above_ratio": 26.3
+      },
+      "population_density": 1.98989999294281,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 34
+        },
+        {
+          "emojicode": "\ud83d\ude0b",
+          "number": 14
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 7
+        },
+        {
+          "emojicode": "\ud83d\ude0e",
+          "number": 6
+        },
+        {
+          "emojicode": "\ud83d\ude02",
+          "number": 5
+        }
+      ]
+    },
+    {
+      "area": "Port Phillip (C)",
+      "positive": 52.38095238095239,
+      "negative": 47.61904761904761,
+      "age_distribution": {
+        "median_age": 36.3,
+        "teenagers_and_young_adults_ratio": 10,
+        "adults_ratio": 42.5,
+        "middle_age_and_above_ratio": 26.1
+      },
+      "population_density": 5582.1083984375,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\ude0d",
+          "number": 5
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 3
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 2
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 2
+        },
+        {
+          "emojicode": "\ud83d\ude37",
+          "number": 2
+        }
+      ]
+    },
+    {
+      "area": "Pyrenees (S)",
+      "positive": 69.42355889724311,
+      "negative": 30.576441102756892,
+      "age_distribution": {
+        "median_age": 50.7,
+        "teenagers_and_young_adults_ratio": 16.6,
+        "adults_ratio": 15.5,
+        "middle_age_and_above_ratio": 27.9
+      },
+      "population_density": 2.17549991607666,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 65
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 47
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 28
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 18
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 16
+        }
+      ]
+    },
+    {
+      "area": "Queenscliffe (B)",
+      "positive": 71.47630619684082,
+      "negative": 28.523693803159173,
+      "age_distribution": {
+        "median_age": 61.2,
+        "teenagers_and_young_adults_ratio": 12.7,
+        "adults_ratio": 11.1,
+        "middle_age_and_above_ratio": 21.1
+      },
+      "population_density": 341.201904296875,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 1139
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 505
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 347
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 314
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 195
+        }
+      ]
+    },
+    {
+      "area": "South Gippsland (S)",
+      "positive": 68.47826086956522,
+      "negative": 31.521739130434785,
+      "age_distribution": {
+        "median_age": 47.4,
+        "teenagers_and_young_adults_ratio": 18.7,
+        "adults_ratio": 17.799999999999997,
+        "middle_age_and_above_ratio": 26.2
+      },
+      "population_density": 9.07489967346191,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 85
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 43
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 16
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 14
+        },
+        {
+          "emojicode": "\ud83d\ude33",
+          "number": 14
+        }
+      ]
+    },
+    {
+      "area": "Southern Grampians (S)",
+      "positive": 0.0,
+      "negative": 100.0,
+      "age_distribution": {
+        "median_age": 46.6,
+        "teenagers_and_young_adults_ratio": 18.200000000000003,
+        "adults_ratio": 19,
+        "middle_age_and_above_ratio": 25.5
+      },
+      "population_density": 2.41960000991821,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc40",
+          "number": 1
+        }
+      ]
+    },
+    {
+      "area": "Stonnington (C)",
+      "positive": 54.54545454545454,
+      "negative": 45.45454545454545,
+      "age_distribution": {
+        "median_age": 34.6,
+        "teenagers_and_young_adults_ratio": 12.1,
+        "adults_ratio": 42.599999999999994,
+        "middle_age_and_above_ratio": 21.8
+      },
+      "population_density": 4591.09423828125,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\ude33",
+          "number": 2
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 2
+        },
+        {
+          "emojicode": "\ud83d\udc94",
+          "number": 1
+        },
+        {
+          "emojicode": "\ud83d\ude22",
+          "number": 1
+        },
+        {
+          "emojicode": "\ud83d\ude14",
+          "number": 1
+        }
+      ]
+    },
+    {
+      "area": "Strathbogie (S)",
+      "positive": 65.13157894736842,
+      "negative": 34.868421052631575,
+      "age_distribution": {
+        "median_age": 52,
+        "teenagers_and_young_adults_ratio": 15.1,
+        "adults_ratio": 17.8,
+        "middle_age_and_above_ratio": 24.6
+      },
+      "population_density": 3.26370000839233,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 38
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 12
+        },
+        {
+          "emojicode": "\ud83d\ude33",
+          "number": 11
+        },
+        {
+          "emojicode": "\ud83d\udd2b",
+          "number": 9
+        },
+        {
+          "emojicode": "\ud83d\udc40",
+          "number": 8
+        }
+      ]
+    },
+    {
+      "area": "Surf Coast (S)",
+      "positive": 76.38190954773869,
+      "negative": 23.618090452261306,
+      "age_distribution": {
+        "median_age": 41.7,
+        "teenagers_and_young_adults_ratio": 20.1,
+        "adults_ratio": 21.200000000000003,
+        "middle_age_and_above_ratio": 27.6
+      },
+      "population_density": 21.5436000823975,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 46
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 16
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 11
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 11
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 9
+        }
+      ]
+    },
+    {
+      "area": "Swan Hill (RC)",
+      "positive": 66.66666666666666,
+      "negative": 33.33333333333333,
+      "age_distribution": {
+        "median_age": 39.9,
+        "teenagers_and_young_adults_ratio": 18.799999999999997,
+        "adults_ratio": 24.7,
+        "middle_age_and_above_ratio": 24
+      },
+      "population_density": 3.37660002708435,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 1
+        },
+        {
+          "emojicode": "\ud83d\udd2b",
+          "number": 1
+        },
+        {
+          "emojicode": "\ud83d\ude0d",
+          "number": 1
+        }
+      ]
+    },
+    {
+      "area": "Towong (S)",
+      "positive": 75.52447552447552,
+      "negative": 24.475524475524477,
+      "age_distribution": {
+        "median_age": 51.1,
+        "teenagers_and_young_adults_ratio": 17,
+        "adults_ratio": 15.8,
+        "middle_age_and_above_ratio": 26.7
+      },
+      "population_density": 0.904900014400482,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 35
+        },
+        {
+          "emojicode": "\ud83d\ude0e",
+          "number": 16
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 11
+        },
+        {
+          "emojicode": "\ud83d\ude04",
+          "number": 10
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 6
+        }
+      ]
+    },
+    {
+      "area": "Unincorporated Vic",
+      "positive": 0,
+      "negative": 0,
+      "age_distribution": {
+        "median_age": 34.2,
+        "teenagers_and_young_adults_ratio": 15,
+        "adults_ratio": 42.699999999999996,
+        "middle_age_and_above_ratio": 23
+      },
+      "population_density": 3.11290001869202,
+      "top_five_emojis": []
+    },
+    {
+      "area": "Wangaratta (RC)",
+      "positive": 60.64064801178203,
+      "negative": 39.359351988217966,
+      "age_distribution": {
+        "median_age": 45,
+        "teenagers_and_young_adults_ratio": 19.2,
+        "adults_ratio": 19.6,
+        "middle_age_and_above_ratio": 25.9
+      },
+      "population_density": 8.00720024108887,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 406
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 305
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 118
+        },
+        {
+          "emojicode": "\ud83d\ude33",
+          "number": 106
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 99
+        }
+      ]
+    },
+    {
+      "area": "Warrnambool (C)",
+      "positive": 73.38684779252856,
+      "negative": 26.61315220747144,
+      "age_distribution": {
+        "median_age": 39.9,
+        "teenagers_and_young_adults_ratio": 18.4,
+        "adults_ratio": 26.1,
+        "middle_age_and_above_ratio": 24.5
+      },
+      "population_density": 290.875091552734,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 703
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 207
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 183
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 177
+        },
+        {
+          "emojicode": "\ud83d\ude15",
+          "number": 122
+        }
+      ]
+    },
+    {
+      "area": "Wellington (S)",
+      "positive": 71.70762444864525,
+      "negative": 28.29237555135476,
+      "age_distribution": {
+        "median_age": 43.4,
+        "teenagers_and_young_adults_ratio": 17.9,
+        "adults_ratio": 22.700000000000003,
+        "middle_age_and_above_ratio": 25.700000000000003
+      },
+      "population_density": 4.10270023345947,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 296
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 99
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 70
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 65
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 65
+        }
+      ]
+    },
+    {
+      "area": "West Wimmera (S)",
+      "positive": 0.0,
+      "negative": 100.0,
+      "age_distribution": {
+        "median_age": 48.8,
+        "teenagers_and_young_adults_ratio": 17.4,
+        "adults_ratio": 17.299999999999997,
+        "middle_age_and_above_ratio": 27.1
+      },
+      "population_density": 0.421700000762939,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\ude37",
+          "number": 1
+        }
+      ]
+    },
+    {
+      "area": "Whitehorse (C)",
+      "positive": 100.0,
+      "negative": 0.0,
+      "age_distribution": {
+        "median_age": 36.7,
+        "teenagers_and_young_adults_ratio": 17.6,
+        "adults_ratio": 31.7,
+        "middle_age_and_above_ratio": 24.4
+      },
+      "population_density": 2780.63159179688,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 16
+        }
+      ]
+    },
+    {
+      "area": "Whittlesea (C)",
+      "positive": 69.82097186700767,
+      "negative": 30.179028132992325,
+      "age_distribution": {
+        "median_age": 34.3,
+        "teenagers_and_young_adults_ratio": 19.2,
+        "adults_ratio": 33,
+        "middle_age_and_above_ratio": 23.8
+      },
+      "population_density": 470.167205810547,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 182
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 117
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 76
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 47
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 43
+        }
+      ]
+    },
+    {
+      "area": "Wodonga (C)",
+      "positive": 68.84007029876977,
+      "negative": 31.159929701230226,
+      "age_distribution": {
+        "median_age": 35.9,
+        "teenagers_and_young_adults_ratio": 20.4,
+        "adults_ratio": 27.6,
+        "middle_age_and_above_ratio": 24.2
+      },
+      "population_density": 97.2591018676758,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 606
+        },
+        {
+          "emojicode": "\ud83d\udc4f",
+          "number": 359
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 353
+        },
+        {
+          "emojicode": "\ud83d\ude0d",
+          "number": 334
+        },
+        {
+          "emojicode": "\ud83d\ude37",
+          "number": 252
+        }
+      ]
+    },
+    {
+      "area": "Wyndham (C)",
+      "positive": 71.30460801915021,
+      "negative": 28.695391980849788,
+      "age_distribution": {
+        "median_age": 32.5,
+        "teenagers_and_young_adults_ratio": 21.6,
+        "adults_ratio": 35,
+        "middle_age_and_above_ratio": 22.6
+      },
+      "population_density": 498.966094970703,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 783
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 376
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 262
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 158
+        },
+        {
+          "emojicode": "\ud83d\ude0b",
+          "number": 128
+        }
+      ]
+    },
+    {
+      "area": "Yarra (C)",
+      "positive": 86.11111111111111,
+      "negative": 13.88888888888889,
+      "age_distribution": {
+        "median_age": 33.7,
+        "teenagers_and_young_adults_ratio": 9.3,
+        "adults_ratio": 49.3,
+        "middle_age_and_above_ratio": 21.8
+      },
+      "population_density": 5193.552734375,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 15
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 9
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 3
+        },
+        {
+          "emojicode": "\ud83c\udfb6",
+          "number": 2
+        },
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 2
+        }
+      ]
+    },
+    {
+      "area": "Yarra Ranges (S)",
+      "positive": 60.63321385902031,
+      "negative": 39.366786140979684,
+      "age_distribution": {
+        "median_age": 39.4,
+        "teenagers_and_young_adults_ratio": 19,
+        "adults_ratio": 25.4,
+        "middle_age_and_above_ratio": 26.999999999999996
+      },
+      "population_density": 64.6064987182617,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\ude21",
+          "number": 268
+        },
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 250
+        },
+        {
+          "emojicode": "\ud83d\udcaa",
+          "number": 77
+        },
+        {
+          "emojicode": "\u2728",
+          "number": 74
+        },
+        {
+          "emojicode": "\ud83d\ude4f",
+          "number": 62
+        }
+      ]
+    },
+    {
+      "area": "Yarriambiack (S)",
+      "positive": 80.0,
+      "negative": 20.0,
+      "age_distribution": {
+        "median_age": 50.9,
+        "teenagers_and_young_adults_ratio": 17.299999999999997,
+        "adults_ratio": 17.1,
+        "middle_age_and_above_ratio": 25.1
+      },
+      "population_density": 0.906199991703033,
+      "top_five_emojis": [
+        {
+          "emojicode": "\ud83d\udc4d",
+          "number": 4
+        },
+        {
+          "emojicode": "\u2728",
+          "number": 2
+        },
+        {
+          "emojicode": "\u270b",
+          "number": 2
+        },
+        {
+          "emojicode": "\ud83d\ude45",
+          "number": 1
+        },
+        {
+          "emojicode": "\ud83d\udc99",
+          "number": 1
+        }
+      ]
+    }
+  ]
+}
