@@ -7,7 +7,6 @@ from torchmoji.sentence_tokenizer import SentenceTokenizer
 from torchmoji.model_def import torchmoji_emojis
 import couchdb  # importing couchdb
 from datetime import datetime
-import time
 
 
 EMOJIS = ":joy: :unamused: :weary: :sob: :heart_eyes: :pensive: :ok_hand: :blush: :heart: :smirk: :grin: :notes: :flushed: :100: :sleeping: :relieved: :relaxed: :raised_hands: :two_hearts: :expressionless: :sweat_smile: :pray: :confused: :kissing_heart: :heartbeat: :neutral_face: :information_desk_person: :disappointed: :see_no_evil: :tired_face: :v: :sunglasses: :rage: :thumbsup: :cry: :sleepy: :yum: :triumph: :hand: :mask: :clap: :eyes: :gun: :persevere: :smiling_imp: :sweat: :broken_heart: :yellow_heart: :musical_note: :speak_no_evil: :wink: :skull: :confounded: :smile: :stuck_out_tongue_winking_eye: :angry: :no_good: :muscle: :facepunch: :purple_heart: :sparkling_heart: :blue_heart: :grimacing: :sparkles:".split(
@@ -173,20 +172,20 @@ if __name__ == '__main__':
     dbserver = connect_to_couch_db_server(host, port, username, password)
     vic_tweets = connect_to_database("vic_tweets", dbserver)
     analysis = connect_to_database("analysis", dbserver)
-
+    #test_db = connect_to_database("test_db",dbserver)
     # sentiment_tweets_db = connect_to_database("sentiment_tweets", dbserver)
-    # since = 1
+   #since = 1
     count = 0
     firstTime = True
-    since = ""
+    analysis_count = 0
+    since =""
     while True:
         try:
             if firstTime:
-                changes = vic_tweets.changes( limit = 5000,  filter="vic_tweets/important" )
+                changes = vic_tweets.changes(limit = 5000,  filter="vic_tweets/important" )
                 firstTime = False
-            else: 
+            else:
                 changes = vic_tweets.changes(since=since, limit = 5000,  filter="vic_tweets/important" )
-
             
             since = changes["last_seq"]
             for changeset in changes["results"]:
@@ -196,15 +195,16 @@ if __name__ == '__main__':
                     continue
                 else:
                     analysis_id = changeset["id"] + "_analysis"
+                    analysis_count +=1
+                    if analysis_count % 2000 == 0:
+                        print("check {} tweets.".format(analysis_count))
                     if analysis_id not in analysis:
                         try:
                             txt = doc['text']
                             p_txt = process_tweets(txt)
                             time = doc['time']
-
                             datetime_t = datetime.strptime(time, '%Y-%m-%d %H:%M:%S')
                             hour = datetime_t.hour
-                            #to do: categorized to hour value 0~24
                             location = doc['location']
                             score = get_score(p_txt)
                             hash_tag = get_hashtags(p_txt)
@@ -215,26 +215,17 @@ if __name__ == '__main__':
                                 "score": score,
                                 "hashtags": hash_tag,
                                 "emoji": emojis,
-                                "hour": hour, #change this 
+                                "hour": hour,
                                 "location": location,
                                 "ts": datetime.now().strftime("%d/%m/%Y %H:%M:%S")
                             }
                             analysis[analysis_id] = sentiment
-                            print("save!")
                             count += 1
-
                             if count % 100 == 0:
                                 print("save {} tweets.".format(count))
-                            time.sleep(50)
-
-                        except Exception:
+                        except:
                             continue
-                            print("SOMETHING WENT WRONG!")
-
-
-
-
+                            
         except KeyboardInterrupt:
             print("End Session.")
             break
-
