@@ -182,17 +182,18 @@ if __name__ == '__main__':
     since = ""
     while True:
         try:
+            
             if firstTime:
                 changes = vic_tweets.changes( limit = 5000,  filter="vic_tweets/important" )
                 firstTime = False
             else: 
                 changes = vic_tweets.changes(since=since, limit = 5000,  filter="vic_tweets/important" )
 
-            
             since = changes["last_seq"]
             for changeset in changes["results"]:
                 try:
                     doc = vic_tweets[changeset["id"]]
+
                 except couchdb.http.ResourceNotFound:
                     continue
                 else:
@@ -226,14 +227,12 @@ if __name__ == '__main__':
 
                             if count % 100 == 0:
                                 print("save {} tweets.".format(count))
-                            time.sleep(50)
+                            time.sleep(10)
 
-                        except Exception:
+                        except Exception as e:
                             continue
+                            print(e)
                             print("SOMETHING WENT WRONG!")
-
-
-
 
         except KeyboardInterrupt:
             print("End Session.")

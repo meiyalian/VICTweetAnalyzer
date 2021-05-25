@@ -59,7 +59,7 @@ while True:
             hour_dict[each.key] =  {"emojis": {}, "positive": 0, "negative": 0}
             hour_dict[each.key]["positive"] = each.value
         
-        for each in hour_pos:
+        for each in hour_neg:
             hour_dict[each.key]["negative"] = each.value
 
         for each in emoji_counts:
@@ -70,7 +70,7 @@ while True:
             area_dict[each.key]["emojis"][emoji] = area_dict[each.key]["emojis"].get(emoji, 0) + 1
 
 
-       
+
         area_stas = {
             "type": "statistics",
             "ts": datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
