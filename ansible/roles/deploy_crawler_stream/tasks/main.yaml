@@ -7,10 +7,10 @@
     yes
   shell: docker build -t comp90024/crawler-stream .
   args:
-    chdir: /home/ubuntu/COMP90024/comp90024/crawler
+    chdir: /home/ubuntu/COMP90024/comp90024/crawler/crawler_stream
 - name: run docker
   become:
     yes
-  shell: docker run -d comp90024/crawler-stream --stream
+  shell: docker run -d comp90024/crawler-stream
   args:
-    chdir: /home/ubuntu/COMP90024/comp90024/crawler
+    chdir: /home/ubuntu/COMP90024/comp90024/crawler/crawler_stream
