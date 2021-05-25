@@ -1,0 +1,485 @@
+{
+  "ok": true,
+  "data": [
+    {
+      "area": "Alpine (S)",
+      "positive": 69.90791896869246,
+      "negative": 30.09208103130755,
+      "income_average": 38000
+    },
+    {
+      "area": "Ararat (RC)",
+      "positive": 81.25,
+      "negative": 18.75,
+      "income_average": 41603
+    },
+    {
+      "area": "Ballarat (C)",
+      "positive": 67.8142187818293,
+      "negative": 32.1857812181707,
+      "income_average": 46105
+    },
+    {
+      "area": "Banyule (C)",
+      "positive": 64.22877640494221,
+      "negative": 35.77122359505779,
+      "income_average": 54559
+    },
+    {
+      "area": "Bass Coast (S)",
+      "positive": 64.1851106639839,
+      "negative": 35.8148893360161,
+      "income_average": 37826
+    },
+    {
+      "area": "Baw Baw (S)",
+      "positive": 68.57142857142857,
+      "negative": 31.428571428571427,
+      "income_average": 44741
+    },
+    {
+      "area": "Bayside (C)",
+      "positive": 64.72491909385113,
+      "negative": 35.275080906148865,
+      "income_average": 58166
+    },
+    {
+      "area": "Benalla (RC)",
+      "positive": 86.07594936708861,
+      "negative": 13.924050632911392,
+      "income_average": 42775
+    },
+    {
+      "area": "Boroondara (C)",
+      "positive": 100.0,
+      "negative": 0.0,
+      "income_average": 55127
+    },
+    {
+      "area": "Brimbank (C)",
+      "positive": 85.71428571428571,
+      "negative": 14.285714285714285,
+      "income_average": 44455
+    },
+    {
+      "area": "Buloke (S)",
+      "positive": 82.7433628318584,
+      "negative": 17.25663716814159,
+      "income_average": 35089
+    },
+    {
+      "area": "Campaspe (S)",
+      "positive": 72.22222222222221,
+      "negative": 27.77777777777778,
+      "income_average": 42875
+    },
+    {
+      "area": "Cardinia (S)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 48044
+    },
+    {
+      "area": "Casey (C)",
+      "positive": 67.81305114638448,
+      "negative": 32.18694885361552,
+      "income_average": 48397
+    },
+    {
+      "area": "Central Goldfields (S)",
+      "positive": 67.07317073170732,
+      "negative": 32.926829268292686,
+      "income_average": 38557
+    },
+    {
+      "area": "Colac-Otway (S)",
+      "positive": 84.28571428571429,
+      "negative": 15.714285714285714,
+      "income_average": 41124
+    },
+    {
+      "area": "Corangamite (S)",
+      "positive": 66.0919540229885,
+      "negative": 33.90804597701149,
+      "income_average": 39085
+    },
+    {
+      "area": "Darebin (C)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 50035
+    },
+    {
+      "area": "East Gippsland (S)",
+      "positive": 44.0,
+      "negative": 56.00000000000001,
+      "income_average": 38908
+    },
+    {
+      "area": "Frankston (C)",
+      "positive": 69.88938959442851,
+      "negative": 30.110610405571485,
+      "income_average": 49208
+    },
+    {
+      "area": "Gannawarra (S)",
+      "positive": 78.94736842105263,
+      "negative": 21.052631578947366,
+      "income_average": 38740
+    },
+    {
+      "area": "Glen Eira (C)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 53000
+    },
+    {
+      "area": "Glenelg (S)",
+      "positive": 50.0,
+      "negative": 50.0,
+      "income_average": 43043
+    },
+    {
+      "area": "Golden Plains (S)",
+      "positive": 86.66666666666667,
+      "negative": 13.333333333333334,
+      "income_average": 48413
+    },
+    {
+      "area": "Greater Bendigo (C)",
+      "positive": 67.07810602994739,
+      "negative": 32.921893970052615,
+      "income_average": 45515
+    },
+    {
+      "area": "Greater Dandenong (C)",
+      "positive": 65.19324230502198,
+      "negative": 34.80675769497801,
+      "income_average": 41558
+    },
+    {
+      "area": "Greater Geelong (C)",
+      "positive": 70.04634994206256,
+      "negative": 29.953650057937427,
+      "income_average": 46670
+    },
+    {
+      "area": "Greater Shepparton (C)",
+      "positive": 76.4683734939759,
+      "negative": 23.531626506024097,
+      "income_average": 42422
+    },
+    {
+      "area": "Hepburn (S)",
+      "positive": 71.48703956343793,
+      "negative": 28.512960436562075,
+      "income_average": 41899
+    },
+    {
+      "area": "Hindmarsh (S)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 42044
+    },
+    {
+      "area": "Hobsons Bay (C)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 55290
+    },
+    {
+      "area": "Horsham (RC)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 43201
+    },
+    {
+      "area": "Hume (C)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 47049
+    },
+    {
+      "area": "Indigo (S)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 47068
+    },
+    {
+      "area": "Kingston (C) (Vic.)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 52539
+    },
+    {
+      "area": "Knox (C)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 49902
+    },
+    {
+      "area": "Latrobe (C) (Vic.)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 47152
+    },
+    {
+      "area": "Loddon (S)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 37189
+    },
+    {
+      "area": "Macedon Ranges (S)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 52166
+    },
+    {
+      "area": "Manningham (C)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 48170
+    },
+    {
+      "area": "Mansfield (S)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 36643
+    },
+    {
+      "area": "Maribyrnong (C)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 50714
+    },
+    {
+      "area": "Maroondah (C)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 51079
+    },
+    {
+      "area": "Melbourne (C)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 37876
+    },
+    {
+      "area": "Melton (C)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 50473
+    },
+    {
+      "area": "Mildura (RC)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 40147
+    },
+    {
+      "area": "Mitchell (S)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 48860
+    },
+    {
+      "area": "Moira (S)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 40731
+    },
+    {
+      "area": "Monash (C)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 47794
+    },
+    {
+      "area": "Moonee Valley (C)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 55099
+    },
+    {
+      "area": "Moorabool (S)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 50721
+    },
+    {
+      "area": "Moreland (C)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 50696
+    },
+    {
+      "area": "Mornington Peninsula (S)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 45095
+    },
+    {
+      "area": "Mount Alexander (S)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 43282
+    },
+    {
+      "area": "Moyne (S)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 40692
+    },
+    {
+      "area": "Murrindindi (S)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 42150
+    },
+    {
+      "area": "Nillumbik (S)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 53502
+    },
+    {
+      "area": "Northern Grampians (S)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 39996
+    },
+    {
+      "area": "Port Phillip (C)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 57417
+    },
+    {
+      "area": "Pyrenees (S)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 39875
+    },
+    {
+      "area": "Queenscliffe (B)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 41133
+    },
+    {
+      "area": "South Gippsland (S)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 40676
+    },
+    {
+      "area": "Southern Grampians (S)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 39586
+    },
+    {
+      "area": "Stonnington (C)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 56534
+    },
+    {
+      "area": "Strathbogie (S)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 41792
+    },
+    {
+      "area": "Surf Coast (S)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 46239
+    },
+    {
+      "area": "Swan Hill (RC)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 38137
+    },
+    {
+      "area": "Towong (S)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 41021
+    },
+    {
+      "area": "Unincorporated Vic",
+      "positive": 0,
+      "negative": 0,
+      "income_average": null
+    },
+    {
+      "area": "Wangaratta (RC)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 43980
+    },
+    {
+      "area": "Warrnambool (C)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 42655
+    },
+    {
+      "area": "Wellington (S)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 44187
+    },
+    {
+      "area": "West Wimmera (S)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 36388
+    },
+    {
+      "area": "Whitehorse (C)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 48280
+    },
+    {
+      "area": "Whittlesea (C)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 48131
+    },
+    {
+      "area": "Wodonga (C)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 48373
+    },
+    {
+      "area": "Wyndham (C)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 50891
+    },
+    {
+      "area": "Yarra (C)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 58029
+    },
+    {
+      "area": "Yarra Ranges (S)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 48073
+    },
+    {
+      "area": "Yarriambiack (S)",
+      "positive": 0,
+      "negative": 0,
+      "income_average": 37095
+    }
+  ]
+}
