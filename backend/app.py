@@ -201,7 +201,7 @@ class getAllStats(Resource):
             for each in detail_stats["rows"]:
                 areas_dict[each["key"]] = {"area":each["key"], "positive": 0, "negative": 0 }
                 areas_dict[each["key"]]["age_distribution"] = each["value"]["age_distribution"]
-                areas_dict[each["key"]]
+                areas_dict[each["key"]]["population_density"] = each["value"]["population_density"]
             
             for key in area_stats:
                 pos_ratio,neg_ratio =  calculateRatio(area_stats[key]["positive"], area_stats[key]["negative"] )
@@ -241,49 +241,11 @@ api.add_resource(getAllStats, '/allstatistics', endpoint = 'allstatistics')
 
 
 
-# {
-#     "ok": True,
-    
-#     "data": [
-#         「"area": "String",
-#         "positive": "float 0-100" ,# ratio of positive tweet
-#         "negative": "float 0-100",
-#         "income_average": "int",  #annual income average
-
-#         "age_distribution": {
-#             "five_to_nineteen": "float",
-#             "twenty_to_thirtynine": "float",
-#             "forty_to_sixty": "float",
-#             "medium_age": "float"
-#         }，
-#         "population_density": "float",
-        
-#         # 5 emojis
-#         "top_five_emojis": []
-#             {
-#                 "code": "emojicode",
-#                 "number": "float 0-100"
-#             }
-#     ]
-#     ]
-# }
-
 
 
 if __name__ == '__main__':
     app.run( debug = True,host="0.0.0.0",port=5000)
 
-# app = Flask(__name__)
-
-# @app.route('/')
-# def index():
-#     return "Hello, World!"
-
-# @app.route('/')
-
-
-# if __name__ == '__main__':
-#     app.run(debug=True,host="0.0.0.0",port=5000)
 
 
 
