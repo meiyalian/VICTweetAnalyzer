@@ -1,34 +1,15 @@
 # location data of each area represented by a central point + radius 
 areas = {
-         'Colac-Otway (S)': {'lat': -38.483006, 'lng': 143.6501903},
-         'Corangamite (S)': {'lat': -38.1491105, 'lng': 143.1319209},
-      
-         'East Gippsland (S)': {'lat': -37.4975957, 'lng': 148.1892921},
-        
-         'Gannawarra (S)': {'lat': -35.6867808, 'lng': 144.1128981},
-         
+       
          'Glenelg (S)': {'lat': -37.9078291, 'lng': 141.5150077},
          'Golden Plains (S)': {'lat': -37.8943285, 'lng': 143.6501903},
-         'Hindmarsh (S)': {'lat': -35.97520799999999, 'lng': 141.852273},
-       
-         'Indigo (S)': {'lat': -36.2306763, 'lng': 146.6962857},
-   
-       
+         'Hindmarsh (S)': {'lat': -35.97520799999999, 'lng': 141.852273}, 
          'Loddon (S)': {'lat': -36.4175636, 'lng': 143.9106594},
-         'Mansfield (S)': {'lat': -37.0625288, 'lng': 146.0821493},
+
         
-         'Maroondah (C)': {'lat': -37.80966, 'lng': 145.2590707},
-         'Melbourne (C)': {'lat': -37.8136276, 'lng': 144.9630576},
-        
-         'Moira (S)': {'lat': -35.9897244, 'lng': 145.5801757},
-         'Monash (C)': {'lat': -37.9109574, 'lng': 145.1371751},
-         'Moonee Valley (C)': {'lat': -37.7465015, 'lng': 144.9061342},
-         'Moorabool (S)': {'lat': -37.6334256, 'lng': 144.1720041},
-         'Moreland (C)': {'lat': -37.7411231, 'lng': 144.9700317},
        
          'Moyne (S)': {'lat': -38.1886081, 'lng': 142.4465474},
-         'Murrindindi (S)': {'lat': -37.36184069999999, 'lng': 145.53928},
-         'Nillumbik (S)': {'lat': -37.597667, 'lng': 145.2701235},
+        
          'Northern Grampians (S)': {'lat': -36.9044244, 'lng': 142.9599661},
          'Port Phillip (C)': {'lat': -37.8464983, 'lng': 144.9666905},
          'Pyrenees (S)': {'lat': -37.3879637, 'lng': 143.4770359},

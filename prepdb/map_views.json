@@ -1,6 +1,6 @@
 {
     "_id": "_design/vic_tweets",
-    "_rev": "7-0f062fdf98b3ef267ae2c66d2241a7b7",
+  
     "views": {
       "getAllAreaDetails": {
         "map": "function(doc) {if(doc.type == \"area\"){emit(doc.name, {positive: doc.positive, negative: doc.negative, average_income: doc.average_income, age_distribution: doc.age_distribution, population_density: doc.population_density, area_range: doc.area_range})};}"
@@ -18,13 +18,8 @@
       },
       "getFaulty": {
         "map": "function(doc) {if(doc.location == \"Queenscliffe (B)\"){emit(doc._id, doc.ts)};}"
-      },
-
-      "getTweetbyHour": {
-        "map": "function(doc){if(doc.type == \"tweet\"){emit(doc.hour, {score: doc.score, emoji: doc.emoji[0]}}; }"
       }
 
-   
     },
     "filters": {
       "important": "function(doc, req) { if(doc.type == 'tweet') { return true; } else { return false; }}"

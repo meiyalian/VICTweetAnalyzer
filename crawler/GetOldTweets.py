@@ -10,8 +10,8 @@ from ProcessOldTweet import processTweets
 
 parser = argparse.ArgumentParser()
 # parser.add_argument('--geo', type=str, default="-37.80811,144.96071,50mi")
-parser.add_argument('--startdate', type=str, default="2013-12-01")
-parser.add_argument('--enddate', type=str, default="2016-1-1")
+parser.add_argument('--startdate', type=str, default="2019-12-01")
+parser.add_argument('--enddate', type=str, default="2021-5-20")
 parser.add_argument('--limit', type=int, default=50000)
 args = parser.parse_args()
 
