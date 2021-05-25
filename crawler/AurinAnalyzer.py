@@ -4,7 +4,7 @@ import os,sys
 from shapely.geometry import Polygon, Point, MultiPolygon
 import pprint
 import matplotlib.pyplot as plt
-from DBconnect import vic_tweets
+from DBconnect import aurin
 from datetime import datetime
 
 
@@ -69,7 +69,7 @@ class AurinAnalyzer:
                     self.areas[area_name].density = density
                     self.areas[area_name].range = geo
 
-    def store_in_db(self,db = vic_tweets):
+    def store_in_db(self,db = aurin):
         print("uploading to db......")
         for key in self.areas:
             area = self.areas[key]

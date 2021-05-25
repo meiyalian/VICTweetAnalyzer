@@ -4,6 +4,7 @@
   gather_facts: true
   roles:
      - role: create_couchdb
+     - role: prepare_couchdb
 
 - hosts: masternode
   vars_files:
