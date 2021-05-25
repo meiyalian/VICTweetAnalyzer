@@ -83,7 +83,8 @@ class getIncomeStats(Resource):
             areas_dict = {}
             for each in income_stats["rows"]:
                 areas_dict[each["key"]] = {"area":each["key"], "positive": 0, "negative": 0 }
-                areas_dict[each["key"]]["income_average"] = each["value"] 
+                areas_dict[each["key"]]["income_average"] = each["value"]["average_income"]
+                areas_dict[each["key"]]["population_density"]  = each["value"]["population_density"]
 
 
             for key in area_stats:
@@ -147,17 +148,125 @@ class getTopFiveEmoji(Resource):
         
 api.add_resource(getTopFiveEmoji, '/getTopFiveEmoji', endpoint = 'getTopFiveEmoji')  
 
-############### api: /topfiveemoji
+###############  api: /time
+class getTimeStats(Resource):
+    def get(self): 
+        return_json = {}
+        
+        try:
+            time_stats =  getStats(ANALYSIS_DB_NAME, ANALYSIS_DESIGN_DOC, "getStats")["rows"][1]["value"]
 
-# top five emoji of victoria , return a list of top 5 emoji codes in vic 
+            hour_dict = {}
+            
+            for key in time_stats:
+            
+                pos_ratio,neg_ratio =  calculateRatio(time_stats[key]["positive"], time_stats[key]["negative"] )
+                topFive = calculateTop(time_stats[key]["emojis"], 5)
+                emos = []
+                for each in topFive:
+                    emos.append({
+                    "emojicode": each[0],
+                    "number": each[1]})
+                hour_dict[key] = {"time": int(key), "positive": pos_ratio, "negative": neg_ratio, "top_five_emojis": emos}
+
+            data = []
+            for key in hour_dict:
+                data.append(hour_dict[key])
+            
+
+            return_json = {
+                        "ok": True,
+                        "data": data}
+        except Exception as e:
+            print(e)
+            return_json = {
+                "ok": False,
+                "msg" : "Something went wrong: "}
+        return return_json
+        
+api.add_resource(getTimeStats, '/time', endpoint = 'time')  
+
+
+
+
+###############  api: /allstatistics
+class getAllStats(Resource):
+    def get(self): 
+        return_json = {}
+        try:
+            area_stats =  getStats(ANALYSIS_DB_NAME, ANALYSIS_DESIGN_DOC, "getStats")["rows"][0]["value"]
+            detail_stats = income_stats = getStats(RAW_TWEET_DB_NAME, RAW_TWEET_DESIGN_DOC, "getAllAreaDetails")
+            areas_dict = {}
+            for each in detail_stats["rows"]:
+                areas_dict[each["key"]] = {"area":each["key"], "positive": 0, "negative": 0 }
+                areas_dict[each["key"]]["age_distribution"] = each["value"]["age_distribution"]
+                areas_dict[each["key"]]
+            
+            for key in area_stats:
+                pos_ratio,neg_ratio =  calculateRatio(area_stats[key]["positive"], area_stats[key]["negative"] )
+                topFive = calculateTop(area_stats[key]["emojis"], 5)
+                emos = []
+                for each in topFive:
+                    emos.append({
+                    "emojicode": each[0],
+                    "number": each[1]})
+                areas_dict[key]["positive"] = pos_ratio
+                areas_dict[key]["negative"] = neg_ratio
+                areas_dict[key]["top_five_emojis"] = emos
+
+
+            data = []
+            for key in areas_dict:
+                data.append(areas_dict[key])
+            
+
+            return_json = {
+                        "ok": True,
+                        "data": data}
+        except Exception as e:
+            print(e)
+            return_json = {
+                "ok": False,
+                "msg" : "Something went wrong: "}
+        return return_json
+        
+api.add_resource(getAllStats, '/allstatistics', endpoint = 'allstatistics')  
+
+
+
+
+
+
+
+
+
 # {
 #     "ok": True,
+    
 #     "data": [
-#         "emojicode "
-#     ] 
+#         「"area": "String",
+#         "positive": "float 0-100" ,# ratio of positive tweet
+#         "negative": "float 0-100",
+#         "income_average": "int",  #annual income average
 
-
+#         "age_distribution": {
+#             "five_to_nineteen": "float",
+#             "twenty_to_thirtynine": "float",
+#             "forty_to_sixty": "float",
+#             "medium_age": "float"
+#         }，
+#         "population_density": "float",
+        
+#         # 5 emojis
+#         "top_five_emojis": []
+#             {
+#                 "code": "emojicode",
+#                 "number": "float 0-100"
+#             }
+#     ]
+#     ]
 # }
+
 
 
 if __name__ == '__main__':

@@ -44,11 +44,6 @@ dbserver = connect_to_couch_db_server2(host, port, username, password)
 vic_tweets = connect_to_database2("vic_tweets", dbserver)
 analysis = connect_to_database2("analysis", dbserver)
 
-# doc = analysis["_design/analysis"]
-# # # # print(doc["hour"])
-# analysis.delete(doc)
-# print("delete")
-
 #prepare view for area 
 with open('prepdb/map_views.json', 'r') as f:
     vic_tweets.save(json.load(f))
