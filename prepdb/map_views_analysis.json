@@ -1,45 +1,39 @@
 {
-    "_id": "_design/analysis",
-
-    "views": {
-
-      "getTweetAreaCount": {
-        "map": "function(doc) {if(doc.type == \"analysis\"){emit(doc.location, 1)};}",
-        "reduce": "_count"
-      },
-    
-      "getTweetStatsbyHour": {
-        "map": "function(doc){if(doc.type == \"analysis\"){emit(doc.hour,{positive: doc.score > 0 ? 1: 0, negative:doc.score < 0 ? 1: 0  })}; }",
-        "reduce": "function(key, values, rereduce) { var result = {positive: 0, negative: 0};for(i=0; i < values.length; i++) {if(rereduce) {result.positive = result.positive + (values[i].positive);result.negative = result.count + (values[i].negative);} else {result.positive = sum(values.map(function (value) {return value.positive}));result.negative = sum(values.map(function (value) {return value.negative}));}}return(result);}"
-      },
-
-      "getTweetPosbyHour": {
-        "map": "function(doc){if(doc.type == \"analysis\" && doc.score> 0 ){emit(doc.hour,1)}; }",
-        "reduce": "_count"
-      },
-
-      "getTweetNegbyHour": {
-        "map": "function(doc){if(doc.type == \"analysis\" && doc.score < 0 ){emit(doc.hour,1)}; }",
-        "reduce": "_count"
-      },
+  "_id": "_design/analysis",
+  "_rev": "19-e0196da7d51fcf07c487d749dccba053",
+  "views": {
+    "getTweetAreaCount": {
+      "map": "function(doc) {if(doc.type == \"analysis\"){emit(doc.location, 1)};}",
+      "reduce": "_count"
+    },
+    "getTweetPosbyHour": {
+      "map": "function(doc){if(doc.type == \"analysis\" && doc.score> 0 ){emit(doc.hour,1)}; }",
+      "reduce": "_count"
+    },
+    "getTweetNegbyHour": {
+      "map": "function(doc){if(doc.type == \"analysis\" && doc.score < 0 ){emit(doc.hour,1)}; }",
+      "reduce": "_count"
+    },
     "getTweetCountbyHour": {
-        "map": "function(doc){if(doc.type == \"analysis\"){emit(doc.hour,1)}; }",
-        "reduce":  "_count"
+      "map": "function(doc){if(doc.type == \"analysis\"){emit(doc.hour,1)}; }",
+      "reduce": "_count"
     },
-      "getPositiveAmountByArea": {
-        "map": "function(doc) {if(doc.type == \"analysis\" && doc.score> 0  ){emit(doc.location, 1)};}",
-        "reduce": "_count"
-      },
-      "getNegativeAmount": {
-        "map": "function(doc) {if(doc.type == \"analysis\" && doc.score < 0  ){emit(doc.location, 1)};}",
-        "reduce": "_count"
-      }
-    
-
-
-   
+    "getPositiveAmountByArea": {
+      "map": "function(doc) {if(doc.type == \"analysis\" && doc.score > 0  ){emit(doc.location, 1)};}",
+      "reduce": "_count"
     },
-    "filters": {
-      "important": "function(doc, req) { if(doc.type == 'tweet') { return true; } else { return false; }}"
+    "getNegativeAmountByArea": {
+      "map": "function(doc) {if(doc.type == \"analysis\" && doc.score < 0  ){emit(doc.location, 1)};}",
+      "reduce": "_count"
+    },
+    "getEmoji": {
+      "map": "function(doc) {if(doc.type == \"analysis\" && doc.score != 0 ){emit(doc.location, {emoji: doc.emoji[0], hour: doc.hour})};}"
+    },
+    "getStats": {
+      "map": "function(doc) {if(doc.type == \"statistics\"){emit(doc._id, doc.data)};}"
     }
+  },
+  "filters": {
+    "important": "function(doc, req) { if(doc.type == 'tweet') { return true; } else { return false; }}"
   }
+}

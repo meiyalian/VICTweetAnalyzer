@@ -77,14 +77,15 @@ class getIncomeStats(Resource):
         return_json = {}
 
         try:
-            income_stats = getStats(RAW_TWEET_DB_NAME, RAW_TWEET_DESIGN_DOC, "getAllAreaIncome")
+            income_stats =  getStats(RAW_TWEET_DB_NAME, RAW_TWEET_DESIGN_DOC, "getAllAreaIncome")
             area_stats =  getStats(ANALYSIS_DB_NAME, ANALYSIS_DESIGN_DOC, "getStats")["rows"][0]["value"]
  
             areas_dict = {}
             for each in income_stats["rows"]:
+
                 areas_dict[each["key"]] = {"area":each["key"], "positive": 0, "negative": 0 }
-                areas_dict[each["key"]]["income_average"] = each["value"]["average_income"]
-                areas_dict[each["key"]]["population_density"]  = each["value"]["population_density"]
+                areas_dict[each["key"]]["income_average"] = each["value"]
+                # areas_dict[each["key"]]["population_density"]  = each["value"]["population_density"]
 
 
             for key in area_stats:
